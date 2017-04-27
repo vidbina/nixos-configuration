@@ -65,7 +65,7 @@
   services.xserver = {
     autorun = false;
     desktopManager = {
-      kde5 = {
+      plasma5 = {
         enable = true;
       };
     };
