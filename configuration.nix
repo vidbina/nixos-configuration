@@ -71,7 +71,6 @@
     videoDrivers = ["intel"];
     windowManager = {
       i3 = {
-        default = "i3-gaps";
         enable = true;
       };
     };
