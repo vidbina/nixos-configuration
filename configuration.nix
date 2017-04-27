@@ -64,8 +64,8 @@
       # https://nixos.org/wiki/Using_X_without_a_Display_Manager
       lightdm = {
         enable = true;
-      }
-    }
+      };
+    };
     enable = true;
     layout = "us";
     videoDrivers = ["intel"];
@@ -73,10 +73,10 @@
       i3 = {
         default = "i3-gaps";
         enable = true;
-      }
-    }
+      };
+    };
     xkbOptions = "eurosign:e";
-  }
+  };
 
   # Enable the KDE Desktop Environment.
   # services.xserver.displayManager.sddm.enable = true;
