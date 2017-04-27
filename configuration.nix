@@ -57,6 +57,8 @@
   programs.zsh.enableAutosuggestions = true;
   programs.zsh.enableSyntaxHighlighting = true;
 
+  services.nixosManual.showManual = true;
+
   # Enable the X11 windowing system.
   services.xserver = {
     autorun = false;
