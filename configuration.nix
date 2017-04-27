@@ -65,7 +65,7 @@
   services.xserver = {
     autorun = false;
     desktopManager = {
-      kde4 = {
+      kde5 = {
         enable = true;
       };
     };
