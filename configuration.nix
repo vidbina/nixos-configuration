@@ -57,15 +57,26 @@
   programs.zsh.enableAutosuggestions = true;
   programs.zsh.enableSyntaxHighlighting = true;
 
-  services.xserver.autorun = false;
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  services.xserver.layout = "us";
-  services.xserver.xkbOptions = "eurosign:e";
-  #services.xserver.desktopManager.gnome3.enable = true;
-  # services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.windowManager.i3.enable = true;
-  services.xserver.videoDrivers = ["intel"];
+  services.xserver = {
+    autorun = false;
+    displayManager = {
+      # https://nixos.org/wiki/Using_X_without_a_Display_Manager
+      lightdm = {
+        enable = true;
+      }
+    }
+    enable = true;
+    layout = "us";
+    videoDrivers = ["intel"];
+    windowManager = {
+      i3 = {
+        default = "i3-gaps";
+        enable = true;
+      }
+    }
+    xkbOptions = "eurosign:e";
+  }
 
   # Enable the KDE Desktop Environment.
   # services.xserver.displayManager.sddm.enable = true;
