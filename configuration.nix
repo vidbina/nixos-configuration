@@ -98,7 +98,7 @@
   system.stateVersion = "17.03";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users {
+  users = {
     defaultUserShell = "/run/current-system/sw/bin/zsh";
     extraUsers.vid = {
       isNormalUser = true;
