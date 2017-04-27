@@ -36,9 +36,11 @@
   #   defaultLocale = "en_US.UTF-8";
   # };
 
-  networking.hostName = "9350.bina.me"; # Define your hostname.
+  networking = {
+    hostName = "9350.bina.me";
   # networking.wireless.enable = wlp58s0;  # Enables wireless support via wpa_supplicant.
-  # networking.networkmanager.enable = true;
+    networkmanager.enable = true;
+  };
 
   # List services that you want to enable:
 
