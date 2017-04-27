@@ -62,6 +62,11 @@
   # Enable the X11 windowing system.
   services.xserver = {
     autorun = false;
+    desktopManager = {
+      kde4 = {
+        enable = true;
+      };
+    };
     displayManager = {
       # https://nixos.org/wiki/Using_X_without_a_Display_Manager
       lightdm = {
@@ -70,6 +75,9 @@
     };
     enable = true;
     layout = "us";
+    synaptic = {
+      enable = true;
+    };
     videoDrivers = ["intel"];
     windowManager = {
       i3 = {
