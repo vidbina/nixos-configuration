@@ -23,7 +23,7 @@
     git
     vim
     dmenu
-    surf
+    uzbl
     rxvt_unicode
   ];
 
