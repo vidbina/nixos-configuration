@@ -59,6 +59,10 @@
   programs.zsh.enableAutosuggestions = true;
   programs.zsh.enableSyntaxHighlighting = true;
 
+  services.illum = {
+    enable = true;
+  };
+
   services.nixosManual.showManual = true;
 
   # Enable the X11 windowing system.
