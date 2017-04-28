@@ -22,6 +22,9 @@
     wget
     git
     vim
+    dmenu
+    surf
+    rxvt-unicode
   ];
 
   fileSystems."/home" = {
