@@ -84,6 +84,7 @@
       };
     };
     enable = true;
+    exportConfiguration = true;
     layout = "us";
     # 846x476 mllimeters reported by Dell XPS 13
     # $ nix-shell -p xorg.xdpyinfo
@@ -96,7 +97,9 @@
     };
     videoDrivers = ["intel"];
     windowManager = {
+      default = "xmonad";
       xmonad = {
+        enableContribAndExtras = true;
         enable = true;
       };
     };
