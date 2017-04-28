@@ -89,6 +89,14 @@
       enable = true;
     };
     videoDrivers = ["intel"];
+    # NOTE: Set XMonad as wm again. Make sure to set .xmonad/xmonad.hs
+    windowManager = {
+      default = "xmonad";
+      xmonad = {
+        enableContribAndExtras = true;
+        enable = true;
+      };
+    };
     xkbOptions = "eurosign:e";
   };
 
