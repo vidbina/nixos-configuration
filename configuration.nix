@@ -78,7 +78,7 @@
     };
     displayManager = {
       # https://nixos.org/wiki/Using_X_without_a_Display_Manager
-      sddm = {
+      slim = {
         enable = true;
       };
     };
