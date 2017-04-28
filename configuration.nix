@@ -72,8 +72,8 @@
   services.xserver = {
     autorun = true;
     desktopManager = {
-      default = "xfce";
-      xfce = {
+      default = "gnome3";
+      gnome3 = {
         enable = true;
       };
       xterm = {
