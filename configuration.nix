@@ -23,8 +23,10 @@
     git
     vim
     dmenu
+    i3status
     torbrowser
     rxvt_unicode
+    st
   ];
 
   fileSystems."/home" = {
@@ -91,9 +93,8 @@
     videoDrivers = ["intel"];
     # NOTE: Set XMonad as wm again. Make sure to set .xmonad/xmonad.hs
     windowManager = {
-      default = "xmonad";
-      xmonad = {
-        enableContribAndExtras = true;
+      default = "i3";
+      i3 = {
         enable = true;
       };
     };
