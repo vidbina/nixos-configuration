@@ -68,11 +68,11 @@
   # Enable the X11 windowing system.
   services.xserver = {
     autorun = true;
-    desktopManager = {
-      plasma5 = {
-        enable = true;
-      };
-    };
+#    desktopManager = {
+#      plasma5 = {
+#        enable = true;
+#      };
+#    };
     displayManager = {
       # https://nixos.org/wiki/Using_X_without_a_Display_Manager
       sddm = {
@@ -91,11 +91,11 @@
       enable = true;
     };
     videoDrivers = ["intel"];
-#    windowManager = {
-#      i3 = {
-#        enable = true;
-#      };
-#    };
+    windowManager = {
+      i3 = {
+        enable = true;
+      };
+    };
     xkbOptions = "eurosign:e";
   };
 
