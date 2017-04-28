@@ -72,6 +72,9 @@
   services.xserver = {
     autorun = true;
     desktopManager = {
+      xfce = {
+        enable = true;
+      };
       xterm = {
         enable = false;
       };
