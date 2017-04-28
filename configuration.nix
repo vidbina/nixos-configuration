@@ -81,6 +81,11 @@
     };
     enable = true;
     layout = "us";
+    monitorSection = ''
+      # Semmingly the DPI used by Windows as mentioned in
+      # https://wiki.archlinux.org/index.php/Talk:Dell_XPS_13_(9350)#HiDPI
+      Option "MergedDPI" "240 240"
+    '';
     synaptics = {
       enable = true;
     };
