@@ -100,7 +100,7 @@
       clickMethod = "clickfinger";
       scrollMethod = "twofinger"; # mimick Macbook behavior
       sendEventsMode = "disabled"; # ingore if external pointing dev is connected
-      tapping = "false"; # mimick Macbook behavior
+      tapping = false; # mimick Macbook behavior
       enable = true;
     };
     videoDrivers = ["intel"];
