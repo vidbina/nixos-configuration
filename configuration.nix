@@ -76,6 +76,7 @@
         enable = false;
       };
     };
+    dpi = 180;
     displayManager = {
       # https://nixos.org/wiki/Using_X_without_a_Display_Manager
       slim = {
