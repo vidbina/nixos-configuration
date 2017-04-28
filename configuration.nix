@@ -81,10 +81,11 @@
     };
     enable = true;
     layout = "us";
+    # 846x476 mllimeters reported by Dell XPS 13
+    # $ nix-shell -p xorg.xdpyinfo
+    # $ xdpyinfo | grep -B resolution
     monitorSection = ''
-      # Semmingly the DPI used by Windows as mentioned in
-      # https://wiki.archlinux.org/index.php/Talk:Dell_XPS_13_(9350)#HiDPI
-      Option "MergedDPI" "240 240"
+      DisplaySize 423 238
     '';
     synaptics = {
       enable = true;
