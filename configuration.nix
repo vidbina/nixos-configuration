@@ -81,11 +81,11 @@
       enable = true;
     };
     videoDrivers = ["intel"];
-    windowManager = {
-      i3 = {
-        enable = true;
-      };
-    };
+#    windowManager = {
+#      i3 = {
+#        enable = true;
+#      };
+#    };
     xkbOptions = "eurosign:e";
   };
 
