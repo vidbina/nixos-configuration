@@ -68,11 +68,11 @@
   # Enable the X11 windowing system.
   services.xserver = {
     autorun = true;
-#    desktopManager = {
-#      plasma5 = {
-#        enable = true;
-#      };
-#    };
+    desktopManager = {
+      xterm = {
+        enable = false;
+      };
+    };
     displayManager = {
       # https://nixos.org/wiki/Using_X_without_a_Display_Manager
       sddm = {
