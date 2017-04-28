@@ -24,7 +24,7 @@
     vim
     dmenu
     surf
-    rxvt-unicode
+    rxvt_unicode
   ];
 
   fileSystems."/home" = {
