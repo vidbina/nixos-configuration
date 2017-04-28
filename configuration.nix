@@ -71,7 +71,7 @@
     };
     displayManager = {
       # https://nixos.org/wiki/Using_X_without_a_Display_Manager
-      lightdm = {
+      sddm = {
         enable = true;
       };
     };
