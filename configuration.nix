@@ -23,7 +23,7 @@
     git
     vim
     dmenu
-    uzbl
+    torbrowser
     rxvt_unicode
   ];
 
