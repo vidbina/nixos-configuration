@@ -72,6 +72,7 @@
   services.xserver = {
     autorun = true;
     desktopManager = {
+      default = "xfce";
       xfce = {
         enable = true;
       };
