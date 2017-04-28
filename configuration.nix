@@ -95,7 +95,7 @@
     };
     videoDrivers = ["intel"];
     windowManager = {
-      i3 = {
+      xmonad = {
         enable = true;
       };
     };
