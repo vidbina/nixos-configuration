@@ -96,7 +96,11 @@
     monitorSection = ''
       DisplaySize 423 238
     '';
-    synaptics = {
+    libinput = {
+      clickMethod = "clickfinger";
+      scrollMethod = "twofinger"; # mimick Macbook behavior
+      sendEventsMode = "disabled"; # ingore if external pointing dev is connected
+      tapping = "false"; # mimick Macbook behavior
       enable = true;
     };
     videoDrivers = ["intel"];
