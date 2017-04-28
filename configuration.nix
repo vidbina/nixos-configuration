@@ -71,28 +71,13 @@
   # Enable the X11 windowing system.
   services.xserver = {
     autorun = true;
-    desktopManager = {
-      default = "gnome3";
-      gnome3 = {
-        enable = true;
-      };
-      xterm = {
-        enable = false;
-      };
-    };
-    dpi = 180;
-    displayManager = {
-      # https://nixos.org/wiki/Using_X_without_a_Display_Manager
-      slim = {
-        enable = true;
-      };
-    };
+    # dpi = 180;
     enable = true;
     exportConfiguration = true;
     layout = "us";
     # 846x476 mllimeters reported by Dell XPS 13
     # $ nix-shell -p xorg.xdpyinfo
-    # $ xdpyinfo | grep -B resolution
+    # $ xdpyinfo | grep -B2 resolution
     monitorSection = ''
       DisplaySize 423 238
     '';
