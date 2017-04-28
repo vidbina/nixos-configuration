@@ -89,13 +89,6 @@
       enable = true;
     };
     videoDrivers = ["intel"];
-    windowManager = {
-      default = "xmonad";
-      xmonad = {
-        enableContribAndExtras = true;
-        enable = true;
-      };
-    };
     xkbOptions = "eurosign:e";
   };
 
