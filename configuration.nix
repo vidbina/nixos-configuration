@@ -89,7 +89,7 @@
       palmDetect = true;
       twoFingerScroll = true;
       vertEdgeScroll = false;
-    }
+    };
     videoDrivers = ["intel"];
     # NOTE: Set XMonad as wm again. Make sure to set .xmonad/xmonad.hs
     windowManager = {
@@ -110,8 +110,8 @@
     dotfiles = stringAfter [ "users" ]
     ''
     git clone --branch master https://github.com/vidbina/i3-config.git ~/.i3
-    ''
-  }
+    '';
+  };
   # The NixOS release to be compatible with for stateful data such as databases.
   system.stateVersion = "17.03";
 
