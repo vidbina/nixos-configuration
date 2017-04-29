@@ -92,7 +92,6 @@ rec {
       vertEdgeScroll = false;
     };
     videoDrivers = ["intel"];
-    # NOTE: Set XMonad as wm again. Make sure to set .xmonad/xmonad.hs
     windowManager = {
       default = "i3";
       i3 = {
