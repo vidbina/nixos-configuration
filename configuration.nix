@@ -18,15 +18,17 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
+    chromium
     curl
-    wget
-    git
-    vim
     dmenu
+    git
+    gpg
     i3status
-    torbrowser
     rxvt_unicode
     st
+    vim
+    torbrowser
+    wget
   ];
 
   fileSystems."/home" = {
