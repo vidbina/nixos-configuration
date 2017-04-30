@@ -9,25 +9,6 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./base.nix
+      ./xmonad.nix
     ];
-
-  # Enable the X11 windowing system.
-  services.xserver = {
-    libinput = {
-      clickMethod = "clickfinger";
-      scrollMethod = "twofinger"; # mimick Macbook behavior
-      sendEventsMode = "disabled"; # ingore if external pointing dev is connected
-      tapping = false; # mimick Macbook behavior
-      enable = true;
-    };
-
-    # NOTE: Set XMonad as wm again. Make sure to set .xmonad/xmonad.hs
-    windowManager = {
-      default = "xmonad";
-      xmonad = {
-        enableContribAndExtras = true;
-        enable = true;
-      };
-    };
-  };
 }
