@@ -13,7 +13,7 @@
     curl
     dmenu
     git
-    gpg
+    gnupg
     i3status
     rxvt_unicode
     st
