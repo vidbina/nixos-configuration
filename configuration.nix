@@ -10,4 +10,4 @@
       ./hardware-configuration.nix
       ./base.nix
     ];
-};
+}
