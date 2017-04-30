@@ -76,22 +76,8 @@
     monitorSection = ''
       DisplaySize 423 238
     '';
-    synaptics.enable = true;
-#    libinput = {
-#      clickMethod = "clickfinger";
-#      scrollMethod = "twofinger"; # mimick Macbook behavior
-#      sendEventsMode = "disabled"; # ingore if external pointing dev is connected
-#      tapping = false; # mimick Macbook behavior
-#      enable = true;
-#    };
     videoDrivers = ["intel"];
     # NOTE: Set XMonad as wm again. Make sure to set .xmonad/xmonad.hs
-    windowManager = {
-      default = "i3";
-      i3 = {
-        enable = true;
-      };
-    };
     xkbOptions = "eurosign:e";
   };
 
