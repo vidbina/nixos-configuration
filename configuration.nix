@@ -107,7 +107,7 @@ rec {
   #
 
   system.activationScripts = {
-    dotfiles = stringAfter [ "users" ]
+    dotfiles = stringAfter [ "users" "pkgs" ]
     ''
     git clone --branch master https://github.com/vidbina/i3-config.git ~/.i3
     '';
