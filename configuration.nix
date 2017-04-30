@@ -9,22 +9,6 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./base.nix
+      ./i3.nix
     ];
-
-  # Enable the X11 windowing system.
-  services.xserver = {
-    synaptics = {
-      enable = true;
-      horizEdgeScroll = false;
-      palmDetect = true;
-      twoFingerScroll = true;
-      vertEdgeScroll = false;
-    };
-    windowManager = {
-      default = "i3";
-      i3 = {
-        enable = true;
-      };
-    };
-  };
 }
