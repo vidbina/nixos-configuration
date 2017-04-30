@@ -11,7 +11,7 @@
     };
 
     # NOTE: Set XMonad as wm again. Make sure to set .xmonad/xmonad.hs
-    windowManager = {
+    windowManager = pkgs.lib.mkForce {
       default = "xmonad";
       xmonad = {
         enableContribAndExtras = true;
