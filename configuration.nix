@@ -9,7 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./base.nix
-    #  ./xmonad.nix
+      ./xmonad.nix
     #  ./i3.nix
     ];
 }
