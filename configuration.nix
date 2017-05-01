@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./base.nix
+      ./users.nix
       # TODO: figure out how to make the following configurable
       # Was thinking about loading a WM env var and then determine which
       # element to import from that
