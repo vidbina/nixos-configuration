@@ -11,6 +11,7 @@
   environment.systemPackages = with pkgs; [
     chromium
     curl
+    darcs
     dmenu
     git
     gnupg
