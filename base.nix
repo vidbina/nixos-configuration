@@ -14,7 +14,6 @@
     dmenu
     git
     gnupg
-    i3status
     rxvt_unicode
     st
     vim

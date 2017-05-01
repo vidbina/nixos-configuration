@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
+    i3status
   ];
 
   services.xserver = {
