@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 
 {
+  environment.systemPackages = with pkgs; [
+  ];
+
   services.xserver = {
     synaptics = {
       enable = true;
