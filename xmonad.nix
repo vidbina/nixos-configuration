@@ -6,7 +6,7 @@
       enable = true;
       horizEdgeScroll = false;
       palmDetect = true;
-      tapButtons = true;
+      tapButtons = false;
       twoFingerScroll = true;
     };
 
