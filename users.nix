@@ -8,7 +8,11 @@
       isNormalUser = true;
       # uid = 1988;
       description = "David Asabina";
-      extraGroups = [ "wheel" "networkmanager" ];
+      extraGroups = [
+        "docker"
+        "networkmanager"
+        "wheel"
+      ];
       initialPassword = "#unsecure";
     };
   };
