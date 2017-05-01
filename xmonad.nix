@@ -2,14 +2,12 @@
 
 {
   services.xserver = {
-    libinput = {
-      clickMethod = "clickfinger";
-      disableWhileTyping = true;
+    synaptics = {
       enable = true;
-      naturalScrolling = true;
-      scrollMethod = "twofinger"; # mimick Macbook behavior
-      sendEventsMode = "disabled"; # ingore if external pointing dev is connected
-      tapping = false; # mimick Macbook behavior
+      horizEdgeScroll = false;
+      palmDetect = true;
+      tapButtons = true;
+      twoFingerScroll = true;
     };
 
     # NOTE: Set XMonad as wm again. Make sure to set .xmonad/xmonad.hs
