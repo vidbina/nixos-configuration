@@ -34,7 +34,6 @@
   };
 
   networking = {
-    hostName = "9350.bina.me";
   # networking.wireless.enable = wlp58s0;  # Enables wireless support via wpa_supplicant.
     networkmanager.enable = true;
   };

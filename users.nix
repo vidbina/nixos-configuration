@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 {
+  networking.hostName = "9350.bina.me";
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
     defaultUserShell = "/run/current-system/sw/bin/zsh";
