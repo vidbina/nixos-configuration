@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    xmobar
+    haskellPackages.xmobar
   ];
 
   services.xserver = {
