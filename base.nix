@@ -16,6 +16,7 @@
     git
     gnupg
     rxvt_unicode
+    okular
     st
     vim
     torbrowser
