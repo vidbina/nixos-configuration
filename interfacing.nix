@@ -15,6 +15,6 @@
   services.xserver.multitouch = {
     enable = true;
     invertScroll = true;
-    ignorePalm = true;
+#    ignorePalm = true;
   };
 }
