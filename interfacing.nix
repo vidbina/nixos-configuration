@@ -12,9 +12,9 @@
 #    twoFingerScroll = true;
 #  };
 
-  services.xserver.multitouch = {
-    enable = true;
-    invertScroll = true;
-    ignorePalm = true;
-  };
+#  services.xserver.multitouch = {
+#    enable = true;
+#    invertScroll = true;
+#    ignorePalm = true;
+#  };
 }
