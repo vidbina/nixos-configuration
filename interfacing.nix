@@ -4,17 +4,19 @@
   services.xserver.autoRepeatDelay = 150;
   services.xserver.autoRepeatInterval = 100;
 
-#  services.xserver.synaptics = {
-#    enable = false;
-#    horizEdgeScroll = false;
-#    palmDetect = true;
-#    tapButtons = false;
-#    twoFingerScroll = true;
-#  };
+  services.xserver.synaptics = {
+    enable = true;
+    horizEdgeScroll = false;
+    palmDetect = true;
+    tapButtons = false;
+    twoFingerScroll = true;
+    # TODO: invert scrolling
+  };
 
-#  services.xserver.multitouch = {
-#    enable = true;
-#    invertScroll = true;
-#    ignorePalm = true;
-#  };
+  services.xserver.multitouch = {
+    enable = false;
+    invertScroll = true;
+    ignorePalm = true;
+    # TODO: improve responsiveness
+  };
 }
