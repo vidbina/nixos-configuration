@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  services.xserver.autoRepeatDelay = 200;
+  services.xserver.autoRepeatDelay = 150;
   services.xserver.autoRepeatInterval = 100;
 
 #  services.xserver.synaptics = {
