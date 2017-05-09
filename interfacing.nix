@@ -5,7 +5,7 @@
   services.xserver.autoRepeatInterval = 100;
 
   services.xserver.synaptics = {
-    enable = true;
+    enable = false;
     horizEdgeScroll = false;
     palmDetect = true;
     tapButtons = false;
@@ -19,4 +19,10 @@
     ignorePalm = true;
     # TODO: improve responsiveness
   };
+
+  services.xserver.libinput = {
+    enable = true;
+    naturalScrolling = true;
+    clickMethod = clickfinger;
+  }
 }
