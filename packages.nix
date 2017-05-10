@@ -10,11 +10,12 @@
     dmenu
     git
     gnupg
-    rxvt_unicode
     okular
+    rxvt_unicode
     st
-    vim
     torbrowser
+    vim
     wget
+    xorg.xev
   ];
 }
