@@ -21,5 +21,6 @@
       ./xmonad.nix
     #  ./i3.nix
       ./interfacing.nix
+      ./temp.nix
     ];
 }
