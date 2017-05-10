@@ -23,7 +23,7 @@
   services.xserver.libinput = {
     enable = true;
     naturalScrolling = true;
-    clickMethod = clickfinger;
-#   scrollMethod = twofinger;
+    clickMethod = "clickfinger";
+#   scrollMethod = "twofinger";
   };
 }
