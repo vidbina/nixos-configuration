@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  # TODO: cleanup
-  allowUnfree = true;
+  # TODO: cleanup later
+  nixpkgs.config.allowUnfree = true;
 }
 
 
