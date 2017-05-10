@@ -17,5 +17,6 @@
     vim
     wget
     xorg.xev
+    xorg.xmodmap
   ];
 }
