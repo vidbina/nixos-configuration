@@ -25,5 +25,6 @@
     naturalScrolling = true;
     clickMethod = "clickfinger";
 #   scrollMethod = "twofinger";
+    disableWhileTyping = true;
   };
 }
