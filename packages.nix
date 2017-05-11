@@ -8,6 +8,7 @@
     curl
     darcs
     dmenu
+    font-awesome-ttf
     git
     gnome3.eog
     gnupg
