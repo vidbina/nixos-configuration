@@ -9,6 +9,7 @@
     darcs
     dmenu
     git
+    gnome3.eog
     gnupg
     okular
     rxvt_unicode
