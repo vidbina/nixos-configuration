@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  services.xserver.autoRepeatDelay = 150;
-  services.xserver.autoRepeatInterval = 100;
+  services.xserver.autoRepeatDelay = 180;
+  services.xserver.autoRepeatInterval = 50;
 
   services.xserver.synaptics = {
     enable = false;
