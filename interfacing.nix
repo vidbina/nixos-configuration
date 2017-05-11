@@ -26,5 +26,6 @@
     clickMethod = "clickfinger";
 #   scrollMethod = "twofinger";
     disableWhileTyping = true;
+    tapping = false;
   };
 }
