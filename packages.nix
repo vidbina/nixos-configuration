@@ -9,6 +9,7 @@
     curl
     darcs
     dmenu
+    dzen2
     git
     gnome3.eog
     gnupg
