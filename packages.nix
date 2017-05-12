@@ -5,6 +5,7 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
     chromium
+    conky
     curl
     darcs
     dmenu
