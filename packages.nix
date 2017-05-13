@@ -5,7 +5,11 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
     chromium
-    conky
+    # perhaps I need a namesake's named nix file for each package
+    conky.override {
+      luaSupport = true;
+      wirelessSupport = true;
+    }
     curl
     darcs
     dmenu
