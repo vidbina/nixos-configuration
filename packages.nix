@@ -6,7 +6,6 @@
   environment.systemPackages = with pkgs; [
     chromium
     conky
-    cairo
     curl
     darcs
     dmenu
@@ -14,6 +13,7 @@
     git
     gnome3.eog
     gnupg
+    luaPackages
     okular
     rxvt_unicode
     st
