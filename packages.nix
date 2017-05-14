@@ -1,4 +1,6 @@
 { config, pkgs, ... }:
+
+{
   environment.systemPackages = with pkgs; [
     chromium
     conky
@@ -16,6 +18,7 @@
     tmux
     torbrowser
     tree # pkgs/tools/system/tree
+    unity3d
     vim
     wget
     xorg.xev
