@@ -10,6 +10,7 @@
     dzen2
     git
     gnome3.eog
+    gnumake
     gnupg
     okular
     pstree
