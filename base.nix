@@ -74,6 +74,4 @@
 
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
-
-  virtualisation.docker.enable = true;
 }
