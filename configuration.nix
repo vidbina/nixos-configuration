@@ -23,5 +23,6 @@
     #  ./i3.nix
       ./interfacing.nix
       ./temp.nix
+      ./unity3d.nix
     ];
 }

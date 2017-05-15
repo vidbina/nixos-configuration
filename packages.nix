@@ -19,7 +19,6 @@
     tmux
     torbrowser
     tree # pkgs/tools/system/tree
-    unity3d
     vim
     wget
     xorg.xev
