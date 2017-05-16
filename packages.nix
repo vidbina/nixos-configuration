@@ -14,7 +14,6 @@
     gnupg
     okular
     pstree
-    rxvt_unicode
     st
     tmux
     torbrowser

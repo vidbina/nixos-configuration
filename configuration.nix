@@ -26,5 +26,6 @@
       ./interfacing.nix
       ./temp.nix
       ./unity3d.nix
+      ./urxvt.nix
     ];
 }
