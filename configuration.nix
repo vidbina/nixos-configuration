@@ -11,6 +11,7 @@
       ./base.nix
       ./docker.nix
       ./fonts.nix
+      ./games.nix
       ./packages.nix
       ./users.nix
       # TODO: figure out how to make the following configurable
