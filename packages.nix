@@ -13,6 +13,7 @@
     gnumake
     gnupg
     inkscape
+    kicad
     okular
     pstree
     st
