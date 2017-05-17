@@ -12,6 +12,7 @@
     gnome3.eog
     gnumake
     gnupg
+    inkscape
     okular
     pstree
     st
