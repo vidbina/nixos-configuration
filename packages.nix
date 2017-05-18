@@ -21,6 +21,7 @@
     torbrowser
     tree # pkgs/tools/system/tree
     vim
+    w3m
     wget
     xorg.xev
     xorg.xmodmap
