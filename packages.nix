@@ -14,7 +14,6 @@
     gnupg
     inkscape
     kicad
-    nmap
     okular
     pstree
     st
