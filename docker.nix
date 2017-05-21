@@ -7,4 +7,3 @@
 
   virtualisation.docker.enable = true;
 }
-
