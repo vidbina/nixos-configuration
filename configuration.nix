@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./audio.nix
       ./base.nix
       ./docker.nix
       ./fonts.nix
