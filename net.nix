@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    networkmanager_fortisslvpn
+    openfortivpn
     nmap
     wireshark
   ];
