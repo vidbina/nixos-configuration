@@ -14,6 +14,7 @@
     gnupg
     inkscape
     kicad
+    oh-my-zsh
     okular
     pstree
     st
