@@ -12,6 +12,7 @@
     gnome3.eog
     gnumake
     gnupg
+    gunzip
     inkscape
     kicad
     neovim
