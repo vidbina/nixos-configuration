@@ -14,6 +14,7 @@
     gnupg
     inkscape
     kicad
+    neovim
     oh-my-zsh
     okular
     pstree
@@ -21,7 +22,6 @@
     tmux
     torbrowser
     tree # pkgs/tools/system/tree
-    vim
     w3m
     wget
     xorg.xev
