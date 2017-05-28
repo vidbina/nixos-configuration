@@ -19,6 +19,7 @@
     okular
     pandoc
     pstree
+    rstudio
     st
     tmux
     torbrowser
