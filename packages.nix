@@ -18,6 +18,7 @@
     neovim
     oh-my-zsh
     okular
+    pandoc
     pstree
     st
     tmux
