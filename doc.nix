@@ -4,8 +4,14 @@
   environment.systemPackages = with pkgs; [
     haskellPackages.pandoc
     haskellPackages.pandoc-citeproc
-    (texLiveAggregationFun { paths = [texLive lmodern]; })
-    (texlive.combine { inherit (texlive) scheme-basic collection-basic; })
+    (texlive.combine { inherit (texlive)
+      scheme-basic
+      collection-basic
+      collection-fontsrecommended
+      collection-langeuropean
+      collection-latexrecommended
+      xetex;
+    })
   ];
 }
 
