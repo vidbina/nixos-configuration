@@ -5,7 +5,7 @@
     pandoc
     haskellPackages.pandoc-citeproc
     tetex
-    (texlive.combine { inherit (texlive) scheme-basic; })
+    (texlive.combine { inherit (texlive) scheme-basic xetex; })
   ];
 }
 
