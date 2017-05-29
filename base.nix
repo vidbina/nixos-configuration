@@ -11,6 +11,11 @@
       device = "/dev/nvme0n1p3";
       preLVM = true;
     }
+    {
+      name = "store";
+      device = "/dev/nvme0n1p5";
+      preLVM = true;
+    }
   ];
 
 #  fileSystems."/home" = {
