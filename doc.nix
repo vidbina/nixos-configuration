@@ -5,6 +5,7 @@
     pandoc
     haskellPackages.pandoc-citeproc
     tetex
+    xetex
   ];
 }
 
