@@ -12,6 +12,7 @@
       collection-latexrecommended
       xetex;
     })
+    xpdf
   ];
 }
 
