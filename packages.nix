@@ -18,7 +18,7 @@
     oh-my-zsh
     okular
     pandoc
-    pandoc-citeproc
+    haskellPackages.pandoc-citeproc
     pstree
     rstudio
     st
