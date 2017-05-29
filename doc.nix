@@ -2,10 +2,12 @@
 
 {
   environment.systemPackages = with pkgs; [
-    pandoc
+    haskellPackages.pandoc
     haskellPackages.pandoc-citeproc
     tetex
-    (texlive.combine { inherit (texlive) scheme-basic xetex; })
+    #lmodern
+    texLive
+    #(texlive.combine { inherit (texlive) scheme-basic xetex; })
   ];
 }
 
