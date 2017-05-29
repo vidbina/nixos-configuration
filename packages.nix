@@ -18,6 +18,7 @@
     oh-my-zsh
     okular
     pandoc
+    pandoc-citeproc
     pstree
     rstudio
     st
