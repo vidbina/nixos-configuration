@@ -17,8 +17,6 @@
     neovim
     oh-my-zsh
     okular
-    pandoc
-    haskellPackages.pandoc-citeproc
     pstree
     rstudio
     st

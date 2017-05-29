@@ -11,6 +11,7 @@
       ./audio.nix
       ./base.nix
       ./docker.nix
+      ./doc.nix
       ./fonts.nix
       ./games.nix
       ./net.nix
