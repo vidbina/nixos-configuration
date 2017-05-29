@@ -9,6 +9,7 @@
     dmenu
     dzen2
     git
+    git-lfs
     gnome3.eog
     gnumake
     gnupg
