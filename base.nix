@@ -18,6 +18,11 @@
     }
   ];
 
+  fileSystems."/store" = {
+    device = "/dev/mapper/store-store";
+    fsType = "btrfs";
+  };
+
 #  fileSystems."/home" = {
 #    device = "/dev/disk/by-label/store";
 #    fsType = "btrfs";
