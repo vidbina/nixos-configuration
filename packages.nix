@@ -12,13 +12,13 @@
     git-lfs
     gnome3.eog
     gnumake
-    gnupg
+    gnupg21
     inkscape
     kicad
     neovim
     oh-my-zsh
     okular
-    password-store
+    pass
     pstree
     rstudio
     st
@@ -27,6 +27,7 @@
     tree # pkgs/tools/system/tree
     w3m
     wget
+    xclip
     xorg.xev
     xorg.xmodmap
   ];
