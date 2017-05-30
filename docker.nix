@@ -6,4 +6,5 @@
   ];
 
   virtualisation.docker.enable = true;
+  virtualisation.docker.extraOptions = "--graph=\"/store/docker\"";
 }
