@@ -18,6 +18,7 @@
     neovim
     oh-my-zsh
     okular
+    password-store
     pstree
     rstudio
     st
