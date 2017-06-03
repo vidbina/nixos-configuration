@@ -6,10 +6,14 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
     defaultUserShell = "/run/current-system/sw/bin/zsh";
-    extraUsers.vid = {
+    users.vidbina = {
       isNormalUser = true;
-      # uid = 1988;
-      description = "David Asabina";
+      uid = 1988;
+      name = "vid";
+      description = "David Asabina <vid@bina>";
+      createHome = true;
+      cryptHomeLuks = "/dev/store/store";
+      home = "/store/vidbina.home";
       extraGroups = [
         "docker"
         "networkmanager"
