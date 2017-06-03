@@ -15,6 +15,7 @@
     gnupg21
     inkscape
     kicad
+    mc
     neovim
     oh-my-zsh
     okular
