@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
+    apvlv
     chromium
     conky
     curl
