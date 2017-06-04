@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     apvlv
+    blender
     chromium
     conky
     curl
