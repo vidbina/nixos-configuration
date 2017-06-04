@@ -10,6 +10,7 @@
     darcs
     dmenu
     dzen2
+    freecad
     gimp
     git
     git-lfs
