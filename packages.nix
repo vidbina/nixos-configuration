@@ -2,18 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    (apvlv.overrideDerivation (oldAttrs: {
-        installPhase = ''
-          # binary
-          mkdir -p $out/bin
-          cp src/apvlv $out/bin/apvlv
-
-          # displays pdfStartup.pdf as default pdf entry
-          mkdir -p $out/share/doc/apvlv/
-          cp ../Startup.pdf $out/share/doc/apvlv/Startup.pdf
-          cp ../main_menubar.glade $out/share/doc/apvlv/main_menubar.glade
-        '';
-    }))
+    apvlv
     chromium
     conky
     curl
