@@ -10,6 +10,7 @@
     darcs
     dmenu
     dzen2
+    gimp
     git
     git-lfs
     gnome3.eog
