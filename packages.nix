@@ -23,6 +23,7 @@
     neovim
     oh-my-zsh
     okular
+    openscad
     pass
     pstree
     rstudio
