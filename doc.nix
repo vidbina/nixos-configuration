@@ -9,6 +9,7 @@
       collection-basic
       collection-fontsrecommended
       collection-langeuropean
+      collection-latexextra
       collection-latexrecommended
       xetex;
     })
