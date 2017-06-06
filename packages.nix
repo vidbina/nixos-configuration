@@ -3,27 +3,21 @@
 {
   environment.systemPackages = with pkgs; [
     apvlv
-    blender
     chromium
     conky
     curl
     darcs
     dmenu
     dzen2
-    freecad
-    gimp
     git
     git-lfs
     gnome3.eog
     gnumake
     gnupg21
-    inkscape
-    kicad
     mc
     neovim
     oh-my-zsh
     okular
-    openscad
     pass
     pstree
     rstudio
