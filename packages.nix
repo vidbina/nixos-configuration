@@ -18,7 +18,7 @@
     mc
     neovim
     oh-my-zsh
-    password-store
+    pass
     pstree
     rstudio
     st
