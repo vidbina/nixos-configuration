@@ -15,6 +15,7 @@
 
       ./audio.nix
       ./cad.nix       # CAD tools (mostly 3d)
+      ./dev.nix
       ./doc.nix
       ./fonts.nix
       ./docker.nix
