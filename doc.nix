@@ -13,6 +13,7 @@
       collection-latexrecommended
       xetex;
     })
+    qpdfview
     xpdf
   ];
 }
