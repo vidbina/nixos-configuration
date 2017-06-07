@@ -9,6 +9,7 @@
     darcs
     dmenu
     dzen2
+    file
     git
     git-lfs
     gnome3.eog
@@ -17,8 +18,7 @@
     mc
     neovim
     oh-my-zsh
-    okular
-    pass
+    password-store
     pstree
     rstudio
     st
