@@ -29,6 +29,7 @@
     wget
     xclip
     xorg.xev
+    xorg.xhost
     xorg.xmodmap
   ];
 }
