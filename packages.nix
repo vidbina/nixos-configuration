@@ -21,6 +21,7 @@
     pass
     pstree
     rstudio
+    screenfetch
     st
     tmux
     torbrowser
