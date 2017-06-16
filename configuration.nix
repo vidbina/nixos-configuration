@@ -11,6 +11,8 @@
       ./base.nix
       ./users.nix
 
+      ./eid.nix       # eID packages
+
       ./packages.nix
 
       ./audio.nix
