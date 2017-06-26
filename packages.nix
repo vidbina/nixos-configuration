@@ -30,6 +30,7 @@
     tree # pkgs/tools/system/tree
     w3m
     wget
+    whois
     xclip
     xorg.xev
     xorg.xhost
