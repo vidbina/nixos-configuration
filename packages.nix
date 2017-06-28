@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     apvlv
+    arandr
     chromium
     conky
     curl
@@ -21,6 +22,7 @@
     neovim
     oh-my-zsh
     pass
+    pciutils
     pstree
     rstudio
     screenfetch
