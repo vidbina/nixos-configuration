@@ -26,6 +26,7 @@
     pstree
     rstudio
     screenfetch
+    scrot
     st
     tmux
     torbrowser
