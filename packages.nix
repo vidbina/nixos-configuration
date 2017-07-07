@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     apvlv
+    arandr
     chromium
     conky
     curl
@@ -21,15 +22,18 @@
     neovim
     oh-my-zsh
     pass
+    pciutils
     pstree
     rstudio
     screenfetch
+    scrot
     st
     tmux
     torbrowser
     tree # pkgs/tools/system/tree
     w3m
     wget
+    whois
     xclip
     xorg.xev
     xorg.xhost
