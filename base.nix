@@ -55,7 +55,7 @@
   # services.printing.enable = true;
   programs.zsh.enable = true;
   programs.zsh.enableAutosuggestions = true;
-  programs.zsh.enableSyntaxHighlighting = true;
+  programs.zsh.syntaxHighlighting.enable = true;
 
   services.illum = {
     enable = true;
