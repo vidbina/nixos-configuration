@@ -10,7 +10,6 @@
     dmenu
     dzen2
     file
-    firefox
     ghc
     git
     git-lfs
