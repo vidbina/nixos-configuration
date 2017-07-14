@@ -22,6 +22,7 @@
       ./doc.nix
       ./fonts.nix
       ./docker.nix
+      ./virtualbox.nix
       ./games.nix
       ./graphic.nix   # tools for graphics editing and design
       ./net.nix
