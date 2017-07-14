@@ -14,6 +14,7 @@
       ./eid.nix       # eID packages
 
       ./packages.nix
+      ./browser.nix
 
       ./audio.nix
       ./cad.nix       # CAD tools (mostly 3d)
