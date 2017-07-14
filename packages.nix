@@ -4,13 +4,13 @@
   environment.systemPackages = with pkgs; [
     apvlv
     arandr
-    chromium
     conky
     curl
     darcs
     dmenu
     dzen2
     file
+    firefox
     ghc
     git
     git-lfs
@@ -23,6 +23,7 @@
     oh-my-zsh
     pass
     pciutils
+    pmtools
     pstree
     rstudio
     screenfetch
