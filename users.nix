@@ -18,6 +18,7 @@
         "docker"
         "networkmanager"
         "wheel"
+        "vboxusers"
       ];
       initialPassword = "#unsecure";
     };
