@@ -37,6 +37,7 @@
     wget
     whois
     xclip
+    xlockmore
     xorg.xev
     xorg.xhost
     xorg.xmodmap
