@@ -16,6 +16,7 @@
     gnome3.eog
     gnumake
     gnupg21
+    hardinfo
     mc
     mitscheme
     neovim
