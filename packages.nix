@@ -32,6 +32,7 @@
     tmux
     torbrowser
     tree # pkgs/tools/system/tree
+    usbutils
     w3m
     wget
     whois
