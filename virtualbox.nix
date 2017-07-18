@@ -2,9 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    (virtualbox.override {
-      enableExtensionPack = true;
-    })
+    virtualbox
   ];
 
   virtualisation.virtualbox.host.enable = true;
