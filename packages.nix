@@ -29,9 +29,11 @@
     screenfetch
     scrot
     st
+    tcpdump
     tmux
     torbrowser
     tree # pkgs/tools/system/tree
+    unzip
     usbutils
     w3m
     wget
