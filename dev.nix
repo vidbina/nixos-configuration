@@ -6,4 +6,6 @@
     stdenv
     cmakeCurses
   ];
+
+  sound.mediaKeys.enable = true;
 }
