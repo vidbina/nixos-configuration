@@ -1,5 +1,5 @@
 setup:
-	sudo cp *.nix /etc/nixos/.
+	sudo cp -r *.nix eid /etc/nixos/.
 
 test:
 	sudo nixos-rebuild test
