@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
+    asciinema
     glibc
     stdenv
     cmakeCurses
