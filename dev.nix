@@ -3,9 +3,15 @@
 {
   environment.systemPackages = with pkgs; [
     asciinema
-    glibc
-    stdenv
     cmakeCurses
+    darcs
+    ghc
+    git
+    git-lfs
+    glibc
+    gnumake
+    mitscheme
+    stdenv
   ];
 
   nixpkgs.config = {

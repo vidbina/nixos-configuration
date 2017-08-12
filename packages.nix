@@ -6,19 +6,13 @@
     arandr
     conky
     curl
-    darcs
     dmenu
     dzen2
     file
-    ghc
-    git
-    git-lfs
     gnome3.eog
-    gnumake
     gnupg21
     hardinfo
     mc
-    mitscheme
     neovim
     oh-my-zsh
     pass
