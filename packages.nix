@@ -25,7 +25,6 @@
     pciutils
     pmtools
     pstree
-    rstudio
     screenfetch
     scrot
     st
