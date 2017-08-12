@@ -10,6 +10,4 @@
 
   nixpkgs.config = {
   };
-
-  sound.mediaKeys.enable = true;
 }
