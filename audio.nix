@@ -5,6 +5,10 @@
     puredata
   ];
 
+  hardware.bluetooth = {
+    enable = true;
+  };
+
   services.actkbd = with pkgs; {
     enable = true;
     bindings = [
