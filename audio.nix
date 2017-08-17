@@ -16,10 +16,10 @@
       { keys = [ 113 ]; events = [ "key" ];       command = "${alsaUtils}/bin/amixer -q set Master toggle"; }
 
       # "Lower Volume" media key
-      { keys = [ 114 ]; events = [ "key" "rep" ]; command = "${alsaUtils}/bin/amixer -q set Master 10%- unmute"; }
+      { keys = [ 114 ]; events = [ "key" "rep" ]; command = "${alsaUtils}/bin/amixer -q set Master 10%-"; }
 
       # "Raise Volume" media key
-      { keys = [ 115 ]; events = [ "key" "rep" ]; command = "${alsaUtils}/bin/amixer -q set Master 10%+ unmute"; }
+      { keys = [ 115 ]; events = [ "key" "rep" ]; command = "${alsaUtils}/bin/amixer -q set Master 10%+"; }
 
 #      # "Mic Mute" media key
 #      { keys = [ 190 ]; events = [ "key" ];       command = "${pkgs.alsaUtils}/bin/amixer -q set Capture toggle"; }
