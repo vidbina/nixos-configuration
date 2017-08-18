@@ -50,9 +50,11 @@
   };
 
   programs = {
-    zsh.enable = true;
-    zsh.enableAutosuggestions = true;
-    zsh.syntaxHighlighting.enable = true;
+    zsh = {
+      enable = true;
+      enableAutosuggestions = true;
+      syntaxHighlighting.enable = true;
+    };
   };
 
   # List services that you want to enable:
