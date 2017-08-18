@@ -40,6 +40,8 @@
   };
 
   networking = {
+    firewall.enable = true;
+
     # Open ports in the firewall.
     # firewall.allowedTCPPorts = [ ... ];
     # firewall.allowedUDPPorts = [ ... ];
@@ -47,12 +49,11 @@
     # wireless.enable = wlp58s0;  # Enables wireless support via wpa_supplicant.
   };
 
-  # Or disable the firewall altogether.
-  networking.firewall.enable = true;
-
-  programs.zsh.enable = true;
-  programs.zsh.enableAutosuggestions = true;
-  programs.zsh.syntaxHighlighting.enable = true;
+  programs = {
+    zsh.enable = true;
+    zsh.enableAutosuggestions = true;
+    zsh.syntaxHighlighting.enable = true;
+  };
 
   # List services that you want to enable:
   services = {
