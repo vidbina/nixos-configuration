@@ -40,21 +40,16 @@
   };
 
   networking = {
-  # networking.wireless.enable = wlp58s0;  # Enables wireless support via wpa_supplicant.
+    # Open ports in the firewall.
+    # firewall.allowedTCPPorts = [ ... ];
+    # firewall.allowedUDPPorts = [ ... ];
     networkmanager.enable = true;
+    # wireless.enable = wlp58s0;  # Enables wireless support via wpa_supplicant.
   };
 
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   networking.firewall.enable = true;
 
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
   programs.zsh.enable = true;
   programs.zsh.enableAutosuggestions = true;
   programs.zsh.syntaxHighlighting.enable = true;
@@ -70,6 +65,12 @@
     };
 
     nixosManual.showManual = true;
+
+    # Enable the OpenSSH daemon.
+    # openssh.enable = true;
+
+    # Enable CUPS to print documents.
+    # printing.enable = true;
 
 
     # Enable the X11 windowing system.
