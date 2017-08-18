@@ -40,10 +40,6 @@
     networkmanager.enable = true;
   };
 
-  # List services that you want to enable:
-
-  services.acpid.enable = true;
-
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
@@ -59,34 +55,41 @@
   programs.zsh.enableAutosuggestions = true;
   programs.zsh.syntaxHighlighting.enable = true;
 
-  services.illum = {
-    enable = true;
+  # List services that you want to enable:
+  services = {
+    acpid = {
+      enable = true;
+    };
+
+    illum = {
+      enable = true;
+    };
+
+    nixosManual.showManual = true;
+
+
+    # Enable the X11 windowing system.
+    xserver = {
+      autorun = true;
+      # dpi = 180;
+      enable = true;
+      exportConfiguration = true;
+      layout = "us";
+      # 846x476 mllimeters reported by Dell XPS 13
+      # $ nix-shell -p xorg.xdpyinfo
+      # $ xdpyinfo | grep -B2 resolution
+      monitorSection = ''
+        DisplaySize 423 238
+      '';
+      videoDrivers = ["intel"];
+      # NOTE: Set XMonad as wm again. Make sure to set .xmonad/xmonad.hs
+      xkbOptions = "eurosign:e";
+    };
+
+    # Enable the KDE Desktop Environment.
+    # xserver.displayManager.sddm.enable = true;
+    # xserver.desktopManager.plasma5.enable = true;
   };
-
-  services.nixosManual.showManual = true;
-
-  # Enable the X11 windowing system.
-  services.xserver = {
-    autorun = true;
-    # dpi = 180;
-    enable = true;
-    exportConfiguration = true;
-    layout = "us";
-    # 846x476 mllimeters reported by Dell XPS 13
-    # $ nix-shell -p xorg.xdpyinfo
-    # $ xdpyinfo | grep -B2 resolution
-    monitorSection = ''
-      DisplaySize 423 238
-    '';
-    videoDrivers = ["intel"];
-    # NOTE: Set XMonad as wm again. Make sure to set .xmonad/xmonad.hs
-    xkbOptions = "eurosign:e";
-  };
-
-  # Enable the KDE Desktop Environment.
-  # services.xserver.displayManager.sddm.enable = true;
-  # services.xserver.desktopManager.plasma5.enable = true;
-  #
 
   # The NixOS release to be compatible with for stateful data such as databases.
   system.stateVersion = "17.03";
