@@ -2,21 +2,25 @@
 
 {
   # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub.device = "/dev/nvme0n1";
-  boot.initrd.luks.devices = [
-    {
-      name = "base.crypt.small";
-      device = "/dev/nvme0n1p3";
-      preLVM = true;
-    }
-    {
-      name = "store";
-      device = "/dev/nvme0n1p5";
-      preLVM = true;
-    }
-  ];
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+      grub.device = "/dev/nvme0n1";
+    };
+    initrd.luks.devices = [
+      {
+        name = "base.crypt.small";
+        device = "/dev/nvme0n1p3";
+        preLVM = true;
+      }
+      {
+        name = "store";
+        device = "/dev/nvme0n1p5";
+        preLVM = true;
+      }
+    ];
+  };
 
   fileSystems."/store" = {
     device = "/dev/mapper/store-store";
