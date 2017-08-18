@@ -103,5 +103,5 @@
   system.stateVersion = "17.03";
 
   # Set your time zone.
-  time.timeZone = "Europe/Amsterdam";
+  time.timeZone = "Europe/Berlin";
 }
