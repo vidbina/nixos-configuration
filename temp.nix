@@ -7,6 +7,7 @@
 
   environment.systemPackages = with pkgs; [
     exfat
+    gucharmap
     notify-osd
     libnotify
   ];
