@@ -7,5 +7,7 @@
 
   environment.systemPackages = with pkgs; [
     exfat
+    notify-osd
+    libnotify
   ];
 }
