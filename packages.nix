@@ -12,8 +12,10 @@
     gnome3.eog
     gnupg21
     hardinfo
+    libnotify
     mc
     neovim
+    notify-osd
     oh-my-zsh
     pass
     pciutils
