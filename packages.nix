@@ -35,6 +35,7 @@
     xlockmore
     xorg.xev
     xorg.xhost
+    xorg.xkbcomp
     xorg.xmodmap
   ];
 }
