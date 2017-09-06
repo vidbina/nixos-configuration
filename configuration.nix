@@ -43,6 +43,7 @@
     ./interfacing.nix
     ./temp.nix
     ./urxvt.nix
+    ./video.nix
 
     ./dev.nix
   ];
