@@ -11,8 +11,8 @@ in
   environment.systemPackages = with pkgs; [
     blender
     glxinfo
-    unstable.fontforge-gtk
     gimp
     inkscape
+    unstable.fontforge-gtk
   ];
 }
