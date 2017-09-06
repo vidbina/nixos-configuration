@@ -16,6 +16,7 @@
       home = "/store/vidbina.home";
       extraGroups = [
         "docker"
+        "lp"
         "network"
         "networkmanager"
         "wheel"
