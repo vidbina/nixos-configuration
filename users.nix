@@ -20,6 +20,7 @@
         "network"
         "networkmanager"
         "wheel"
+        "vboxsf"
         "vboxusers"
       ];
       initialPassword = "#unsecure";
