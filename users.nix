@@ -22,6 +22,7 @@
         "wheel"
         "vboxsf"
         "vboxusers"
+        "wireshark"
       ];
       initialPassword = "#unsecure";
     };
