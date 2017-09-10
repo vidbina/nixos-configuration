@@ -17,6 +17,7 @@
     ./browser.nix
 
     ./audio.nix
+    ./math.nix
     ./cad.nix       # CAD tools (mostly 3d)
     ./dev.nix
     ./doc.nix
@@ -42,6 +43,7 @@
     ./interfacing.nix
     ./temp.nix
     ./urxvt.nix
+    ./video.nix
 
     ./dev.nix
   ];

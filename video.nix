@@ -2,10 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    puredata
+    vlc
   ];
-
-  hardware.bluetooth = {
-    enable = true;
-  };
 }
+

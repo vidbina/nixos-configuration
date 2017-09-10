@@ -2,10 +2,8 @@
 
 {
   environment.systemPackages = with pkgs; [
-    puredata
+    octave
+    rstudio
   ];
-
-  hardware.bluetooth = {
-    enable = true;
-  };
 }
+

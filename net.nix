@@ -2,6 +2,8 @@
 
 {
   environment.systemPackages = with pkgs; [
+    bind
+    freerdp
     openfortivpn
     nmap
     telnet

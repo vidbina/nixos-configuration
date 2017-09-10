@@ -16,9 +16,13 @@
       home = "/store/vidbina.home";
       extraGroups = [
         "docker"
+        "lp"
+        "network"
         "networkmanager"
         "wheel"
+        "vboxsf"
         "vboxusers"
+        "wireshark"
       ];
       initialPassword = "#unsecure";
     };

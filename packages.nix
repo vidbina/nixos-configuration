@@ -6,26 +6,21 @@
     arandr
     conky
     curl
-    darcs
     dmenu
     dzen2
     file
-    ghc
-    git
-    git-lfs
     gnome3.eog
-    gnumake
     gnupg21
     hardinfo
+    libnotify
     mc
-    mitscheme
     neovim
+    notify-osd
     oh-my-zsh
     pass
     pciutils
     pmtools
     pstree
-    rstudio
     screenfetch
     scrot
     st
@@ -42,6 +37,7 @@
     xlockmore
     xorg.xev
     xorg.xhost
+    xorg.xkbcomp
     xorg.xmodmap
   ];
 }
