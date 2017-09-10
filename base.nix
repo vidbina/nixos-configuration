@@ -11,12 +11,12 @@
     initrd.luks.devices = [
       {
         name = "base.crypt.small";
-        device = "/dev/nvme0n1p3";
+        device = "/dev/nvme0n1p3"; # 100 GiB
         preLVM = true;
       }
       {
         name = "store";
-        device = "/dev/nvme0n1p5";
+        device = "/dev/nvme0n1p5"; # 300 GiB
         preLVM = true;
       }
     ];
