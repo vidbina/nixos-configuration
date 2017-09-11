@@ -5,6 +5,7 @@
     bind
     freerdp
     openfortivpn
+    openvpn
     nmap
     telnet
     wireshark
