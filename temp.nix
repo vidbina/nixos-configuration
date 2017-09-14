@@ -8,6 +8,7 @@
   environment.systemPackages = with pkgs; [
     exfat
     gucharmap
+    spotify
     transmission
   ];
 }
