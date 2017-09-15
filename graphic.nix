@@ -12,6 +12,7 @@ in
     blender
     glxinfo
     gimp
+    imagemagick
     inkscape
     unstable.fontforge-gtk
   ];
