@@ -14,6 +14,6 @@ in
     gimp
     imagemagick
     inkscape
-    unstable.fontforge-gtk
+    fontforge-gtk
   ];
 }

@@ -10,7 +10,7 @@
     dzen2
     file
     gnome3.eog
-    gnupg21
+    gnupg22
     hardinfo
     libnotify
     mc
