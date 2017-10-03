@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 let
+  # /nixpkgs points to a local clone of the nixpkgs repository
+  fontforge-dev = pkgs.callPackage /nixpkgs/pkgs/tools/misc/fontforge {
+    withSpiro = true;
+    withGTK = true;
+  };
   # http://nixos.org/channels/nixos-unstable/nixexprs.tar.xz
   unstable = import (
     fetchTarball
@@ -14,6 +19,6 @@ in
     gimp
     imagemagick
     inkscape
-    fontforge-gtk
+    fontforge-dev
   ];
 }

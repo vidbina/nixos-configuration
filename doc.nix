@@ -12,7 +12,10 @@
       collection-langeuropean
       collection-latexextra
       collection-latexrecommended
-      xetex;
+      realscripts
+      xetex
+      xetex-def
+      xltxtra;
     })
     qpdfview
     xournal
