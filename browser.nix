@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
+    chromium
     firefox
     (pkgs.torbrowser.override {
       extraPrefs = ''
