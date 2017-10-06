@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     chromium
     firefox
+    httpie
     (pkgs.torbrowser.override {
       extraPrefs = ''
         lockPref("browser.tabs.remote.autostart", false);
