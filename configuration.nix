@@ -26,6 +26,7 @@
     ./virtualbox.nix
     ./games.nix
     ./graphic.nix   # tools for graphics editing and design
+    ./mail.nix
     ./productivity.nix
     ./net.nix
     ./tron.nix      # tools for electronics engineering

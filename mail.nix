@@ -2,7 +2,9 @@
 
 {
   environment.systemPackages = with pkgs; [
-    osmo
-    calcurse
+    mutt
+    offlineimap
+    sup
   ];
 }
+
