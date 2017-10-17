@@ -10,5 +10,6 @@
     gucharmap
     spotify
     transmission
+    python36
   ];
 }
