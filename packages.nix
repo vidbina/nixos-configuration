@@ -38,5 +38,6 @@
     xorg.xhost
     xorg.xkbcomp
     xorg.xmodmap
+    xorg.xprop
   ];
 }
