@@ -1,11 +1,21 @@
+CUSTOM_SRCS=-I nixos=${HOME}/nixpkgs/nixos -I nixpkgs=${HOME}/nixpkgs
+
+NIXOS_REBUILD=sudo nixos-rebuild
+
 setup:
 	sudo cp -r *.nix eid /etc/nixos/.
 
-test:
-	sudo nixos-rebuild test
+local-test:
+	${NIXOS_REBUILD} ${CUSTOM_SRCS} test
 
-install:
-	sudo nixos-rebuild switch
+local-switch:
+	${NIXOS_REBUILD} ${CUSTOM_SRCS} switch
+
+test:
+	${NIXOS_REBUILD} test
+
+switch:
+	${NIXOS_REBUILD} switch
 
 PSEUDO:
-	setup
+	local-switch local-test setup switch test
