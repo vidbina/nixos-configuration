@@ -5,6 +5,7 @@
     bind
     freerdp
     openfortivpn
+    openssl
     openvpn
     nmap
     telnet
