@@ -12,6 +12,7 @@
       collection-langeuropean
       collection-latexextra
       collection-latexrecommended
+      invoice
       realscripts
       xetex
       xetex-def
