@@ -25,6 +25,7 @@
     ./docker.nix
     ./virtualbox.nix
     ./games.nix
+    ./media.nix
     ./graphic.nix   # tools for graphics editing and design
     ./chat.nix
     ./mail.nix
@@ -46,7 +47,6 @@
     ./interfacing.nix
     ./temp.nix
     ./urxvt.nix
-    ./video.nix
 
     ./dev.nix
   ];
