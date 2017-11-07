@@ -12,5 +12,6 @@
     transmission
     python36
     vagrant
+    packer
   ];
 }
