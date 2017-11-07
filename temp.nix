@@ -8,6 +8,7 @@
   environment.systemPackages = with pkgs; [
     exfat
     gucharmap
+    ranger
     transmission
     python36
     vagrant
