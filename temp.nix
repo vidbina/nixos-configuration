@@ -10,5 +10,6 @@
     gucharmap
     transmission
     python36
+    vagrant
   ];
 }
