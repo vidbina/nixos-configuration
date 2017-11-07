@@ -3,6 +3,10 @@
 {
   # Use the systemd-boot EFI boot loader.
   boot = {
+    kernelModules = [
+      "af_packet" "vboxsf"
+      "virtio" "virtio_pci" "virtio_ring" "virtio_net" "vboxguest"
+    ];
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
