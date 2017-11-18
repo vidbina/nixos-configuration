@@ -10,9 +10,18 @@
     gucharmap
     ranger
     transmission
-    ibus-engines.uniemoji
+    ibus-with-plugins
     python36
     vagrant
     packer
   ];
+
+  i18n.inputMethod = {
+    enabled = "ibus";
+    ibus = {
+      engines = with pkgs.ibus-engines; [
+        uniemoji
+      ];
+    };
+  };
 }
