@@ -46,7 +46,7 @@
   #  ./i3.nix
     ./interfacing.nix
     ./temp.nix
-    ./urxvt.nix
+    ./terminal.nix
 
     ./dev.nix
   ];
