@@ -2,8 +2,9 @@
 
 {
   environment.systemPackages = with pkgs; [
+    cool-retro-term
     rxvt_unicode
-    urxvt_font_size
     termite
+    urxvt_font_size
   ];
 }
