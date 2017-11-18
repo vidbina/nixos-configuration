@@ -10,6 +10,7 @@
     gucharmap
     ranger
     transmission
+    ibus-engines.uniemoji
     python36
     vagrant
     packer
