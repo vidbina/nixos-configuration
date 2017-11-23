@@ -11,5 +11,6 @@
         lockPref("browser.tabs.remote.autostart.2", false);
       '';
     })
+    rainbowstream
   ];
 }
