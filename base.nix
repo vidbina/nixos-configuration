@@ -103,10 +103,6 @@
       # NOTE: Set XMonad as wm again. Make sure to set .xmonad/xmonad.hs
       xkbOptions = "eurosign:e";
     };
-
-    # Enable the KDE Desktop Environment.
-    # xserver.displayManager.sddm.enable = true;
-    # xserver.desktopManager.plasma5.enable = true;
   };
 
   # The NixOS release to be compatible with for stateful data such as databases.
