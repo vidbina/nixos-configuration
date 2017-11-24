@@ -90,6 +90,18 @@
     xserver = {
       autorun = true;
       # dpi = 180;
+      displayManager = {
+        slim = {
+          enable = true;
+          theme = pkgs.fetchurl {
+            #url = "https://github.com/vidbina/asabina-slim-theme/archive/master.tar.gz";
+            url = "https://github.com/vidbina/asabina-slim-theme/archive/132fa3339286681f636434333701330ef2c41104.tar.gz";
+            #sha256 = "1d3e8fc41729b2ade2649d3083b7fddb81b3dde2ef6ecb95261ce32af5c9d2fdz";
+            sha256 = "cfdc9cfcb4ea93b993caca3b82d16b55ed4b4f3207031b574dc5ced59dcc8cd0";
+          };
+        };
+      };
+
       enable = true;
       exportConfiguration = true;
       layout = "us";
