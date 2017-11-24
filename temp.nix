@@ -14,6 +14,7 @@
     python36
     vagrant
     packer
+    stellarium
   ];
 
   i18n.inputMethod = {
