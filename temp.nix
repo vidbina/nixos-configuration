@@ -11,6 +11,7 @@
     ranger
     transmission
     ibus-with-plugins
+    htop
     python36
     vagrant
     packer
