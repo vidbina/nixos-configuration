@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     biber
+    evince
     haskellPackages.pandoc
     haskellPackages.pandoc-citeproc
     libreoffice
