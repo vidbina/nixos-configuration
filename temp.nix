@@ -16,6 +16,7 @@
     vagrant
     packer
     stellarium
+    xfe
   ];
 
   i18n.inputMethod = {
