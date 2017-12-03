@@ -27,4 +27,19 @@
       ];
     };
   };
+
+  systemd.user.services.ibus-daemon = {
+    enable = true;
+    #after = ["graphical.target"];
+    wantedBy = [
+      "multi-user.target"
+      "graphical-session.target"
+    ];
+    description = "IBus daemon";
+    script = "${pkgs.ibus-with-plugins}/bin/ibus-daemon";
+    serviceConfig = {
+      Restart = "always";
+      StandardOutput = "syslog";
+    };
+  };
 }
