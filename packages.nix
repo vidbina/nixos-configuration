@@ -32,6 +32,7 @@
     w3m
     wget
     whois
+    xautolock
     xclip
     xlockmore
     xorg.xev
