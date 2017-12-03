@@ -39,5 +39,6 @@
     xorg.xkbcomp
     xorg.xmodmap
     xorg.xprop
+    xtrlock-pam
   ];
 }
