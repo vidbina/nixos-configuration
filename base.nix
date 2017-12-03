@@ -100,6 +100,9 @@
             sha256 = "cfdc9cfcb4ea93b993caca3b82d16b55ed4b4f3207031b574dc5ced59dcc8cd0";
           };
         };
+        sessionCommands = ''
+          alias freeze="xtralock_pam -b none"
+        '';
       };
 
       enable = true;
