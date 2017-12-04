@@ -101,8 +101,7 @@
           };
         };
         sessionCommands = ''
-          alias freeze="xtralock_pam -b none"
-          xautolock -time 10 -locker "freeze"
+          alias freeze="${pkgs.xtrlock-pam}/bin/xtrlock-pam -b none"
         '';
       };
 
