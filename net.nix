@@ -7,6 +7,7 @@
     openfortivpn
     openssl
     openvpn
+    netcat
     nmap
     telnet
     wireshark
