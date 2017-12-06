@@ -27,5 +27,17 @@
     xournal
     xpdf
   ];
+
+  services.dictd = {
+    enable = true;
+    DBs = with pkgs.dictdDBs; [
+      deu2eng
+      eng2deu
+      nld2eng
+      eng2nld
+      wordnet
+      wiktionary
+    ];
+  };
 }
 
