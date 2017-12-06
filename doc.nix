@@ -2,6 +2,10 @@
 
 {
   environment.systemPackages = with pkgs; [
+    aspell
+    aspellDicts.de
+    aspellDicts.en
+    aspellDicts.nl
     biber
     evince
     haskellPackages.pandoc
