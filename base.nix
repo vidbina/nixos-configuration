@@ -43,16 +43,6 @@
   #   defaultLocale = "en_US.UTF-8";
   };
 
-  networking = {
-    firewall.enable = true;
-
-    # Open ports in the firewall.
-    # firewall.allowedTCPPorts = [ ... ];
-    # firewall.allowedUDPPorts = [ ... ];
-    networkmanager.enable = true;
-    # wireless.enable = wlp58s0;  # Enables wireless support via wpa_supplicant.
-  };
-
   programs = {
     gnupg = {
       agent = {
