@@ -22,4 +22,11 @@
     networkmanager.enable = true;
     # wireless.enable = wlp58s0;  # Enables wireless support via wpa_supplicant.
   };
+
+  services.dnsmasq = {
+    enable = true;
+    extraConfig = ''
+      address=/.local/127.0.0.1
+    '';
+  };
 }
