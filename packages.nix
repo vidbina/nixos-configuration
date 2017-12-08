@@ -27,6 +27,7 @@
     tcpdump
     tmux
     tree # pkgs/tools/system/tree
+    udisks2
     unzip
     usbutils
     w3m
