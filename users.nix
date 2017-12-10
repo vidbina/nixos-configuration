@@ -15,6 +15,7 @@
       cryptHomeLuks = "/dev/store/store";
       home = "/store/vidbina.home";
       extraGroups = [
+        "dialout"
         "docker"
         "lp"
         "network"
