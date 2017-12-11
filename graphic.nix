@@ -15,10 +15,11 @@ in
 {
   environment.systemPackages = with pkgs; [
     blender
-    glxinfo
+    fontforge-dev
     gimp
+    glxinfo
+    gmsh
     imagemagick
     inkscape
-    fontforge-dev
   ];
 }
