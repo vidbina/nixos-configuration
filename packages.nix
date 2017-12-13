@@ -18,6 +18,7 @@
     neovim
     nix-repl
     nix-prefetch-git
+    nixUnstable
     notify-osd
     oh-my-zsh
     pass
