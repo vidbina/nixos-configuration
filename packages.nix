@@ -15,6 +15,8 @@
     libnotify
     mc
     neovim
+    nix-repl
+    nix-prefetch-git
     notify-osd
     oh-my-zsh
     pass
