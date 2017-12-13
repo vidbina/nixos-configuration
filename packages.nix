@@ -12,6 +12,7 @@
     gnome3.eog
     gnupg22
     hardinfo
+    indent
     libnotify
     mc
     neovim
