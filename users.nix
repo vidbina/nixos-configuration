@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  networking.hostName = "bina.me"; # callsign
+  networking.hostName = ""; # callsign
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
