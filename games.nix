@@ -6,7 +6,6 @@
   ];
 
   hardware.opengl.driSupport32Bit = true;
-  hardware.pulseaudio.support32Bit = true;
 
   services.udev.extraRules = ''
     SUBSYSTEM=="usb", ATTRS{idVendor}=="28de", MODE="0666"
