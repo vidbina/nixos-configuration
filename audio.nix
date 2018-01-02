@@ -6,7 +6,6 @@
     pamixer
     paprefs
     pavucontrol
-    #pulsemixer
     puredata
   ];
 
