@@ -30,6 +30,7 @@
     st
     tcpdump
     tmux
+    trayer
     tree # pkgs/tools/system/tree
     udisks2
     unzip

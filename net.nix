@@ -8,6 +8,7 @@
     openssl
     openvpn
     netcat
+    networkmanagerapplet
     nmap
     telnet
     wireshark
