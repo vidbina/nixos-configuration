@@ -11,8 +11,14 @@
     networkmanagerapplet
     nmap
     telnet
-    wireshark
   ];
+
+  programs = {
+    wireshark = {
+      enable = true;
+      package = pkgs.wireshark;
+    };
+  };
 
   networking = {
     firewall.enable = true;
