@@ -20,10 +20,12 @@
     # Open ports in the firewall.
     # firewall.allowedTCPPorts = [ ... ];
     # firewall.allowedUDPPorts = [ ... ];
-    networkmanager.enable = true;
-    networkmanager.packages = with pkgs; [
-      networkmanager_openvpn
-    ];
+    networkmanager = {
+      enable = true;
+      packages = with pkgs; [
+        networkmanager_openvpn
+      ];
+    };
     # wireless.enable = wlp58s0;  # Enables wireless support via wpa_supplicant.
   };
 
