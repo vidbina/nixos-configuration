@@ -9,6 +9,7 @@
     openssl
     openvpn
     netcat
+    nethogs
     networkmanagerapplet
     nmap
     telnet
