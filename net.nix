@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     bind
     freerdp
+    iftop
     openfortivpn
     openssl
     openvpn
