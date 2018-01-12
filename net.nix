@@ -4,14 +4,23 @@
   environment.systemPackages = with pkgs; [
     bind
     freerdp
+    iftop
     openfortivpn
     openssl
     openvpn
     netcat
+    nethogs
+    networkmanagerapplet
     nmap
     telnet
-    wireshark
   ];
+
+  programs = {
+    wireshark = {
+      enable = true;
+      package = pkgs.wireshark;
+    };
+  };
 
   networking = {
     firewall.enable = true;
@@ -19,7 +28,13 @@
     # Open ports in the firewall.
     # firewall.allowedTCPPorts = [ ... ];
     # firewall.allowedUDPPorts = [ ... ];
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+      packages = with pkgs; [
+        networkmanager_openvpn
+      ];
+      useDnsmasq = true;
+    };
     # wireless.enable = wlp58s0;  # Enables wireless support via wpa_supplicant.
   };
 
