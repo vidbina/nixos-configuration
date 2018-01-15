@@ -13,6 +13,7 @@
     networkmanagerapplet
     nmap
     telnet
+    tor
   ];
 
   programs = {
