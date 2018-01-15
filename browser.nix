@@ -5,7 +5,7 @@
     chromium
     firefox
     httpie
-    (pkgs.torbrowser.override {
+    (torbrowser.override {
       extraPrefs = ''
         lockPref("browser.tabs.remote.autostart", false);
         lockPref("browser.tabs.remote.autostart.2", false);
