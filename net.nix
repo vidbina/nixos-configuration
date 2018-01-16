@@ -5,6 +5,7 @@
     bind
     freerdp
     iftop
+    ldns
     openfortivpn
     openssl
     openvpn
