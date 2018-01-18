@@ -47,6 +47,15 @@
         address=/.local/127.0.0.1
       '';
     };
+    openssh = {
+      enable = true;
+      listenAddresses = [
+        { addr = "127.0.0.1"; port = 22; }
+      ];
+      authorizedKeysFiles = [
+        "/store/vidbina.home/.ssh/ssh_proxy.pub"
+      ];
+    };
     privoxy = {
       enable = true;
     };
