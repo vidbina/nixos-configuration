@@ -10,7 +10,6 @@
     openssl
     openvpn
     netcat
-    nethogs
     networkmanagerapplet
     nmap
     telnet
@@ -58,6 +57,14 @@
     };
     privoxy = {
       enable = true;
+    };
+  };
+
+  security = {
+    wrappers = {
+      nethogs = {
+        source = "${pkgs.nethogs.out}/bin/nethogs";
+      };
     };
   };
 }
