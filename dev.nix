@@ -13,6 +13,7 @@
     gnumake
     mitscheme
     stdenv
+    xxd
   ];
 
   nixpkgs.config = {
