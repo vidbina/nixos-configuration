@@ -6,6 +6,7 @@
     arandr
     conky
     curl
+    dbus-map
     dmenu
     dzen2
     file
