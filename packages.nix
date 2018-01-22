@@ -8,6 +8,7 @@
     curl
     dbus-map
     dmenu
+    dunst
     dzen2
     file
     gnome3.eog
@@ -20,7 +21,6 @@
     nix-repl
     nix-prefetch-git
     nixUnstable
-    notify-osd
     oh-my-zsh
     pass
     pciutils
