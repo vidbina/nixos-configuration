@@ -13,6 +13,7 @@
     gnumake
     mitscheme
     stdenv
+    neovim
     xxd
   ];
 

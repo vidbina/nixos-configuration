@@ -17,7 +17,6 @@
     indent
     libnotify
     mc
-    neovim
     nix-repl
     nix-prefetch-git
     nixUnstable
