@@ -8,7 +8,6 @@
     curl
     dbus-map
     dmenu
-    dunst
     dzen2
     file
     gnome3.eog
