@@ -43,4 +43,24 @@
       StandardOutput = "syslog";
     };
   };
+
+  systemd.user.services.dunst = {
+    enable = true;
+    description  = "Dunst: libnotify client";
+    documentation = [
+      "man:dunst(1)"
+    ];
+    partOf = [
+      "graphical-session.target"
+    ];
+    wantedBy = [
+      "default.target"
+    ];
+
+    serviceConfig = {
+      Type = "dbus";
+      BusName = "org.freedesktop.Notifications";
+      ExecStart = "${pkgs.dunst}/bin/dunst";
+    };
+  };
 }
