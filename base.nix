@@ -52,7 +52,7 @@
     };
     zsh = {
       enable = true;
-      enableAutosuggestions = true;
+      enableAutosuggestions = false;
       syntaxHighlighting.enable = true;
     };
   };

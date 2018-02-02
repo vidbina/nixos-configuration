@@ -19,7 +19,6 @@
     nix-repl
     nix-prefetch-git
     nixUnstable
-    oh-my-zsh
     pass
     pciutils
     pmtools
