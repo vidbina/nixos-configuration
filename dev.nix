@@ -6,6 +6,7 @@
     bazaar
     cmakeCurses
     darcs
+    (import ./emacs.nix { inherit pkgs; })
     ghc
     git
     git-lfs
