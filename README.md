@@ -56,11 +56,11 @@ Conversely, if you don't want to think about manually upgrading, you could use
 the `upgrade-test` and `upgrade-switch` rules which will install against the
 latest version of your selected channel. Between different nixos-rebuild
 operations, one should expect that occasionally packages can be removed or
-renamed thus resulting to broken builds.
+renamed thus resulting to failing builds, but this should be simple to fix.
 
 The `local-test` and `local-switch` rules are useful if you need to build
 against a local clone of nixpkgs. This comes in handy when you've added,
-altered or removed modules or packages from nixpkgs. When using this approach,
+altered or removed modules or packages in nixpkgs. When using this approach,
 one should occasionally consider consolidating the updated upstream branch for
 the given channel with the local repository (either through a merge and/or
 rebase).
