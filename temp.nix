@@ -20,6 +20,8 @@
     xfe
   ];
 
+  programs.digitalbitbox.enable = true;
+
   i18n.inputMethod = {
     enabled = "ibus";
     ibus = {
