@@ -3,6 +3,9 @@
 {
   # Use the systemd-boot EFI boot loader.
   boot = {
+    cleanTmpDir = true;
+    #tmpOnTmpfs = true;
+
     kernelModules = [
       "af_packet" "vboxsf"
       "virtio" "virtio_pci" "virtio_ring" "virtio_net" "vboxguest"
