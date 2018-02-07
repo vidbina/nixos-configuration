@@ -13,18 +13,19 @@
     libreoffice
     (texlive.combine { inherit (texlive)
       biblatex
-      scheme-basic
       collection-basic
       collection-fontsrecommended
       collection-langeuropean
       collection-latexextra
       collection-latexrecommended
+      #graphics-def
       IEEEtran
       invoice
       logreq
       realscripts
+      scheme-basic
       xetex
-      xetex-def
+      xetex-def # will soon be replaced with graphics-def
       xltxtra;
     })
     qpdfview
