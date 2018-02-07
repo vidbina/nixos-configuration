@@ -18,6 +18,7 @@
     mc
     nix-repl
     nix-prefetch-git
+    nixpkgs-lint
     nixUnstable
     pass
     pciutils
