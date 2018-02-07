@@ -53,7 +53,9 @@
     zsh = {
       enable = true;
       enableAutosuggestions = false;
-      syntaxHighlighting.enable = true;
+      syntaxHighlighting = {
+        enable = true;
+      };
     };
   };
 
