@@ -1,6 +1,7 @@
 # Commands
 CP=cp
 NIXOS_REBUILD=nixos-rebuild
+SUDO=sudo
 
 # Command arguments in case I want to build against $HOME/nixpkgs
 MY_NIXPKGS_LOCAL_ARGS=-I nixos=${HOME}/nixpkgs/nixos -I nixpkgs=${HOME}/nixpkgs
@@ -11,25 +12,26 @@ MY_NIXPKGS_BRANCH?=current
 
 # Sets up /etc/nixos for installation
 setup:
-	${CP} -r *.nix eid /etc/nixos/.
+	${SUDO} ${CP} -r *.nix eid /etc/nixos/.
 
+# https://nixos.org/nixos/manual/#sec-changing-config
 local-test:
-	${NIXOS_REBUILD} ${MY_NIXPKGS_LOCAL_ARGS} test
+	${SUDO} ${NIXOS_REBUILD} ${MY_NIXPKGS_LOCAL_ARGS} test
 
 local-switch:
-	${NIXOS_REBUILD} ${MY_NIXPKGS_LOCAL_ARGS} switch
+	${SUDO} ${NIXOS_REBUILD} ${MY_NIXPKGS_LOCAL_ARGS} switch
 
 remote-test:
-	${NIXOS_REBUILD} -I nixpkgs=${MY_NIXPKGS_REPO}/archive/${MY_NIXPKGS_BRANCH}.tar.gz test
+	${SUDO} ${NIXOS_REBUILD} -I nixpkgs=${MY_NIXPKGS_REPO}/archive/${MY_NIXPKGS_BRANCH}.tar.gz test
 
 remote-switch:
-	${NIXOS_REBUILD} -I nixpkgs=${MY_NIXPKGS_REPO}/archive/${MY_NIXPKGS_BRANCH}.tar.gz switch
+	${SUDO} ${NIXOS_REBUILD} -I nixpkgs=${MY_NIXPKGS_REPO}/archive/${MY_NIXPKGS_BRANCH}.tar.gz switch
 
 test:
-	${NIXOS_REBUILD} test
+	${SUDO} ${NIXOS_REBUILD} test
 
 switch:
-	${NIXOS_REBUILD} switch
+	${SUDO} ${NIXOS_REBUILD} switch
 
 .PHONY:
 	setup \
