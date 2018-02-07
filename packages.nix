@@ -6,6 +6,7 @@
     arandr
     conky
     curl
+    dbus-map
     dmenu
     dzen2
     file
@@ -15,12 +16,10 @@
     indent
     libnotify
     mc
-    neovim
     nix-repl
     nix-prefetch-git
+    nixpkgs-lint
     nixUnstable
-    notify-osd
-    oh-my-zsh
     pass
     pciutils
     pmtools

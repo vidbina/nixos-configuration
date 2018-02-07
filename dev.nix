@@ -6,6 +6,7 @@
     bazaar
     cmakeCurses
     darcs
+    (import ./emacs.nix { inherit pkgs; })
     ghc
     git
     git-lfs
@@ -13,6 +14,8 @@
     gnumake
     mitscheme
     stdenv
+    neovim
+    xxd
   ];
 
   nixpkgs.config = {

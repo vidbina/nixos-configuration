@@ -3,6 +3,9 @@
 {
   # Use the systemd-boot EFI boot loader.
   boot = {
+    cleanTmpDir = true;
+    #tmpOnTmpfs = true;
+
     kernelModules = [
       "af_packet" "vboxsf"
       "virtio" "virtio_pci" "virtio_ring" "virtio_net" "vboxguest"
@@ -52,8 +55,10 @@
     };
     zsh = {
       enable = true;
-      enableAutosuggestions = true;
-      syntaxHighlighting.enable = true;
+      enableAutosuggestions = false;
+      syntaxHighlighting = {
+        enable = true;
+      };
     };
   };
 
@@ -111,7 +116,9 @@
   };
 
   # The NixOS release to be compatible with for stateful data such as databases.
-  system.stateVersion = "17.09";
+  system = {
+    stateVersion = "17.09";
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";

@@ -5,14 +5,15 @@
     bind
     freerdp
     iftop
+    ldns
     openfortivpn
     openssl
     openvpn
     netcat
-    nethogs
     networkmanagerapplet
     nmap
     telnet
+    tor
   ];
 
   programs = {
@@ -44,6 +45,26 @@
       extraConfig = ''
         address=/.local/127.0.0.1
       '';
+    };
+    openssh = {
+      enable = true;
+      listenAddresses = [
+        { addr = "127.0.0.1"; port = 22; }
+      ];
+      authorizedKeysFiles = [
+        "/store/vidbina.home/.ssh/ssh_proxy.pub"
+      ];
+    };
+    privoxy = {
+      enable = true;
+    };
+  };
+
+  security = {
+    wrappers = {
+      nethogs = {
+        source = "${pkgs.nethogs.out}/bin/nethogs";
+      };
     };
   };
 }
