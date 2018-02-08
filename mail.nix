@@ -2,7 +2,8 @@
 
 {
   environment.systemPackages = with pkgs; [
-    mutt
+    msmtp
+    neomutt
     offlineimap
     sup
   ];
