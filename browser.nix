@@ -12,5 +12,6 @@
       '';
     })
     rainbowstream
+    qutebrowser
   ];
 }
