@@ -2,6 +2,8 @@
 
 {
   environment.systemPackages = with pkgs; [
+    packer
+    vagrant
     virtualbox
   ];
 

@@ -6,18 +6,8 @@
   # nixpkgs.config.allowBroken = true;
 
   environment.systemPackages = with pkgs; [
-    exfat
-    dunst
-    gucharmap
-    ranger
-    transmission
-    ibus-with-plugins
-    htop
-    python36
-    vagrant
-    packer
-    stellarium
-    xfe
+    dunst              # for displaying IBus Notifications
+    ibus-with-plugins  # for handling input modes (emojis too)
   ];
 
   programs.digitalbitbox.enable = true;
