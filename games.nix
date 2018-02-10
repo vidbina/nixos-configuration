@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 {
+  nixpkgs.config.allowUnfree = true; # for steam
+
   environment.systemPackages = with pkgs; [
     steam
   ];
