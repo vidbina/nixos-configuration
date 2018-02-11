@@ -19,6 +19,7 @@
     ./browser.nix
     ./cad.nix       # CAD tools (mostly 3d)
     ./chat.nix
+    ./crypto.nix
     ./dev.nix
     ./dev.nix
     ./doc.nix

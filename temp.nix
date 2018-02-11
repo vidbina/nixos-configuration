@@ -6,6 +6,4 @@
 
   environment.systemPackages = with pkgs; [
   ];
-
-  programs.digitalbitbox.enable = true;
 }
