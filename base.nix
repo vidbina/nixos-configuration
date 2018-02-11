@@ -103,14 +103,13 @@
       enable = true;
       exportConfiguration = true;
       layout = "us";
-      # 846x476 mllimeters reported by Dell XPS 13
+      # 846x476 millimeters reported by Dell XPS 13
       # $ nix-shell -p xorg.xdpyinfo
       # $ xdpyinfo | grep -B2 resolution
       monitorSection = ''
         DisplaySize 423 238
       '';
       videoDrivers = ["intel"];
-      # NOTE: Set XMonad as wm again. Make sure to set .xmonad/xmonad.hs
       xkbOptions = "eurosign:e";
     };
   };
