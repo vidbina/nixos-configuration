@@ -4,11 +4,8 @@
   environment.systemPackages = with pkgs; [
     apvlv
     arandr
-    conky
     curl
     dbus-map
-    dmenu
-    dzen2
     exfat              # for handling FAT partitions
     file
     gnome3.eog         # for image viewing

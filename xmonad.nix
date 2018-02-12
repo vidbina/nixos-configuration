@@ -2,6 +2,10 @@
 
 {
   environment.systemPackages = with pkgs; [
+    conky
+    dmenu
+    dzen2
+    gmrun
     haskellPackages.xmobar
   ];
 
