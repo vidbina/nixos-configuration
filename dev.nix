@@ -12,6 +12,7 @@
     git-lfs
     glibc
     gnumake
+    go
     mitscheme
     stdenv
     neovim
