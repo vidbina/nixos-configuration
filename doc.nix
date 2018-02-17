@@ -11,6 +11,7 @@
     haskellPackages.pandoc
     haskellPackages.pandoc-citeproc
     libreoffice
+    pdftk
     (texlive.combine { inherit (texlive)
       biblatex
       collection-basic
@@ -22,6 +23,7 @@
       IEEEtran
       invoice
       logreq
+      pdfcrop
       realscripts
       scheme-basic
       xetex
