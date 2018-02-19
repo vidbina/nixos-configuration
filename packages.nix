@@ -6,6 +6,7 @@
     arandr
     curl
     dbus-map
+    entr
     exfat              # for handling FAT partitions
     file
     gnome3.eog         # for image viewing
