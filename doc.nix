@@ -12,7 +12,8 @@
     haskellPackages.pandoc-citeproc
     libreoffice
     pdftk
-    (texlive.combine { inherit (texlive)
+    (texlive.combine {
+      inherit (texlive)
       biblatex
       collection-basic
       collection-fontsrecommended
