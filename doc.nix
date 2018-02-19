@@ -1,17 +1,6 @@
 { config, pkgs, stdenv, ... }:
 
 let
-  overridenInvoice = let
-    op = texPkg: texPkg.overrideAttrs (attrs: {
-      inherit (texPkg) pname tlType; # version;
-      version = "${texPkg.version}-vidbina";
-      postUnpack = "echo post; ls -la";
-    });
-    transform = pkg: if pkg.tlType == "run"then op pkg else pkg;
-    override = original: original // {
-      pkgs = builtins.map transform original.pkgs;
-    }; #overrideLatexInvoice pkgs.texlive.invoice.pkgs;
-  in override pkgs.texlive.invoice;
   redefinedInvoice = let
     invoice = pkgs.stdenv.mkDerivation rec {
       version = "2011-10-01";
