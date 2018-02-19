@@ -1,5 +1,55 @@
-{ config, pkgs, ... }:
+{ config, pkgs, stdenv, ... }:
 
+let
+  overridenInvoice = let
+    op = texPkg: texPkg.overrideAttrs (attrs: {
+      inherit (texPkg) pname tlType; # version;
+      version = "${texPkg.version}-vidbina";
+      postUnpack = "echo post; ls -la";
+    });
+    transform = pkg: if pkg.tlType == "run"then op pkg else pkg;
+    override = original: original // {
+      pkgs = builtins.map transform original.pkgs;
+    }; #overrideLatexInvoice pkgs.texlive.invoice.pkgs;
+  in override pkgs.texlive.invoice;
+  redefinedInvoice = let
+    invoice = pkgs.stdenv.mkDerivation rec {
+      version = "2011-10-01";
+      pname = "invoice";
+      tlType = "run";
+
+      name = "${pname}-${version}";
+
+      src = ./customPkgs/invoice-latex;
+#      src = pkgs.fetchurl {
+#        url = "http://mirrors.ctan.org/macros/latex/contrib/invoice.zip";
+#        sha256 = "1brinirb67pssr27l4bc17y138kvkdb7adx61b627qwq1q2immqp";
+#      };
+
+      buildInputs = with pkgs; [
+        tree
+        #unzip
+      ];
+
+      dontBuild = true;
+
+      unpackPhase = ''
+        echo "nothing to unpack";
+      '';
+
+#      patches = [ /tmp/invoice/invoice-former/invoice.patch ];
+
+      installPhase = ''
+        mkdir -p $out/tex/latex/invoice
+        cp -r $src/texinput $out/tex/latex/invoice
+      '';
+
+      meta = {
+        #platforms = stdenv.lib.platforms.unix;
+      };
+    };
+  in { pkgs = [ invoice ]; };
+in
 {
   environment.systemPackages = with pkgs; [
     aspell
@@ -22,7 +72,6 @@
       collection-latexrecommended
       #graphics-def
       IEEEtran
-      invoice
       logreq
       pdfcrop
       realscripts
@@ -30,6 +79,7 @@
       xetex
       xetex-def # will soon be replaced with graphics-def
       xltxtra;
+      inherit redefinedInvoice;
     })
     qpdfview
     xournal
