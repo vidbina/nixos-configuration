@@ -53,18 +53,18 @@ in
     pdftk
     (texlive.combine {
       inherit (texlive)
+      scheme-basic
+
       biblatex
+      collection-langeuropean
       collection-basic
       collection-fontsrecommended
-      collection-langeuropean
-      collection-latexextra
       collection-latexrecommended
       #graphics-def
       IEEEtran
       logreq
       pdfcrop
       realscripts
-      scheme-basic
       xetex
       xetex-def # will soon be replaced with graphics-def
       xltxtra;
