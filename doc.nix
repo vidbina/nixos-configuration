@@ -65,6 +65,8 @@ in
       logreq
       pdfcrop
       realscripts
+      tabu
+      varwidth
       xetex
       xetex-def # will soon be replaced with graphics-def
       xltxtra;
