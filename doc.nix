@@ -61,6 +61,7 @@ in
       collection-fontsrecommended
       collection-latexrecommended
       #graphics-def
+      etoolbox
       IEEEtran
       logreq
       pdfcrop
@@ -69,7 +70,8 @@ in
       varwidth
       xetex
       xetex-def # will soon be replaced with graphics-def
-      xltxtra;
+      xltxtra
+      xstring;
       inherit redefinedInvoice;
     })
     qpdfview
