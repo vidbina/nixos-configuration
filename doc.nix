@@ -63,6 +63,7 @@ in
       #graphics-def
       etoolbox
       IEEEtran
+      lastpage
       logreq
       pdfcrop
       realscripts
