@@ -62,8 +62,11 @@ in
       collection-latexrecommended
       #graphics-def
       etoolbox
+      datetime
+      fmtcount
       IEEEtran
       lastpage
+      layouts
       logreq
       pdfcrop
       realscripts
