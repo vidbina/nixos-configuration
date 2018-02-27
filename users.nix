@@ -28,5 +28,10 @@
       initialPassword = "#unsecure";
     };
   };
-  
+
+  environment = {
+    variables = {
+      URXVT_PERL_PLUGINS = "${pkgs.rxvt_unicode-with-plugins}/lib/urxvt/perl";
+    };
+  };
 }
