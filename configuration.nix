@@ -39,7 +39,7 @@
     ./terminal.nix
     ./tron.nix      # tools for electronics engineering
     ./unity3d.nix
-    ./virtualbox.nix
+    ./virt.nix
     ./xmonad.nix
   ];
 }
