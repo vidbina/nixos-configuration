@@ -81,6 +81,7 @@ in
     qpdfview
     xournal
     xpdf
+    zathura
   ];
 
   services.dictd = {
