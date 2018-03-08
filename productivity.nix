@@ -6,5 +6,6 @@
     calcurse
     tasksh
     taskwarrior
+    timewarrior
   ];
 }
