@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     packer
     vagrant
+    qemu
     virtualbox
   ];
 
