@@ -51,6 +51,7 @@ in
     haskellPackages.pandoc-citeproc
     libreoffice
     pdftk
+    scim
     (texlive.combine {
       inherit (texlive)
       scheme-basic
