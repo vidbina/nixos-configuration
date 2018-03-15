@@ -65,6 +65,7 @@ in
       etoolbox
       datetime
       fmtcount
+      german
       IEEEtran
       lastpage
       layouts
