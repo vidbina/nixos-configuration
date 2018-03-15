@@ -5,7 +5,6 @@
     packer
     vagrant
     qemu
-    virtualbox
   ];
 
   virtualisation.virtualbox.host.enable = true;
