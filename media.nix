@@ -8,6 +8,7 @@
     playerctl
     spotify
     vlc
+    youtube-dl
   ];
 }
 
