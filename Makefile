@@ -67,6 +67,9 @@ upgrade-switch:
 # 	upstream first.
 #
 # 	Source: https://nixos.org/nixos/manual/#sec-changing-config
+local-boot:
+	${SUDO} ${NIXOS_REBUILD} ${MY_NIXPKGS_LOCAL_ARGS} boot
+
 local-test:
 	${SUDO} ${NIXOS_REBUILD} ${MY_NIXPKGS_LOCAL_ARGS} test
 
