@@ -75,7 +75,7 @@ in
       tabu
       varwidth
       xetex
-      xetex-def # will soon be replaced with graphics-def
+      graphics-def
       xltxtra
       xstring;
       inherit redefinedInvoice;
