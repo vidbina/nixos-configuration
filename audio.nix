@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
+    alsaUtils
     blueman
     pamixer
     paprefs
