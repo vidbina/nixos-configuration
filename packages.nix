@@ -53,5 +53,6 @@
     xorg.xprop
     xsel
     xtrlock-pam
+    ./customPkgs/qeletrotech
   ];
 }
