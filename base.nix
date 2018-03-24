@@ -39,6 +39,10 @@
 #    fsType = "btrfs";
 #  };
 
+  hardware = {
+    cpu.intel.updateMicrocode = true;
+  };
+
   # Select internationalisation properties.
   i18n = {
     consoleFont = "latarcyrheb-sun32";
