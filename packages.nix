@@ -30,7 +30,6 @@
     screenfetch
     scrot
     st
-    stellarium         # for stargazing
     tcpdump
     tmux
     transmission       # for Torrent downloads
