@@ -20,7 +20,7 @@
     nix-repl
     nix-prefetch-git
     nixpkgs-lint
-    nixUnstable
+    nix
     pass
     pciutils
     pmtools
