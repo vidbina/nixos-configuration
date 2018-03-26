@@ -5,6 +5,10 @@
     irssi
     skypeforlinux
     telegram-cli
-    tdesktop
+    (tdesktop.overrideAttrs(oldAttrs: rec {
+      nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [
+        wrapGAppsHook
+      ];
+    }))
   ];
 }
