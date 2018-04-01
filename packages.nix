@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     apvlv
     arandr
+    ctags
     curl
     dbus-map
     entr
