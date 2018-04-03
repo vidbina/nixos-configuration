@@ -56,6 +56,7 @@ in
       inherit (texlive)
       scheme-basic
 
+      babel-german
       biblatex
       collection-langeuropean
       collection-basic
