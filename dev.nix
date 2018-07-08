@@ -13,6 +13,7 @@
     glibc
     gnumake
     go
+    jq
     mitscheme
     stdenv
     neovim
