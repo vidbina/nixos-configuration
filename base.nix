@@ -1,6 +1,15 @@
 { config, pkgs, ... }:
 
-{
+let
+  lowBatteryNotifier = pkgs.writeScript "lowBatteryNotifier"
+  ''
+      BAT_PCT=`${pkgs.acpi}/bin/acpi -b | ${pkgs.gnugrep}/bin/grep -P -o '[0-9]+(?=%)'`
+      BAT_STA=`${pkgs.acpi}/bin/acpi -b | ${pkgs.gnugrep}/bin/grep -P -o '\w+(?=,)'`
+      echo "Checking battery pulse"
+      test $BAT_PCT -le 10 && test $BAT_PCT -gt 5 && test && test $BAT_STA = "Discharging" && DISPLAY=:0.0 ${pkgs.libnotify}/bin/notify-send -c device -u normal   'Low Battery' 'Would be wise to keep my charger nearby.'
+      test $BAT_PCT -le  5                                && test $BAT_STA = "Discharging" && DISPLAY=:0.0 ${pkgs.libnotify}/bin/notify-send -c device -u critical 'Low Battery' 'Charge me or watch me die!
+  '';
+in {
   # Use the systemd-boot EFI boot loader.
   boot = {
     cleanTmpDir = true;
@@ -70,6 +79,13 @@
   services = {
     acpid = {
       enable = true;
+    };
+
+    cron = {
+      enable = true;
+      systemCronJobs = [
+        "* * * * * vid bash -x ${lowBatteryNotifier} > /tmp/cron.batt.log 2>&1"
+      ];
     };
 
     illum = {
