@@ -5,6 +5,7 @@
   # nixpkgs.config.allowBroken = true;
 
   environment.systemPackages = with pkgs; [
+    keymon
     slop
     (screenkey.overrideAttrs(oldAttrs: rec {
       # https://github.com/rasendubi/nixpkgs/pull/1/files
