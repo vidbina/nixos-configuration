@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
+    acpi
     apvlv
     arandr
     ctags
