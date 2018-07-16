@@ -60,6 +60,9 @@ in {
   };
 
   programs = {
+    bash = {
+      enableCompletion = true;
+    };
     gnupg = {
       agent = {
         enable = true;
