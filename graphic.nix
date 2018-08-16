@@ -19,6 +19,7 @@ in
     fontforge-dev
     gimp
     glxinfo
+    graphviz
     gmsh
     imagemagick
     inkscape
