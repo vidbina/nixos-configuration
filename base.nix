@@ -95,6 +95,11 @@ in {
       enable = true;
     };
 
+    redshift = {
+      enable = true;
+      provider = "geoclue2";
+    };
+
     nixosManual.showManual = true;
 
     # Enable the OpenSSH daemon.

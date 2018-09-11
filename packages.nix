@@ -29,6 +29,7 @@
     pstree
     python36           # we all need a python interpreter sometimes
     ranger             # TUI file mananager
+    redshift
     screenfetch
     scrot
     st
