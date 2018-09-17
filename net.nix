@@ -45,6 +45,11 @@
       extraConfig = ''
         address=/.local/127.0.0.1
       '';
+      servers = [
+        "139.59.18.213"
+        "163.53.248.170"
+        "91.217.137.37"
+      ];
     };
     openssh = {
       enable = true;
