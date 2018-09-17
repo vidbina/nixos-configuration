@@ -46,9 +46,21 @@
         address=/.local/127.0.0.1
       '';
       servers = [
-        "139.59.18.213"
-        "163.53.248.170"
-        "91.217.137.37"
+        "185.208.208.141" # ns1.nl.dns.opennic.glue (Sponsored by mon0.li)
+        "82.196.9.45"     # ns1.nh.nl.dns.opennic.glue
+        "146.185.176.36"  # ns7.nh.nl.dns.opennic.glue (Sponsored by phillymesh.net)
+        "51.15.98.97"     # ns12.nh.nl.dns.opennic.glue
+
+        "94.247.43.254"   # ns8.he.de.dns.opennic.glue (Sponsored by ETH-Services)
+        "130.255.78.223"  # ns22.de.dns.opennic.glue (Sponsored by edv-froehlich.de)
+        "94.16.114.254"   # ns11.de.dns.opennic.glue
+        "46.101.70.183"   # ns9.de.dns.opennic.glue (Sponsored by hollweck.it)
+        "50.3.82.215"     # ns7.de.dns.opennic.glue (Sponsored by edv-froehlich.de)
+        "82.141.39.32"    # ns1.de.dns.opennic.glue (Sponsored by edv-froehlich.de)
+
+        "139.59.18.213"   # ns1.ka.in.dns.opennic.glue
+        "163.53.248.170"  # ns2.vic.au.dns.opennic.glue
+        "91.217.137.37"   # ns5.ru.dns.opennic.glue (Sponsored by subnets.ru)
       ];
     };
     openssh = {
