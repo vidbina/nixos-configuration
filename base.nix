@@ -69,9 +69,29 @@ in {
         enableSSHSupport = true;
       };
     };
-    zsh = {
+    zsh = let
+      keybindings = ''
+        # Note ^ or \C is Ctrl, \M is Alt
+        bindkey '^ ' autosuggest-accept
+        bindkey -M viins '\C-U' kill-whole-line # removes everything
+        bindkey -M viins '\C-P' history-incremental-pattern-search-backward
+        bindkey -M viins '\C-N' history-incremental-pattern-search-forward
+      '';
+    in {
       enable = true;
-      enableAutosuggestions = false;
+      enableAutosuggestions = true;
+      interactiveShellInit = ''
+        export EDITOR=nvim
+
+        bindkey -v # use vim key bindings
+        ${keybindings}
+
+        setopt histignorespace # keeps lines preceded with SPACE out of history
+      '';
+      promptInit = ''
+        autoload -U promptinit && promptinit && prompt walters # default
+        autoload -U +X bashcompinit && bashcompinit # enable bash completion
+      '';
       syntaxHighlighting = {
         enable = true;
       };
