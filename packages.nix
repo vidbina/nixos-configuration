@@ -11,6 +11,7 @@
     entr
     exfat              # for handling FAT partitions
     file
+    fzf
     gnome3.eog         # for image viewing
     gnupg22
     gucharmap          # GUI charmap

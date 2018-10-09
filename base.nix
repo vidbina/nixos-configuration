@@ -89,6 +89,9 @@ in {
         setopt histignorespace # keeps lines preceded with SPACE out of history
       '';
       promptInit = ''
+        source ${pkgs.fzf}/share/fzf/completion.zsh
+        source ${pkgs.fzf}/share/fzf/key-bindings.zsh
+
         autoload -U promptinit && promptinit && prompt walters # default
         autoload -U +X bashcompinit && bashcompinit # enable bash completion
       '';
