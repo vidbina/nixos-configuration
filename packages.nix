@@ -11,7 +11,6 @@
     entr
     exfat              # for handling FAT partitions
     file
-    freemind
     fzf
     gnome3.eog         # for image viewing
     gnupg22
@@ -43,6 +42,7 @@
     udisks2
     unzip
     usbutils
+    vym
     w3m
     wget
     whois
