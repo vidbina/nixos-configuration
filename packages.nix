@@ -11,6 +11,7 @@
     entr
     exfat              # for handling FAT partitions
     file
+    freemind
     fzf
     gnome3.eog         # for image viewing
     gnupg22
