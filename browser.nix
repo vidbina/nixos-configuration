@@ -14,4 +14,8 @@
     rainbowstream
     qutebrowser
   ];
+
+  nixpkgs.config.firefox = {
+    enableEsteid = true;
+  };
 }
