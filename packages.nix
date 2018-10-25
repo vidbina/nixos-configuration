@@ -17,6 +17,7 @@
     gucharmap          # GUI charmap
     hardinfo
     htop               # for viewing process metrics
+    iotop
     indent
     libnotify
     mc
