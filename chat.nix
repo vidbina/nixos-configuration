@@ -10,5 +10,6 @@
         wrapGAppsHook
       ];
     }))
+    weechat
   ];
 }
