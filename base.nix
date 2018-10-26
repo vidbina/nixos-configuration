@@ -92,8 +92,13 @@ in {
         source ${pkgs.fzf}/share/fzf/completion.zsh
         source ${pkgs.fzf}/share/fzf/key-bindings.zsh
 
-        autoload -U promptinit && promptinit && prompt walters # default
-        autoload -U +X bashcompinit && bashcompinit # enable bash completion
+        autoload -U promptinit && \
+        promptinit && \
+        prompt adam2 8bit yellow red blue
+
+        # enable bash completion
+        autoload -U +X bashcompinit && \
+        bashcompinit
       '';
       syntaxHighlighting = {
         enable = true;
