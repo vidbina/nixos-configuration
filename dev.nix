@@ -2,11 +2,11 @@
 
 {
   environment.systemPackages = with pkgs; [
+    (import ./emacs.nix { inherit pkgs; })
     asciinema
     bazaar
     cmakeCurses
     darcs
-    (import ./emacs.nix { inherit pkgs; })
     ghc
     git
     git-lfs
@@ -15,8 +15,8 @@
     go
     jq
     mitscheme
-    stdenv
     neovim
+    stdenv
     xxd
   ];
 
