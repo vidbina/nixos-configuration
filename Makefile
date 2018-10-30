@@ -48,7 +48,7 @@ switch:
 #
 # 	The --upgrade flag basically facilitates an upgrade to the latest version
 # 	of your selected channel. The benefit of this approach is that this always
-# 	yields the latest version of the give release (e.g.: 17.09 or 17.09-small)
+# 	yields the latest version of the given release (e.g.: 17.09 or 17.09-small)
 # 	but the downside is that is offers less control in version management of
 # 	the packages involved. Any of these make rules can potentially trigger a
 # 	lot of downloads and subsequent version upgrades of packages, perhaps this
