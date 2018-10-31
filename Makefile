@@ -12,8 +12,8 @@ MY_NIXPKGS_LOCAL_ARGS=-I nixos=${HOME}/nixpkgs/nixos -I nixpkgs=${HOME}/nixpkgs
 #		and remote-switch). Defining MY_NIXPKGS_REPO and/or MY_NIXPKGS_BRANCH
 #		prior to invoking any of the "remote" rules will override the default
 #		values of the following variables:
-MY_NIXPKGS_REPO?=https://github.com/vidbina/nixpkgs
-MY_NIXPKGS_BRANCH?=current
+MY_NIXPKGS_REPO?=https://github.com/NixOS/nixpkgs
+MY_NIXPKGS_BRANCH?=06fb0253afabb8cc7dc85db742e2de94a4d68ca0
 
 # Sets up /etc/nixos and performs a switch
 #
@@ -48,7 +48,7 @@ switch:
 #
 # 	The --upgrade flag basically facilitates an upgrade to the latest version
 # 	of your selected channel. The benefit of this approach is that this always
-# 	yields the latest version of the give release (e.g.: 17.09 or 17.09-small)
+# 	yields the latest version of the given release (e.g.: 17.09 or 17.09-small)
 # 	but the downside is that is offers less control in version management of
 # 	the packages involved. Any of these make rules can potentially trigger a
 # 	lot of downloads and subsequent version upgrades of packages, perhaps this
@@ -67,6 +67,9 @@ upgrade-switch:
 # 	upstream first.
 #
 # 	Source: https://nixos.org/nixos/manual/#sec-changing-config
+local-boot:
+	${SUDO} ${NIXOS_REBUILD} ${MY_NIXPKGS_LOCAL_ARGS} boot
+
 local-test:
 	${SUDO} ${NIXOS_REBUILD} ${MY_NIXPKGS_LOCAL_ARGS} test
 

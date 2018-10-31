@@ -1,21 +1,22 @@
-{ config, pkgs, ... }:
+{ config, pkgs ? (import ./nixpkgs.nix).default, ... }:
 
 {
   environment.systemPackages = with pkgs; [
+    (import ./emacs.nix { inherit pkgs; })
     asciinema
     bazaar
     cmakeCurses
     darcs
-    (import ./emacs.nix { inherit pkgs; })
     ghc
     git
     git-lfs
     glibc
     gnumake
     go
+    jq
     mitscheme
-    stdenv
     neovim
+    stdenv
     xxd
   ];
 

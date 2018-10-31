@@ -1,10 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs ? (import ./nixpkgs.nix).default, ... }:
 
 {
   nixpkgs.config.firefox.enableEsteid = true;
 
   environment.systemPackages = with pkgs; [
-    (import ./customPkgs/eid/qesteidutil.nix) #vid-qesteidutil
+    qesteidutil
   ];
 
   services.pcscd = {

@@ -1,0 +1,22 @@
+--- a/qelectrotech.pro
++++ b/qelectrotech.pro
+@@ -5,8 +5,8 @@
+ # Chemins utilises pour la compilation et l'installation de QET
+ unix {
+ 	# Chemins UNIX
+-	COMPIL_PREFIX              = '/usr/local/'
+-	INSTALL_PREFIX             = '/usr/local/'
++	COMPIL_PREFIX              = './'
++	INSTALL_PREFIX             = '$out/INSTALL/'
+ 	QET_BINARY_PATH            = 'bin/'
+ 	QET_COMMON_COLLECTION_PATH = 'share/qelectrotech/elements/'
+ 	QET_COMMON_TBT_PATH        = 'share/qelectrotech/titleblocks/'
+@@ -34,7 +34,7 @@ win32 {
+ macx {
+ 	# Chemins MacOS X
+ 	COMPIL_PREFIX              = './'
+-	INSTALL_PREFIX             = '/usr/local/'
++	INSTALL_PREFIX             = '$out/share/doc/'
+ 	QET_BINARY_PATH            = 'bin/'
+ 	QET_COMMON_COLLECTION_PATH = '../Resources/elements/'
+ 	QET_COMMON_TBT_PATH        = '../Resources/titleblocks/'

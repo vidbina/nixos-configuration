@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs ? (import ./nixpkgs.nix).default, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -14,4 +14,8 @@
     rainbowstream
     qutebrowser
   ];
+
+  nixpkgs.config.firefox = {
+    enableEsteid = true;
+  };
 }

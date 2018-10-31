@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs ? (import ./nixpkgs.nix).default, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -7,8 +7,9 @@
     dmenu
     dzen2
     gmrun
-    hsetroot
+    haskellPackages.taffybar
     haskellPackages.xmobar
+    hsetroot
   ];
 
     # NOTE: Set XMonad as wm again. Make sure to set .xmonad/xmonad.hs

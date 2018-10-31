@@ -1,7 +1,7 @@
-{ config, pkgs, ... }:
+{ config, pkgs ? (import ./nixpkgs.nix).default, ... }:
 
 {
-  networking.hostName = ""; # callsign
+  networking.hostName = "bina"; # callsign
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {

@@ -1,6 +1,15 @@
 { config, pkgs, ... }:
 
-{
+let
+  lowBatteryNotifier = pkgs.writeScript "lowBatteryNotifier"
+  ''
+      BAT_PCT=`${pkgs.acpi}/bin/acpi -b | ${pkgs.gnugrep}/bin/grep -P -o '[0-9]+(?=%)'`
+      BAT_STA=`${pkgs.acpi}/bin/acpi -b | ${pkgs.gnugrep}/bin/grep -P -o '\w+(?=,)'`
+      echo "Checking battery level"
+      test $BAT_PCT -le 10 && test $BAT_PCT -gt 5 && test $BAT_STA = "Discharging" && DISPLAY=:0.0 ${pkgs.libnotify}/bin/notify-send -c device -u normal   "Low Battery" "Would be wise to keep my charger nearby."
+      test $BAT_PCT -le  5                        && test $BAT_STA = "Discharging" && DISPLAY=:0.0 ${pkgs.libnotify}/bin/notify-send -c device -u critical "Low Battery" "Charge me or watch me die!"
+  '';
+in {
   # Use the systemd-boot EFI boot loader.
   boot = {
     cleanTmpDir = true;
@@ -39,6 +48,10 @@
 #    fsType = "btrfs";
 #  };
 
+  hardware = {
+    cpu.intel.updateMicrocode = true;
+  };
+
   # Select internationalisation properties.
   i18n = {
     consoleFont = "latarcyrheb-sun32";
@@ -47,15 +60,48 @@
   };
 
   programs = {
+    bash = {
+      enableCompletion = true;
+    };
     gnupg = {
       agent = {
         enable = true;
         enableSSHSupport = true;
       };
     };
-    zsh = {
+    zsh = let
+      keybindings = ''
+        # Note ^ or \C is Ctrl, \M is Alt
+        bindkey '^ ' autosuggest-accept
+        bindkey -M viins '\C-U' kill-whole-line # removes everything
+        bindkey -M viins '\C-P' history-incremental-pattern-search-backward
+        bindkey -M viins '\C-N' history-incremental-pattern-search-forward
+      '';
+    in {
       enable = true;
-      enableAutosuggestions = false;
+      autosuggestions = {
+        enable = true;
+      };
+      interactiveShellInit = ''
+        export EDITOR=nvim
+
+        bindkey -v # use vim key bindings
+        ${keybindings}
+
+        setopt histignorespace # keeps lines preceded with SPACE out of history
+      '';
+      promptInit = ''
+        source ${pkgs.fzf}/share/fzf/completion.zsh
+        source ${pkgs.fzf}/share/fzf/key-bindings.zsh
+
+        autoload -U promptinit && \
+        promptinit && \
+        prompt adam2 8bit yellow red blue
+
+        # enable bash completion
+        autoload -U +X bashcompinit && \
+        bashcompinit
+      '';
       syntaxHighlighting = {
         enable = true;
       };
@@ -68,8 +114,20 @@
       enable = true;
     };
 
+    cron = {
+      enable = true;
+      systemCronJobs = [
+        "* * * * * vid bash -x ${lowBatteryNotifier} > /tmp/cron.batt.log 2>&1"
+      ];
+    };
+
     illum = {
       enable = true;
+    };
+
+    redshift = {
+      enable = true;
+      provider = "geoclue2";
     };
 
     nixosManual.showManual = true;
@@ -89,10 +147,8 @@
         slim = {
           enable = true;
           theme = pkgs.fetchurl {
-            #url = "https://github.com/vidbina/asabina-slim-theme/archive/master.tar.gz";
-            url = "https://github.com/vidbina/asabina-slim-theme/archive/132fa3339286681f636434333701330ef2c41104.tar.gz";
-            #sha256 = "1d3e8fc41729b2ade2649d3083b7fddb81b3dde2ef6ecb95261ce32af5c9d2fdz";
-            sha256 = "cfdc9cfcb4ea93b993caca3b82d16b55ed4b4f3207031b574dc5ced59dcc8cd0";
+            url = "https://gitlab.com/vidbina/asabina-slim-theme/-/archive/a3698d20e133bf1765adcbec9d2de87ac5fdf0e3/asabina-slim-theme-a3698d20e133bf1765adcbec9d2de87ac5fdf0e3.tar.gz";
+            sha256 = "1xw58r6g2i3j6qkrdmxlslm11d3072irrc7r4kh8jj64cnqz9xx5";
           };
         };
         sessionCommands = ''
@@ -116,7 +172,7 @@
 
   # The NixOS release to be compatible with for stateful data such as databases.
   system = {
-    stateVersion = "17.09";
+    stateVersion = "18.03";
   };
 
   # Set your time zone.

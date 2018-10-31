@@ -1,36 +1,40 @@
-{ config, pkgs, ... }:
+{ config, pkgs ? (import ./nixpkgs.nix).default, ... }:
 
 {
   environment.systemPackages = with pkgs; [
+    acpi
     apvlv
     arandr
+    ctags
     curl
     dbus-map
     entr
     exfat              # for handling FAT partitions
     file
+    fzf
     gnome3.eog         # for image viewing
     gnupg22
     gucharmap          # GUI charmap
     hardinfo
     htop               # for viewing process metrics
+    iotop
     indent
     libnotify
     mc
-    nix-repl
     nix-prefetch-git
     nixpkgs-lint
-    nixUnstable
+    nix
     pass
     pciutils
     pmtools
     pstree
     python36           # we all need a python interpreter sometimes
+    pv
     ranger             # TUI file mananager
+    redshift
     screenfetch
     scrot
     st
-    stellarium         # for stargazing
     tcpdump
     tmux
     transmission       # for Torrent downloads
@@ -39,6 +43,7 @@
     udisks2
     unzip
     usbutils
+    vym
     w3m
     wget
     whois
@@ -53,5 +58,7 @@
     xorg.xprop
     xsel
     xtrlock-pam
+    zip
+    #./customPkgs/qeletrotech
   ];
 }

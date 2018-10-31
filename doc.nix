@@ -1,4 +1,4 @@
-{ config, pkgs, stdenv, ... }:
+{ config, pkgs ? (import ./nixpkgs.nix).default, ... }:
 
 let
   redefinedInvoice = let
@@ -56,6 +56,7 @@ in
       inherit (texlive)
       scheme-basic
 
+      babel-german
       biblatex
       collection-langeuropean
       collection-basic
@@ -75,7 +76,7 @@ in
       tabu
       varwidth
       xetex
-      xetex-def # will soon be replaced with graphics-def
+      graphics-def
       xltxtra
       xstring;
       inherit redefinedInvoice;
