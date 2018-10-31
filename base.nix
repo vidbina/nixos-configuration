@@ -85,15 +85,9 @@ in {
       interactiveShellInit = ''
         export EDITOR=nvim
 
-        bindkey -v # use vim key bindings
-        ${keybindings}
-
         setopt histignorespace # keeps lines preceded with SPACE out of history
       '';
       promptInit = ''
-        source ${pkgs.fzf}/share/fzf/completion.zsh
-        source ${pkgs.fzf}/share/fzf/key-bindings.zsh
-
         autoload -U promptinit && \
         promptinit && \
         prompt adam2 8bit yellow red blue
@@ -101,6 +95,13 @@ in {
         # enable bash completion
         autoload -U +X bashcompinit && \
         bashcompinit
+
+        bindkey -v # use vim key bindings
+        ${keybindings}
+
+        source ${pkgs.fzf}/share/fzf/completion.zsh
+        source ${pkgs.fzf}/share/fzf/key-bindings.zsh
+
       '';
       syntaxHighlighting = {
         enable = true;
