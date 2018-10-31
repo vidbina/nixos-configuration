@@ -21,7 +21,6 @@
     indent
     libnotify
     mc
-    nix-repl
     nix-prefetch-git
     nixpkgs-lint
     nix

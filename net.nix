@@ -38,7 +38,7 @@
       packages = with pkgs; [
         networkmanager_openvpn
       ];
-      useDnsmasq = true;
+      dns = "dnsmasq";
     };
     # wireless.enable = wlp58s0;  # Enables wireless support via wpa_supplicant.
   };

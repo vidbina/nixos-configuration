@@ -79,7 +79,9 @@ in {
       '';
     in {
       enable = true;
-      enableAutosuggestions = true;
+      autosuggestions = {
+        enable = true;
+      };
       interactiveShellInit = ''
         export EDITOR=nvim
 
