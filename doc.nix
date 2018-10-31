@@ -1,4 +1,4 @@
-{ config, pkgs, stdenv, ... }:
+{ config, pkgs ? (import ./nixpkgs.nix).default, ... }:
 
 let
   redefinedInvoice = let

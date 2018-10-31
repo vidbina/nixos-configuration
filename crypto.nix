@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs ? (import ./nixpkgs.nix).default, ... }:
 
 {
   #programs.digitalbitbox.enable = true;

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs ? (import ./nixpkgs.nix).default, ... }:
 
 let
   # /nixpkgs points to a local clone of the nixpkgs repository

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs ? (import ./nixpkgs.nix).default, ... }:
 
 {
   networking.hostName = "bina"; # callsign

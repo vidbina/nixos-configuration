@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs ? (import ./nixpkgs.nix).default, ... }:
 
 {
   nixpkgs.config.firefox.enableEsteid = true;
