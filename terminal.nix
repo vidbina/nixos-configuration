@@ -30,6 +30,8 @@
 
         setopt histignorespace # keeps lines preceded with SPACE out of history
 
+        zmodload -i zsh/complist
+
         autoload -U promptinit && \
         promptinit && \
         prompt adam2 8bit yellow red blue
