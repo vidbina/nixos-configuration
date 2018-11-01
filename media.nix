@@ -1,4 +1,4 @@
-{ config, pkgs ? (import ./nixpkgs.nix).default, ... }:
+{ config, pkgs, ... }:
 
 {
   nixpkgs.config.allowUnfree = true; # for spotify

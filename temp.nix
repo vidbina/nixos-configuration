@@ -1,4 +1,4 @@
-{ config, pkgs ? (import ./nixpkgs.nix).default, ... }:
+{ config, pkgs, ... }:
 
 {
   # TODO: cleanup later
