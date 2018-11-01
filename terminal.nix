@@ -29,8 +29,7 @@
         export EDITOR=nvim
 
         setopt histignorespace # keeps lines preceded with SPACE out of history
-      '';
-      promptInit = ''
+
         autoload -U promptinit && \
         promptinit && \
         prompt adam2 8bit yellow red blue
@@ -38,13 +37,13 @@
         # enable bash completion
         autoload -U +X bashcompinit && \
         bashcompinit
-
+      '';
+      promptInit = ''
         bindkey -v # use vim key bindings
         ${keybindings}
 
         source ${pkgs.fzf}/share/fzf/completion.zsh
         source ${pkgs.fzf}/share/fzf/key-bindings.zsh
-
       '';
       syntaxHighlighting = {
         enable = true;
