@@ -12,15 +12,7 @@
     bash = {
       enableCompletion = true;
     };
-    zsh = let
-      keybindings = ''
-        # Note ^ or \C is Ctrl, \M is Alt
-        bindkey '^ ' autosuggest-accept
-        bindkey -M viins '\C-U' kill-whole-line # removes everything
-        bindkey -M viins '\C-P' history-incremental-pattern-search-backward
-        bindkey -M viins '\C-N' history-incremental-pattern-search-forward
-      '';
-    in {
+    zsh = {
       enable = true;
       autosuggestions = {
         enable = true;
@@ -31,6 +23,7 @@
         setopt histignorespace # keeps lines preceded with SPACE out of history
 
         zmodload -i zsh/complist
+        source ${./zsh/zstyle.zsh}
 
         autoload -U promptinit && \
         promptinit && \
@@ -42,7 +35,7 @@
       '';
       promptInit = ''
         bindkey -v # use vim key bindings
-        ${keybindings}
+        source ${./zsh/keybindings.zsh}
 
         source ${pkgs.fzf}/share/fzf/completion.zsh
         source ${pkgs.fzf}/share/fzf/key-bindings.zsh
