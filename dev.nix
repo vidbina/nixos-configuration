@@ -7,6 +7,7 @@
     bazaar
     cmakeCurses
     darcs
+    gdb
     ghc
     git
     git-lfs
