@@ -4,6 +4,11 @@ This is the NixOS :snowflake: configuration that I use on my Dell XPS.
 
 # Usage
 
+> :bulb: Last update was tested with `make setup && make remote-test` and
+> applied with `make setup && make remote-switch`. Just run this and be done
+> with it. :wink:
+
+
 This NixOS configuration comes packages with a collection of make rules that
 are intended to make your life a little bit easier. The installation process
 for a NixOS configuration requires the making of changes to `/etc/nixos`

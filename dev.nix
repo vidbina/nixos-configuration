@@ -1,4 +1,4 @@
-{ config, pkgs ? (import ./nixpkgs.nix).default, ... }:
+{ config, pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -7,6 +7,7 @@
     bazaar
     cmakeCurses
     darcs
+    gdb
     ghc
     git
     git-lfs

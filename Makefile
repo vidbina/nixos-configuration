@@ -31,7 +31,7 @@ all: setup switch
 # 	Source: https://nixos.org/nixos/manual/index.html#sec-changing-config
 setup:
 	${SUDO} ${RM} -r /etc/nixos/customPkgs
-	${SUDO} ${CP} -Lr *.nix customPkgs /etc/nixos/.
+	${SUDO} ${CP} -Lr *.nix zsh customPkgs /etc/nixos/.
 
 # Performs nixos-rebuilds against the nixpkgs version of this system
 #
