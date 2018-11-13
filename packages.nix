@@ -43,7 +43,6 @@
     udisks2
     unzip
     usbutils
-    vym
     w3m
     wget
     whois

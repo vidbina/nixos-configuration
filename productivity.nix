@@ -6,5 +6,6 @@
     tasksh
     taskwarrior
     timewarrior
+    vym
   ];
 }
