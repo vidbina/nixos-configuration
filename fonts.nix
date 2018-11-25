@@ -5,11 +5,8 @@
     enableFontDir = true;
     enableGhostscriptFonts = true;
     fonts = with pkgs; [
-      dejavu_fonts
+      powerline-fonts
       font-awesome-ttf
-      noto-fonts
-      noto-fonts-cjk
-      noto-fonts-emoji
     ];
   };
 }
