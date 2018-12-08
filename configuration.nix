@@ -34,6 +34,7 @@
     ./media.nix
     ./net.nix
     ./productivity.nix
+    ./sec.nix
     ./temp.nix
     ./terminal.nix
     ./tron.nix      # tools for electronics engineering
