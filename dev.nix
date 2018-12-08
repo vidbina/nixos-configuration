@@ -14,6 +14,7 @@
     glibc
     gnumake
     go
+    htmlTidy
     jq
     mitscheme
     neovim
