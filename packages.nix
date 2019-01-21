@@ -35,6 +35,7 @@
     screenfetch
     scrot
     st
+    tabbed
     tcpdump
     tmux
     transmission       # for Torrent downloads
