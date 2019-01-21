@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     cool-retro-term
+    terminator
     termite
   ];
 
