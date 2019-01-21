@@ -12,7 +12,7 @@
 
     ./users.nix
 
-    ./packages.nix
+    ./utils.nix
 
     ./audio.nix
     ./browser.nix
