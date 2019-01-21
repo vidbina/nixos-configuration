@@ -5,5 +5,6 @@
     minicom
     kicad
     xoscope
+    nextpnr
   ];
 }
