@@ -49,7 +49,7 @@ in
     evince
     haskellPackages.pandoc
     haskellPackages.pandoc-citeproc
-    libreoffice
+    #libreoffice
     pdftk
     scim
     (texlive.combine {
