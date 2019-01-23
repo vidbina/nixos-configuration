@@ -3,8 +3,8 @@
 {
   environment.systemPackages = with pkgs; [
     bc
-    octave
-    rstudio
+    #octave
+    #rstudio
   ];
 }
 
