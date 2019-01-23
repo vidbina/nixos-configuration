@@ -2,10 +2,10 @@
 
 {
   environment.systemPackages = with pkgs; [
-    acpi
-    apvlv
+    acpi               # show batt status and other ACPI info
+    apvlv              # pdf reader
     arandr
-    ctags
+    ctags              # generate tags
     curl
     dbus-map
     entr
@@ -15,21 +15,22 @@
     gnome3.eog         # for image viewing
     gnupg22
     gucharmap          # GUI charmap
-    hardinfo
+    hardinfo           # system profiler and benchmark tool
     htop               # for viewing process metrics
-    iotop
     indent
+    iotop
     libnotify
     mc
+    networkmanagerapplet
+    nix
     nix-prefetch-git
     nixpkgs-lint
-    nix
     pass
     pciutils
-    pmtools
+    pmtools            # ACPI utils
     pstree
-    python36           # we all need a python interpreter sometimes
     pv
+    python36           # we all need a python interpreter sometimes
     ranger             # TUI file mananager
     #redshift
     screenfetch
@@ -47,10 +48,8 @@
     w3m
     wget
     whois
-    xautolock
     xclip
     xfe                # GUI file manager
-    xlockmore
     xorg.xev
     xorg.xhost
     xorg.xkbcomp
@@ -59,6 +58,5 @@
     xsel
     xtrlock-pam
     zip
-    #./customPkgs/qeletrotech
   ];
 }
