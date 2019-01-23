@@ -3,22 +3,22 @@
 {
   environment.systemPackages = with pkgs; [
     (import ./emacs.nix { inherit pkgs; })
-    asciinema
-    bazaar
+    #asciinema
+    #bazaar
     cmakeCurses
-    darcs
+    #darcs
     gdb
-    ghc
+    #ghc
     git
     git-lfs
     glibc
     gnumake
     go
-    htmlTidy
-    jq
-    mitscheme
+    #htmlTidy
+    #jq
+    #mitscheme
     neovim
-    stdenv
+    #stdenv
     xxd
   ];
 
