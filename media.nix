@@ -6,7 +6,7 @@
   environment.systemPackages = with pkgs; [
     mpv
     playerctl
-    spotify
+    #spotify
     vlc
     youtube-dl
   ];
