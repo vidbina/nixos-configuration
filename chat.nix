@@ -3,7 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     irssi
-    skypeforlinux
+    #skypeforlinux
     telegram-cli
     (tdesktop.overrideAttrs(oldAttrs: rec {
       nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [
