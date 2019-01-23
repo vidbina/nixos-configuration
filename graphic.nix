@@ -14,7 +14,7 @@ let
 in
 {
   environment.systemPackages = with pkgs; [
-    blender
+    #blender
     dia
     fontforge-dev
     gimp
