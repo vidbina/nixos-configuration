@@ -14,32 +14,34 @@
 
     ./utils.nix
 
+    # basics
+    ./dev.nix
+    ./docker.nix
+    ./fonts.nix
+    ./interfacing.nix
+    ./terminal.nix
+    ./xmonad.nix
+    ./net.nix
+
+    # other
     ./audio.nix
     ./browser.nix
-    ./cad.nix       # CAD tools (mostly 3d)
+    #./cad.nix       # CAD tools (mostly 3d)
     ./chat.nix
     ./crypto.nix
-    ./dev.nix
-    ./dev.nix
     ./doc.nix
-    ./docker.nix
-    ./eid.nix       # eID packages
-    ./fonts.nix
+    #./eid.nix       # eID packages
     ./games.nix
-    ./graphic.nix   # tools for graphics editing and design
-    #./i3.nix
-    ./interfacing.nix
+    #./graphic.nix   # tools for graphics editing and design
+    ##./i3.nix
     ./mail.nix
     ./math.nix
-    ./media.nix
-    ./net.nix
+    #./media.nix
     ./productivity.nix
-    ./sec.nix
-    ./temp.nix
-    ./terminal.nix
-    ./tron.nix      # tools for electronics engineering
-    ./unity3d.nix
-    ./virt.nix
-    ./xmonad.nix
+    #./sec.nix
+    #./temp.nix
+    #./tron.nix      # tools for electronics engineering
+    #./unity3d.nix
+    #./virt.nix
   ];
 }
