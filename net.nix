@@ -2,19 +2,18 @@
 
 {
   environment.systemPackages = with pkgs; [
-    bind
-    freerdp
-    iftop
-    ipfs
-    ldns
-    openfortivpn
+    #bind
+    #freerdp
+    #iftop
+    #ipfs
+    #ldns
+    #openfortivpn
     openssl
     openvpn
     netcat
-    networkmanagerapplet
     nmap
-    telnet
-    tor
+    #telnet
+    #tor
   ];
 
   programs = {
