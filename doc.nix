@@ -52,35 +52,35 @@ in
     #libreoffice
     pdftk
     scim
-    (texlive.combine {
-      inherit (texlive)
-      scheme-basic
+    #(texlive.combine {
+    #  inherit (texlive)
+    #  scheme-basic
 
-      babel-german
-      biblatex
-      collection-langeuropean
-      collection-basic
-      collection-fontsrecommended
-      collection-latexrecommended
-      #graphics-def
-      etoolbox
-      datetime
-      fmtcount
-      german
-      IEEEtran
-      lastpage
-      layouts
-      logreq
-      pdfcrop
-      realscripts
-      tabu
-      varwidth
-      xetex
-      graphics-def
-      xltxtra
-      xstring;
-      inherit redefinedInvoice;
-    })
+    #  babel-german
+    #  biblatex
+    #  collection-langeuropean
+    #  collection-basic
+    #  collection-fontsrecommended
+    #  collection-latexrecommended
+    #  #graphics-def
+    #  etoolbox
+    #  datetime
+    #  fmtcount
+    #  german
+    #  IEEEtran
+    #  lastpage
+    #  layouts
+    #  logreq
+    #  pdfcrop
+    #  realscripts
+    #  tabu
+    #  varwidth
+    #  xetex
+    #  graphics-def
+    #  xltxtra
+    #  xstring;
+    #  inherit redefinedInvoice;
+    #})
     qpdfview
     xournal
     xpdf
