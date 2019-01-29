@@ -25,7 +25,7 @@
     nix
     nix-prefetch-git
     nixpkgs-lint
-    pass
+    (pass.withExtensions (exts: [ exts.pass-otp ]))
     pciutils
     pmtools            # ACPI utils
     pstree
