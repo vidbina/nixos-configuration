@@ -8,6 +8,7 @@
     ctags              # generate tags
     curl
     dbus-map
+    dict
     entr
     exfat              # for handling FAT partitions
     file
