@@ -16,11 +16,11 @@ in
   environment.systemPackages = with pkgs; [
     #blender
     dia
-    fontforge-dev
+    #fontforge-dev
     gimp
-    glxinfo
+    glxinfo # test utils for OpenGL
     graphviz
-    gmsh
+    #gmsh
     imagemagick
     inkscape
   ];
