@@ -13,7 +13,7 @@ MY_NIXPKGS_LOCAL_ARGS=-I nixos=${HOME}/nixpkgs/nixos -I nixpkgs=${HOME}/nixpkgs
 #		prior to invoking any of the "remote" rules will override the default
 #		values of the following variables:
 MY_NIXPKGS_REPO?=https://github.com/NixOS/nixpkgs
-MY_NIXPKGS_BRANCH?=06fb0253afabb8cc7dc85db742e2de94a4d68ca0
+MY_NIXPKGS_BRANCH?=ea0820818a7bfd9086d021122c6e23f24d166be7
 
 # Sets up /etc/nixos and performs a switch
 #
