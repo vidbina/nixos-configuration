@@ -49,7 +49,8 @@ in
     evince
     haskellPackages.pandoc
     haskellPackages.pandoc-citeproc
-    #libreoffice
+    libreoffice
+    okular
     pdftk
     scim
     #(texlive.combine {
