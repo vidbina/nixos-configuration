@@ -38,7 +38,7 @@
     ./math.nix
     #./media.nix
     ./productivity.nix
-    #./sec.nix
+    ./sec.nix
     #./temp.nix
     #./tron.nix      # tools for electronics engineering
     #./unity3d.nix
