@@ -3,7 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     acpi               # show batt status and other ACPI info
-    apvlv              # pdf reader
+    #apvlv              # pdf reader
     arandr
     ctags              # generate tags
     curl
@@ -58,6 +58,7 @@
     xorg.xprop
     xsel
     xtrlock-pam
+    zbar
     zip
   ];
 }

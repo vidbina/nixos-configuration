@@ -82,7 +82,7 @@ in
     #  xstring;
     #  inherit redefinedInvoice;
     #})
-    qpdfview
+    #qpdfview
     xournal
     xpdf
     zathura

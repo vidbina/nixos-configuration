@@ -9,6 +9,7 @@
     #spotify
     vlc
     youtube-dl
+    shotcut
   ];
 }
 

@@ -74,7 +74,7 @@
     serviceConfig = {
       Type = "dbus";
       BusName = "org.freedesktop.Notifications";
-      ExecStart = "${pkgs.dunst}/bin/dunst";
+      ExecStart = "${pkgs.dunst}/bin/dunst -print";
     };
   };
 }
