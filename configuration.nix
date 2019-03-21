@@ -26,7 +26,7 @@
     # other
     ./audio.nix
     ./browser.nix
-    #./cad.nix       # CAD tools (mostly 3d)
+    ./cad.nix       # CAD tools (mostly 3d)
     ./chat.nix
     ./crypto.nix
     ./doc.nix
