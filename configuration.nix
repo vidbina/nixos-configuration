@@ -36,7 +36,7 @@
     ##./i3.nix
     ./mail.nix
     ./math.nix
-    #./media.nix
+    ./media.nix
     ./productivity.nix
     ./sec.nix
     #./temp.nix

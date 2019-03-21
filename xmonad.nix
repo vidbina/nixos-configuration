@@ -7,7 +7,6 @@
     dmenu
     dzen2
     gmrun
-    #haskellPackages.taffybar
     haskellPackages.xmobar
     hsetroot
   ];

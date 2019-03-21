@@ -3,7 +3,6 @@
 {
   environment.systemPackages = with pkgs; [
     acpi               # show batt status and other ACPI info
-    #apvlv              # pdf reader
     arandr
     ctags              # generate tags
     curl
@@ -42,7 +41,7 @@
     tmux
     transmission       # for Torrent downloads
     trayer
-    tree # pkgs/tools/system/tree
+    tree               # pkgs/tools/system/tree
     udisks2
     unzip
     usbutils

@@ -7,7 +7,6 @@
     #iftop
     #ipfs
     #ldns
-    #openfortivpn
     openssl
     openvpn
     netcat
