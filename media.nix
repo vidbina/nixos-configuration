@@ -6,9 +6,9 @@
   environment.systemPackages = with pkgs; [
     mpv
     playerctl
+    shotcut
     vlc
     youtube-dl
-    shotcut
   ];
 }
 
