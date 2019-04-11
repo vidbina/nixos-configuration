@@ -32,7 +32,7 @@
     pv
     python36           # we all need a python interpreter sometimes
     ranger             # TUI file mananager
-    #redshift
+    redshift
     screenfetch
     scrot
     st

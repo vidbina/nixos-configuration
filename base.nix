@@ -85,10 +85,10 @@ in {
       enable = true;
     };
 
-    #redshift = {
-    #  enable = true;
-    #  provider = "geoclue2";
-    #};
+    redshift = {
+      enable = false;
+      provider = "geoclue2";
+    };
 
     nixosManual.showManual = true;
 
