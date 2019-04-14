@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    #bind
+    bind
     #freerdp
     #iftop
     #ipfs
