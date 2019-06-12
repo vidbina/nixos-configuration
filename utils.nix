@@ -14,6 +14,7 @@
     fzf
     gnome3.eog         # for image viewing
     gnupg22
+    gotop
     gucharmap          # GUI charmap
     hardinfo           # system profiler and benchmark tool
     htop               # for viewing process metrics
