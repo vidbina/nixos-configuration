@@ -42,6 +42,6 @@
     #./temp.nix
     ./tron.nix      # tools for electronics engineering
     #./unity3d.nix
-    #./virt.nix
+    ./virt.nix
   ];
 }

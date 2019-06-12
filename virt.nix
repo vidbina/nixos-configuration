@@ -7,7 +7,13 @@
     qemu
   ];
 
-  virtualisation.virtualbox.host.enable = true;
-
-  nixpkgs.config.virtualbox.enableExtensionPack = true;
+  virtualisation.virtualbox = {
+    guest = {
+      enable = true;
+    };
+    host = {
+      enable = true;
+      enableExtensionPack = true;
+    };
+  };
 }
