@@ -2,9 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    packer
-    vagrant
-    qemu
+    minikube
   ];
 
   virtualisation.virtualbox = {
