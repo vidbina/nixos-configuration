@@ -26,7 +26,7 @@
     firewall.enable = true;
 
     # Open ports in the firewall.
-    # firewall.allowedTCPPorts = [ ... ];
+    firewall.allowedTCPPorts = [ ];
     # firewall.allowedUDPPorts = [ ... ];
     networkmanager = {
       enable = true;
