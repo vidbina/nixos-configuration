@@ -81,3 +81,26 @@ remote endpoint is that of a branch, and you are not the maintainer of that
 endpoint you will have to exercise the same caution that you practiced when
 invoking `upgrade-test` or `upgrade-switch` rules since packages could be
 removed or renamed between revisions.
+
+## OpenVPN
+
+In order to configure OpenVPN provide a config/openvpn.nix file with
+your configuration as follows:
+
+```
+{
+  servers = {
+    tcp-config-one = {
+      autoStart = false;
+      updateResolvConf = true;
+      config = ''
+        config /home/user/path/to/openvpn-config-for-one.ovpn
+        auth-user-pass /path/to/torguard-pass-file.txt
+        '';
+    };
+  };
+}
+```
+
+where the paths for config and auth-user-pass are updated to reflect
+the paths of the files on your system.
