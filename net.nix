@@ -65,6 +65,9 @@
         "91.217.137.37"   # ns5.ru.dns.opennic.glue (Sponsored by subnets.ru)
       ];
     };
+
+    openvpn = import ./config/openvpn.nix;
+
     openssh = {
       enable = true;
       listenAddresses = [
