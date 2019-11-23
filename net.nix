@@ -23,11 +23,16 @@
   };
 
   networking = {
-    firewall.enable = true;
+    enableIPv6 = false;
 
-    # Open ports in the firewall.
-    firewall.allowedTCPPorts = [ ];
-    # firewall.allowedUDPPorts = [ ... ];
+    firewall = {
+      enable = true;
+
+      allowPing = false;
+      allowedTCPPorts = [ ];
+      allowedUDPPorts = [ ];
+    };
+
     networkmanager = {
       enable = true;
       insertNameservers = [
