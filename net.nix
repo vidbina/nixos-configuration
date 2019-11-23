@@ -66,7 +66,30 @@
       ];
     };
 
-    openvpn = import ./config/openvpn.nix;
+    openvpn = let
+      describeConnection = {
+        handle,
+        configFile,
+        passFile,
+        autoStart ? false,
+        updateResolvConf ? true,
+      }: {
+        "${handle}" = {
+          autoStart = autoStart;
+          updateResolvConf = updateResolvConf;
+          config = ''
+            config ${configFile}
+            auth-user-pass ${passFile}
+            '';
+        };
+      };
+    in {
+      servers = builtins.foldl'
+        (acc: val: acc // describeConnection(val))
+        {}
+        (import ./config/openvpn.nix { toUpper = pkgs.stdenv.lib.toUpper; });
+    };
+
 
     openssh = {
       enable = true;

@@ -84,10 +84,10 @@ removed or renamed between revisions.
 
 ## OpenVPN
 
-In order to configure OpenVPN provide a config/openvpn.nix file with
-your configuration as follows:
+In order to configure OpenVPN, override the `openvpn` configuration in net.nix
+to comply with the following format:
 
-```
+```nix
 {
   servers = {
     tcp-config-one = {
@@ -95,7 +95,7 @@ your configuration as follows:
       updateResolvConf = true;
       config = ''
         config /home/user/path/to/openvpn-config-for-one.ovpn
-        auth-user-pass /path/to/torguard-pass-file.txt
+        auth-user-pass /path/to/myprovider-pass-file.txt
         '';
     };
   };
@@ -104,3 +104,58 @@ your configuration as follows:
 
 where the paths for config and auth-user-pass are updated to reflect
 the paths of the files on your system.
+
+Alternatively, leave the helpers defined in the `let` block of the openvpn
+attribute in net.nix as is and provide a config/openvpn.nix file with the
+configuration as follows:
+
+```nix
+{ toUpper }:
+let
+  regions = [
+    ["de" "Germany"]
+    ["nl" "Netherlands"]
+    ["us-nyc" "USA-NEW-YORK"]
+  ];
+  builder = { region ? [], kind ? "tcp" }:
+  let
+    locationIdentifier = builtins.elemAt region 0;
+    locationName = builtins.elemAt region 1;
+  in {
+    handle = "${toUpper(kind)}-${toUpper(locationIdentifier)}";
+    configFile = "/home/user/path/to/${kind}-openvpn-config-for-${locationName}.ovpn";
+    passFile = "/path/to/myprovider-pass-file.txt";
+  };
+in
+  builtins.foldl' (acc: val: acc ++ [(builder {
+    region = val;
+    kind = "tcp";
+  })]) [] regions ++
+  builtins.foldl' (acc: val: acc ++ [(builder {
+    region = val;
+    kind = "udp";
+  })]) [] regions
+```
+
+in order to dynamically generate your configuration in case you have many
+configurations that share some common properties.
+
+The example above, generates a configuration of the following OpenVPN
+configurations with their corresponding .ovpn files:
+ - `tcp-DE` at `/home/user/path/to/tcp-openvpn-config-for-Germany.ovpn`
+ - `tcp-NL` at `/home/user/path/to/tcp-openvpn-config-for-Netherlands.ovpn`
+ - `tcp-US-NYC` at `/home/user/path/to/tcp-openvpn-config-for-USA-NEW-YORK.ovpn`
+ - `udp-DE` at `/home/user/path/to/udp-openvpn-config-for-Germany.ovpn`
+ - `udp-NL` at `/home/user/path/to/udp-openvpn-config-for-Netherlands.ovpn`
+ - `udp-US-NYC` at `/home/user/path/to/udp-openvpn-config-for-USA-NEW-YORK.ovpn`
+where all configurations share the same passFile and naming scheme such that
+we're able to derive the necessary attributes from a smaller collection of
+inputs.
+
+In summary, `config/openvpn.nix` contains a function that receives some
+functions needed for the internal housekeeping and simply returns a list of
+attrsets. In the provided example, we just needed to provide the `toUpper`
+helper and then just fold over a list of regions to generate the list
+for the helper in net.nix. In case this is just too messy for you, revert to
+the instructions at the head of this paragraph for a much easier but possibly
+more verbose setup. :wink:
