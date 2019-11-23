@@ -35,15 +35,15 @@
 
     networkmanager = {
       enable = true;
-      insertNameservers = [
-        "127.0.0.1"
-      ];
-      packages = with pkgs; [
-        networkmanager_openvpn
-      ];
+
       dns = "dnsmasq";
+      insertNameservers = [ "127.0.0.1" ];
+      packages = with pkgs; [ networkmanager_openvpn ];
     };
-    # wireless.enable = wlp58s0;  # Enables wireless support via wpa_supplicant.
+
+    wireless = {
+      enable = false;
+    };
   };
 
   services = {
@@ -92,9 +92,10 @@
       servers = builtins.foldl'
         (acc: val: acc // describeConnection(val))
         {}
-        (import ./config/openvpn.nix { toUpper = pkgs.stdenv.lib.toUpper; });
+        (import ./config/openvpn.nix {
+          toUpper = pkgs.stdenv.lib.toUpper;
+        });
     };
-
 
     openssh = {
       enable = true;
