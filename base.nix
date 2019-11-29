@@ -1,6 +1,31 @@
 { config, pkgs, ... }:
 
 let
+  timeZones = rec {
+    CET = berlin;
+    ET = nyc; # https://en.wikipedia.org/wiki/Eastern_Time_Zone
+    PT = la; # https://en.wikipedia.org/wiki/Pacific_Time_Zone
+    bangkok = {
+      # https://tools.wmflabs.org/geohack/geohack.php?pagename=Thailand&params=13_45_N_100_29_E_type:city
+      latitude = 13.75; longitude = 100.483333;
+    };
+    berlin = {
+      # https://tools.wmflabs.org/geohack/geohack.php?pagename=Berlin&params=52_31_00_N_13_23_20_E_type:city(3748148)_region:DE-BE
+      latitude = 52.516667; longitude = 13.388889;
+    };
+    nyc = {
+      # https://tools.wmflabs.org/geohack/geohack.php?pagename=New_York_City&params=40.661_N_73.944_W_region:US-NY_type:city(8175133)
+      latitude = 40.661; longitude = -73.944;
+    };
+    la = {
+      # https://tools.wmflabs.org/geohack/geohack.php?pagename=Los_Angeles&params=34_03_N_118_15_W_region:US-CA_type:city(3792621)
+      latitudue = 34.05; longitude = -118.25;
+    };
+    paramaribo = {
+      # https://tools.wmflabs.org/geohack/geohack.php?pagename=Paramaribo&params=5_51_8_N_55_12_14_W_region:SR_type:city(240924)
+      latitude = 5.852222; longitude = -55.203889;
+    };
+  };
   lowBatteryNotifier = pkgs.writeScript "lowBatteryNotifier"
   ''
       BAT_PCT=`${pkgs.acpi}/bin/acpi -b | ${pkgs.gnugrep}/bin/grep -P -o '[0-9]+(?=%)'`
@@ -68,6 +93,10 @@ in {
     };
   };
 
+  location = {
+    provider = "manual";
+  } // timeZones.bangkok;
+
   # List services that you want to enable:
   services = {
     acpid = {
@@ -87,7 +116,6 @@ in {
 
     redshift = {
       enable = false;
-      provider = "geoclue2";
     };
 
     nixosManual.showManual = true;
