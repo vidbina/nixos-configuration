@@ -88,6 +88,7 @@
         passFile,
         autoStart ? false,
         updateResolvConf ? true,
+        additionalConfig ? "",
       }: {
         "${handle}" = {
           autoStart = autoStart;
@@ -95,6 +96,7 @@
           config = ''
             config ${configFile}
             auth-user-pass ${passFile}
+            ${additionalConfig}
             '';
         };
       };
