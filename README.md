@@ -22,7 +22,12 @@ switch operations. :wink:
 
 By simlinking the overlays directory to ~/.config/nixpkgs/overlays.
 
-> In both `nixos-rebuild test` as in `nixos-rebuild switch` all changes are actually installed. The only difference is that `nixos-rebuild switch` persists the changes by adding a new generation that shows up in the bootlist. In the test case the installed changes are in your nixos store until you clean it up. This is why subsequent `nixos-rebuild` operations is so much faster -- a lot of data is cached from a previous build. :wink:
+> In both `nixos-rebuild test` as in `nixos-rebuild switch` all changes are
+> actually installed. The only difference is that `nixos-rebuild switch`
+> persists the changes by adding a new generation that shows up in the
+> bootlist. In the test case the installed changes are in your nixos store
+> until you clean it up. This is why subsequent `nixos-rebuild` operations are
+> much faster -- a lot of data is cached from a previous build. :wink:
 
 ### The easy way
 
