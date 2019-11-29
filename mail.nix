@@ -5,7 +5,6 @@
     msmtp
     neomutt
     offlineimap
-    sup
     thunderbird
   ];
 }
