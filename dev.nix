@@ -19,6 +19,7 @@
     #mitscheme
     neovim
     #stdenv
+    sqlite_3_30
     xxd
   ];
 
