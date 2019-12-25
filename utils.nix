@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     acpi               # show batt status and other ACPI info
     arandr
+    beep
     ccze
     ctags              # generate tags
     curl

@@ -15,14 +15,15 @@
       cryptHomeLuks = "/dev/store/store";
       home = "/store/vidbina.home";
       extraGroups = [
+        "beep"
         "dialout"
         "docker"
         "lp"
         "network"
         "networkmanager"
-        "wheel"
         "vboxsf"
         "vboxusers"
+        "wheel"
         "wireshark"
       ];
       initialPassword = "#unsecure";
