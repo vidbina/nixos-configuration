@@ -9,11 +9,11 @@
     users.vidbina = {
       isNormalUser = true;
       uid = 1988;
-      name = "vid";
-      description = "David Asabina <vid@bina>";
+      name = "vidbina";
+      description = "David Asabina <vid@bina.me>";
       createHome = true;
       cryptHomeLuks = "/dev/store/store";
-      home = "/store/vidbina.home";
+      home = "/home/vidbina";
       extraGroups = [
         "beep"
         "dialout"

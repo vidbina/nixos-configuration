@@ -63,7 +63,7 @@ in {
     ];
   };
 
-  fileSystems."/store" = {
+  fileSystems."/home" = {
     device = "/dev/mapper/store-store";
     fsType = "btrfs";
   };
