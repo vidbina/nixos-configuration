@@ -23,5 +23,6 @@ in
     #gmsh
     imagemagick
     inkscape
+    scribus
   ];
 }
