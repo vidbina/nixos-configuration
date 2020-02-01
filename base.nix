@@ -68,6 +68,13 @@ in {
     fsType = "btrfs";
   };
 
+  fileSystems."/nix" = {
+    device = "/dev/nvme0n1p6";
+    fsType = "btrfs";
+    neededForBoot = true;
+    options = [ "noatime" ];
+  };
+
 #  fileSystems."/home" = {
 #    device = "/dev/disk/by-label/store";
 #    fsType = "btrfs";
