@@ -27,7 +27,7 @@
         mkdir -p $out/bin $out/share/java
         cp -v $src $out/share/java/josm.jar
 
-        makeWrapper ${jre10}/bin/java $out/bin/josm \
+        makeWrapper ${jdk11}/bin/java $out/bin/josm \
           --add-flags "-Dsun.java2d.uiScale=1.3" \
           --add-flags "-jar $out/share/java/josm.jar"
 
