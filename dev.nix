@@ -14,8 +14,9 @@
     glibc
     gnumake
     go
+    httpie
     #htmlTidy
-    #jq
+    jq
     #mitscheme
     neovim
     #stdenv

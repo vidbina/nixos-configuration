@@ -4,7 +4,6 @@
   environment.systemPackages = with pkgs; [
     chromium
     firefox
-    httpie
     qutebrowser
   ];
 
