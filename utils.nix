@@ -22,6 +22,7 @@
     htop               # for viewing process metrics
     indent
     iotop
+    jmtpfs
     (josm.overrideAttrs(oldAttrs: rec {
       buildCommand = ''
         mkdir -p $out/bin $out/share/java
