@@ -21,6 +21,7 @@
     neovim
     #stdenv
     sqlite_3_30_1
+    subversion
     xxd
   ];
 
