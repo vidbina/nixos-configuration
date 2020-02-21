@@ -3,12 +3,13 @@
 {
   environment.systemPackages = with pkgs; [
     (import ./emacs.nix { inherit pkgs; })
-    #asciinema
-    #bazaar
+    asciinema
+    bazaar
     cmakeCurses
-    #darcs
+    darcs
+    # deno # WIP
     gdb
-    #ghc
+    ghc
     git
     git-lfs
     glibc
