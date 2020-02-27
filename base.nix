@@ -100,10 +100,6 @@ in {
     };
   };
 
-  location = {
-    provider = "manual";
-  } // timeZones.bangkok;
-
   # List services that you want to enable:
   services = {
     acpid = {
@@ -172,4 +168,12 @@ in {
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
+  # Example values:
+  #   America/Los_Angeles
+  #   America/Mexico_City
+  #   America/New_York
+  #   America/Paramaribo
+  #   Asia/Bangkok
+  #   Europe/Amsterdam
+  #   Europe/Berlin
 }
