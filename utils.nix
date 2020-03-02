@@ -2,42 +2,46 @@
 
 {
   environment.systemPackages = with pkgs; [
-    acpi               # show batt status and other ACPI info
+    acpi # show batt status and other ACPI info
     arandr
     beep
     ccze
-    ctags              # generate tags
+    ctags # generate tags
     curl
     dbus-map
     dict
     entr
-    exfat              # for handling FAT partitions
+    exfat # for handling FAT partitions
     file
     fzf
-    gnome3.eog         # for image viewing
+    gnome3.eog # for image viewing
     gnupg22
     gotop
-    gucharmap          # GUI charmap
-    hardinfo           # system profiler and benchmark tool
-    htop               # for viewing process metrics
+    gucharmap # GUI charmap
+    hardinfo # system profiler and benchmark tool
+    htop # for viewing process metrics
     indent
     iotop
     jmtpfs
-    (josm.overrideAttrs(oldAttrs: rec {
-      buildCommand = ''
-        mkdir -p $out/bin $out/share/java
-        cp -v $src $out/share/java/josm.jar
+    (
+      josm.overrideAttrs (
+        oldAttrs: rec {
+          buildCommand = ''
+            mkdir -p $out/bin $out/share/java
+            cp -v $src $out/share/java/josm.jar
 
-        makeWrapper ${jdk11}/bin/java $out/bin/josm \
-          --add-flags "-Dsun.java2d.uiScale=1.3" \
-          --add-flags "-jar $out/share/java/josm.jar"
+            makeWrapper ${jdk11}/bin/java $out/bin/josm \
+              --add-flags "-Dsun.java2d.uiScale=1.3" \
+              --add-flags "-jar $out/share/java/josm.jar"
 
-        mkdir -p $out/share/applications
-        cp $desktopItem/share/applications"/"* $out/share/applications
-        mkdir -p $out/share/pixmaps
-        ${unzip}/bin/unzip -p $src images/logo_48x48x32.png > $out/share/pixmaps/josm.png
-      '';
-    }))
+            mkdir -p $out/share/applications
+            cp $desktopItem/share/applications"/"* $out/share/applications
+            mkdir -p $out/share/pixmaps
+            ${unzip}/bin/unzip -p $src images/logo_48x48x32.png > $out/share/pixmaps/josm.png
+          '';
+        }
+      )
+    )
     libnotify
     mc
     networkmanagerapplet
@@ -47,11 +51,11 @@
     nixpkgs-lint
     (pass.withExtensions (exts: [ exts.pass-otp ]))
     pciutils
-    pmtools            # ACPI utils
+    pmtools # ACPI utils
     pstree
     pv
-    python36           # we all need a python interpreter sometimes
-    ranger             # TUI file mananager
+    python36 # we all need a python interpreter sometimes
+    ranger # TUI file mananager
     redshift
     screenfetch
     scrot
@@ -59,9 +63,9 @@
     tabbed
     tcpdump
     tmux
-    transmission       # for Torrent downloads
+    transmission # for Torrent downloads
     trayer
-    tree               # pkgs/tools/system/tree
+    tree # pkgs/tools/system/tree
     udisks2
     unzip
     usbutils
@@ -69,7 +73,7 @@
     wget
     whois
     xclip
-    xfe                # GUI file manager
+    xfe # GUI file manager
     xorg.xev
     xorg.xhost
     xorg.xkbcomp

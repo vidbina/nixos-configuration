@@ -29,8 +29,8 @@
       enable = true;
 
       allowPing = false;
-      allowedTCPPorts = [ ];
-      allowedUDPPorts = [ ];
+      allowedTCPPorts = [];
+      allowedUDPPorts = [];
     };
 
     networkmanager = {
@@ -74,40 +74,45 @@
           ipv4 = [ "9.9.9.11" "149.112.112.11" ];
           ipv6 = [ "2620:fe::11" "2620:fe::fe:11" ];
         };
-      in builtins.foldl' (acc: val: acc ++ val.ipv4) [] [
-        cloudflare
-        ethservices-ns31
-        quad9-edns
-      ];
+      in
+        builtins.foldl' (acc: val: acc ++ val.ipv4) [] [
+          cloudflare
+          ethservices-ns31
+          quad9-edns
+        ];
     };
 
     openvpn = let
-      describeConnection = {
-        handle,
-        configFile,
-        passFile,
-        autoStart ? false,
-        updateResolvConf ? true,
-        additionalConfig ? "",
-      }: {
-        "${handle}" = {
-          autoStart = autoStart;
-          updateResolvConf = updateResolvConf;
-          config = ''
-            config ${configFile}
-            auth-user-pass ${passFile}
-            ${additionalConfig}
+      describeConnection =
+        { handle
+        , configFile
+        , passFile
+        , autoStart ? false
+        , updateResolvConf ? true
+        , additionalConfig ? ""
+        ,
+        }: {
+          "${handle}" = {
+            autoStart = autoStart;
+            updateResolvConf = updateResolvConf;
+            config = ''
+              config ${configFile}
+              auth-user-pass ${passFile}
+              ${additionalConfig}
             '';
+          };
         };
+    in
+      {
+        servers = builtins.foldl'
+          (acc: val: acc // describeConnection (val))
+          {}
+          (
+            import ./config/openvpn.nix {
+              toUpper = pkgs.stdenv.lib.toUpper;
+            }
+          );
       };
-    in {
-      servers = builtins.foldl'
-        (acc: val: acc // describeConnection(val))
-        {}
-        (import ./config/openvpn.nix {
-          toUpper = pkgs.stdenv.lib.toUpper;
-        });
-    };
 
     openssh = {
       enable = true;

@@ -26,6 +26,5 @@
     xxd
   ];
 
-  nixpkgs.config = {
-  };
+  nixpkgs.config = {};
 }

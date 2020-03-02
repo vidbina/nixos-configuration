@@ -2,8 +2,8 @@
 
 {
   environment.systemPackages = with pkgs; [
-    dunst              # for displaying IBus Notifications
-    ibus-with-plugins  # for handling input modes (emojis too)
+    dunst # for displaying IBus Notifications
+    ibus-with-plugins # for handling input modes (emojis too)
   ];
 
   i18n.inputMethod = {
@@ -38,7 +38,7 @@
     enable = true;
     naturalScrolling = true;
     clickMethod = "clickfinger";
-#   scrollMethod = "twofinger";
+    #   scrollMethod = "twofinger";
     disableWhileTyping = true;
     tapping = false;
   };
@@ -60,7 +60,7 @@
 
   systemd.user.services.dunst = {
     enable = true;
-    description  = "Dunst: libnotify client";
+    description = "Dunst: libnotify client";
     documentation = [
       "man:dunst(1)"
     ];

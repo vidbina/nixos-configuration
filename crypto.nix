@@ -5,4 +5,3 @@
 
   #services.trezord.enable = true;
 }
-
