@@ -15,6 +15,7 @@
     glibc
     gnumake
     go
+    haskellPackages.hlint
     httpie
     #htmlTidy
     jq
