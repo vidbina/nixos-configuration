@@ -43,6 +43,7 @@
     networkmanagerapplet
     nix
     nix-prefetch-git
+    nixpkgs-fmt
     nixpkgs-lint
     (pass.withExtensions (exts: [ exts.pass-otp ]))
     pciutils
