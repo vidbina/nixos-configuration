@@ -22,6 +22,7 @@
     httpie
     jq
     neovim
+    shfmt
     sqlite_3_30_1
     subversion
     xxd
