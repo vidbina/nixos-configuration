@@ -19,10 +19,11 @@ in
     #fontforge-dev
     gimp
     glxinfo # test utils for OpenGL
-    graphviz
     #gmsh
+    graphviz
     imagemagick
     inkscape
+    krita
     scribus
   ];
 }
