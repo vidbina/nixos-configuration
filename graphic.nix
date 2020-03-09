@@ -14,6 +14,7 @@ let
 in
 {
   environment.systemPackages = with pkgs; [
+    aseprite-unfree
     #blender
     dia
     #fontforge-dev
