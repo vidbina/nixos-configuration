@@ -151,7 +151,7 @@ in
   };
 
   # Set your time zone.
-  time.timeZone = "America/Mexico_City";
+  time.timeZone = "America/Los_Angeles";
   # Example values:
   #   America/Los_Angeles
   #   America/Mexico_City
