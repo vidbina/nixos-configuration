@@ -15,7 +15,7 @@ in
 {
   environment.systemPackages = with pkgs; [
     aseprite-unfree
-    #blender
+    blender
     dia
     #fontforge-dev
     gimp
