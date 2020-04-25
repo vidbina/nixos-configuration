@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     khal
+    planner
     tasksh
     taskwarrior
     timewarrior
