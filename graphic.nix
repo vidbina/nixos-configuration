@@ -17,7 +17,7 @@ in
     aseprite-unfree
     blender
     dia
-    #fontforge-dev
+    fontforge-gtk
     gimp
     glxinfo # test utils for OpenGL
     #gmsh
