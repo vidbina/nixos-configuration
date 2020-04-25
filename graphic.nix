@@ -25,6 +25,7 @@ in
     imagemagick
     inkscape
     krita
+    plantuml
     scribus
   ];
 }
