@@ -9,11 +9,11 @@ MY_NIXPKGS_LOCAL_ARGS=-I nixos=${HOME}/nixpkgs/nixos -I nixpkgs=${HOME}/nixpkgs
 # Git repository and branch in which I keep the nixpkgs which I want to install
 #
 #		The MY_NIXPKGS_* variables are only used in the remote rules (remote-test
-#		and remote-switch). Defining MY_NIXPKGS_REPO and/or MY_NIXPKGS_BRANCH
-#		prior to invoking any of the "remote" rules will override the default
-#		values of the following variables:
+#		and remote-switch). Defining MY_NIXPKGS_REPO and/or MY_NIXPKGS_COMMIT prior
+#		to invoking any of the "remote" rules will override the default values of
+#		the following variables:
 MY_NIXPKGS_REPO?=https://github.com/NixOS/nixpkgs
-MY_NIXPKGS_BRANCH?=e10c65cdb35b6a66491e47e5a85f5d456b4f4eea
+MY_NIXPKGS_COMMIT?=9642f121eb1ac508c088bb021445934596c6f078
 
 # Sets up /etc/nixos and performs a switch
 #
@@ -80,18 +80,18 @@ local-switch:
 #
 # 	The remote rules facilitate nixos-rebuilds against an repository archive as
 # 	indicated by MY_NIXPKGS_REPO. By maintaining the branch as specified by
-# 	MY_NIXPKGS_BRANCH, one can provide an online nixpkgs archive that should
-# 	result to identical package versions between all machines that nixos-rebuild
-# 	against this archive.
+# 	MY_NIXPKGS_COMMIT, one can provide an online nixpkgs archive that should
+# 	result to identical package versions between all machines that
+# 	nixos-rebuild against this archive.
 #
 # 	NOTE: When a change is made to the specified branch, one should invoke
 # 	these rules on all the machines that are build against the branch in order
 # 	to ensure package version parity between machines.
 remote-test:
-	${SUDO} ${NIXOS_REBUILD} -I nixpkgs=${MY_NIXPKGS_REPO}/archive/${MY_NIXPKGS_BRANCH}.tar.gz test
+	${SUDO} ${NIXOS_REBUILD} -I nixpkgs=${MY_NIXPKGS_REPO}/archive/${MY_NIXPKGS_COMMIT}.tar.gz test
 
 remote-switch:
-	${SUDO} ${NIXOS_REBUILD} -I nixpkgs=${MY_NIXPKGS_REPO}/archive/${MY_NIXPKGS_BRANCH}.tar.gz switch
+	${SUDO} ${NIXOS_REBUILD} -I nixpkgs=${MY_NIXPKGS_REPO}/archive/${MY_NIXPKGS_COMMIT}.tar.gz switch
 
 .PHONY:
 	all \
