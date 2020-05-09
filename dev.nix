@@ -18,7 +18,6 @@
     glibc
     gnumake
     go
-    haskellPackages.hlint
     httpie
     jq
     neovim
@@ -26,7 +25,12 @@
     sqlite_3_31_1
     subversion
     xxd
-  ];
+  ] ++ (with haskellPackages; [
+    #hfmt # broken
+    hindent
+    hlint
+    stylish-haskell
+  ]);
 
   nixpkgs.config = {};
 }
