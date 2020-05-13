@@ -31,7 +31,12 @@
     hindent
     hlint
     stylish-haskell
-  ]);
+  ])
+  ++
+  (with pythonPackages; [
+    yamllint
+  ])
+  ;
 
   nixpkgs.config = {};
 }
