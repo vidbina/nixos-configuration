@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
+    calcurse
     khal
     planner
     tasksh
