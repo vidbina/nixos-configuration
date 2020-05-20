@@ -13,7 +13,9 @@ MY_NIXPKGS_LOCAL_ARGS=-I nixos=${HOME}/nixpkgs/nixos -I nixpkgs=${HOME}/nixpkgs
 #		to invoking any of the "remote" rules will override the default values of
 #		the following variables:
 MY_NIXPKGS_REPO?=https://github.com/NixOS/nixpkgs
-MY_NIXPKGS_COMMIT?=9642f121eb1ac508c088bb021445934596c6f078
+
+# Output of `git describe --dirty --always`
+MY_NIXPKGS_COMMIT?=19.09-1777-g31dcaa5eb67
 
 # Sets up /etc/nixos and performs a switch
 #
