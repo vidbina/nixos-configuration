@@ -16,7 +16,6 @@
 
     # basics
     ./dev.nix
-    ./docker.nix
     ./fonts.nix
     ./interfacing.nix
     ./terminal.nix

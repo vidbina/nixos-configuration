@@ -2,19 +2,27 @@
 
 {
   environment.systemPackages = with pkgs; [
+    dive
+    docker_compose
     #packer
+    singularity
     #vagrant
     qemu
     #minikube
   ];
 
-  virtualisation.virtualbox = {
-    guest = {
+  virtualisation = {
+    docker = {
       enable = true;
     };
-    host = {
-      enable = true;
-      enableExtensionPack = true;
+    virtualbox = {
+      guest = {
+        enable = true;
+      };
+      host = {
+        enable = true;
+        enableExtensionPack = true;
+      };
     };
   };
 }
