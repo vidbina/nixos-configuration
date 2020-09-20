@@ -31,11 +31,11 @@ in
       grub.device = "/dev/nvme0n1";
     };
     initrd.luks.devices = {
-      base.crypt.small = {
+      "base.crypt.small" = {
         device = "/dev/nvme0n1p3"; # 100 GiB
         preLVM = true;
       };
-      store = {
+      "store" = {
         device = "/dev/nvme0n1p5"; # 300 GiB
         preLVM = true;
       };
@@ -63,9 +63,9 @@ in
     cpu.intel.updateMicrocode = true;
   };
 
+  console.font = "latarcyrheb-sun32";
   # Select internationalisation properties.
   i18n = {
-    console.font = "latarcyrheb-sun32";
     #   consoleKeyMap = "us";
     #   defaultLocale = "en_US.UTF-8";
   };
