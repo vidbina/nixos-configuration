@@ -25,7 +25,7 @@
     # other
     ./audio.nix
     ./browser.nix
-    #./cad.nix # CAD tools (mostly 3d)
+    ./cad.nix # CAD tools (mostly 3d)
     ./chat.nix
     ./crypto.nix
     ./doc.nix
@@ -41,6 +41,6 @@
     #./temp.nix
     ./tron.nix # tools for electronics engineering
     #./unity3d.nix
-    #./virt.nix
+    ./virt.nix
   ];
 }
