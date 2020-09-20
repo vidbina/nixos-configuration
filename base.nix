@@ -65,7 +65,7 @@ in
 
   # Select internationalisation properties.
   i18n = {
-    consoleFont = "latarcyrheb-sun32";
+    console.font = "latarcyrheb-sun32";
     #   consoleKeyMap = "us";
     #   defaultLocale = "en_US.UTF-8";
   };
