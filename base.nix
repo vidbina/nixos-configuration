@@ -150,7 +150,7 @@ in
 
   # The NixOS release to be compatible with for stateful data such as databases.
   system = {
-    stateVersion = "19.09";
+    stateVersion = "20.03";
   };
 
   # Set your time zone.
