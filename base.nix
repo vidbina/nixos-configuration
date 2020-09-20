@@ -30,18 +30,16 @@ in
       efi.canTouchEfiVariables = true;
       grub.device = "/dev/nvme0n1";
     };
-    initrd.luks.devices = [
-      {
-        name = "base.crypt.small";
+    initrd.luks.devices = {
+      base.crypt.small = {
         device = "/dev/nvme0n1p3"; # 100 GiB
         preLVM = true;
-      }
-      {
-        name = "store";
+      };
+      store = {
         device = "/dev/nvme0n1p5"; # 300 GiB
         preLVM = true;
-      }
-    ];
+      };
+    };
   };
 
   fileSystems."/home" = {
