@@ -163,4 +163,17 @@ in
   #   Asia/Bangkok
   #   Europe/Amsterdam
   #   Europe/Berlin
+
+  # TODO: Use a dict of named coordinates and fetch a given location from that dict
+  location = {
+    provider = "manual";
+    # Berlin
+    latitude = "52.520008";
+    longitude = "13.404954";
+    # Thailand/Bangkok
+    # USA/LA
+    # USA/NYC
+    # Suriname/Paramaribo
+    # Curacao/Willemstad
+  };
 }
