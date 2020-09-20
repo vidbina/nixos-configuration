@@ -120,13 +120,10 @@ in
       autorun = true;
       # dpi = 180;
       displayManager = {
-        slim = {
+        lightdm = {
           enable = true;
-          theme = pkgs.fetchurl {
-            url = "https://gitlab.com/vidbina/asabina-slim-theme/-/archive/a3698d20e133bf1765adcbec9d2de87ac5fdf0e3/asabina-slim-theme-a3698d20e133bf1765adcbec9d2de87ac5fdf0e3.tar.gz";
-            sha256 = "1xw58r6g2i3j6qkrdmxlslm11d3072irrc7r4kh8jj64cnqz9xx5";
-          };
         };
+
         sessionCommands = ''
           alias freeze="${pkgs.xtrlock-pam}/bin/xtrlock-pam -b none"
         '';
