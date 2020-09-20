@@ -18,6 +18,7 @@
     glibc
     gnumake
     go
+    html-tidy
     httpie
     jq
     neovim
