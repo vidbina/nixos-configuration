@@ -27,13 +27,6 @@
     # TODO: invert scrolling
   };
 
-  services.xserver.multitouch = {
-    enable = false;
-    invertScroll = true;
-    ignorePalm = true;
-    # TODO: improve responsiveness
-  };
-
   services.xserver.libinput = {
     enable = true;
     naturalScrolling = true;
