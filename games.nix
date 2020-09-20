@@ -4,8 +4,8 @@
   environment.systemPackages = with pkgs; [
     anki
     godot
-    steam
-    steam-run
+    #steam
+    #steam-run
   ];
 
   hardware.opengl = {

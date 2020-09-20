@@ -2,15 +2,16 @@
 
 {
   environment.systemPackages = with pkgs; [
-    (
-      tdesktop.overrideAttrs (
-        oldAttrs: rec {
-          nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [
-            wrapGAppsHook
-          ];
-        }
-      )
-    )
+    #(
+    #  tdesktop.overrideAttrs (
+    #    oldAttrs: rec {
+    #      nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [
+    #        wrapGAppsHook
+    #      ];
+    #    }
+    #  )
+    #)
     weechat
+    #zoom-us
   ];
 }

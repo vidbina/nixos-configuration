@@ -15,16 +15,16 @@ in
 {
   environment.systemPackages = with pkgs; [
     aseprite-unfree
-    blender
+    #blender
     dia
-    fontforge-gtk
+    #fontforge-gtk
     gimp
     glxinfo # test utils for OpenGL
     #gmsh
     graphviz
     imagemagick
     inkscape
-    krita
+    #krita
     plantuml
     scribus
   ];
