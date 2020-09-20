@@ -103,6 +103,9 @@ in
 
     redshift = {
       enable = false;
+      extraOptions = [
+        "-c ~/.config/redshift.conf"
+      ];
     };
 
     nixosManual.showManual = true;
