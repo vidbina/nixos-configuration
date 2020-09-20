@@ -15,7 +15,6 @@
     pdftk
     scim
     xournal
-    xpdf
     zathura
   ];
 
