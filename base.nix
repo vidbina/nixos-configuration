@@ -120,6 +120,8 @@ in
       autorun = true;
       # dpi = 180;
       displayManager = {
+        defaultSession = "none+xmonad";
+
         lightdm = {
           enable = true;
         };
