@@ -77,4 +77,19 @@
       ExecStart = "${pkgs.dunst}/bin/dunst -print";
     };
   };
+
+  # systemd.user.services.redshift = {
+  #   enable = true;
+  #   description = "Redshift";
+  #   documentation = [
+  #     "man redshift"
+  #   ];
+  #   partOf = [
+  #     "graphical-session.target"
+  #   ];
+  #   wantedBy = [
+  #     "default.target"
+  #   ]
+  #   serviceConfig
+  # }
 }
