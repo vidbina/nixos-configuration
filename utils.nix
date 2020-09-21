@@ -51,6 +51,7 @@
     nixpkgs-lint
     (pass.withExtensions (exts: [ exts.pass-otp ]))
     pciutils
+    pinentry_qt5
     pmtools # ACPI utils
     pstree
     pv
