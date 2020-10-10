@@ -22,6 +22,7 @@
     html-tidy
     httpie
     jq
+    k9s
     neovim
     shfmt
     shfmt
