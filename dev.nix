@@ -15,6 +15,7 @@
     ghc
     git
     git-lfs
+    github-cli
     glibc
     gnumake
     go
