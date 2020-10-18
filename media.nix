@@ -7,6 +7,7 @@
     ffmpeg
     minitube
     mpv
+    obs-studio
     playerctl
     v4l-utils
     vlc
