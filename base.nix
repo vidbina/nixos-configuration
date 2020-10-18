@@ -25,6 +25,9 @@ in
       "virtio_net"
       "vboxguest"
     ];
+    extraModulePackages = [
+      config.boot.kernelPackages.v4l2loopback
+    ];
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
