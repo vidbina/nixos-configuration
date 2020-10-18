@@ -13,6 +13,7 @@
     darcs
     gdb
     ghc
+    gitAndTools.ghorg
     git
     git-lfs
     github-cli
