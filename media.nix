@@ -7,6 +7,7 @@
     minitube
     mpv
     playerctl
+    v4l-utils
     vlc
     youtube-dl
   ];
