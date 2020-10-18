@@ -28,6 +28,9 @@ in
     extraModulePackages = [
       config.boot.kernelPackages.v4l2loopback
     ];
+    extraModprobeConfig = ''
+      options v4l2loopback exclusive_caps=1 video_nr=9 card_label="the-display"
+    '';
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
