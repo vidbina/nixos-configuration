@@ -29,7 +29,7 @@ in
       config.boot.kernelPackages.v4l2loopback
     ];
     extraModprobeConfig = ''
-      options v4l2loopback exclusive_caps=1 video_nr=9 card_label="the-display"
+      options v4l2loopback exclusive_caps=1 video_nr=1 card_label="obs"
     '';
     loader = {
       systemd-boot.enable = true;
