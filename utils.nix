@@ -85,5 +85,10 @@
     xtrlock-pam
     zbar
     zip
-  ];
+  ]
+  ++
+  (with pythonPackages; [
+    glances # alternative to gotop or htop
+  ])
+  ;
 }
