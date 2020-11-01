@@ -10,6 +10,7 @@
     curl
     dbus-map
     dict
+    duc # disk usage utility (view disk space usage)
     entr
     exfat # for handling FAT partitions
     file
