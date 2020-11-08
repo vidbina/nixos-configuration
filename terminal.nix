@@ -22,6 +22,7 @@
       };
       shellInit = ''
         export PATH=$PATH:~/bin/
+        source ~/bin/teleport.zsh
       '';
       interactiveShellInit = ''
         export EDITOR=nvim
