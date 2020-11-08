@@ -48,6 +48,7 @@
         }
       )
     )
+    vdirsyncer
     vym
   ];
 }
