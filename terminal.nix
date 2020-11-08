@@ -20,6 +20,9 @@
       autosuggestions = {
         enable = true;
       };
+      shellInit = ''
+        export PATH=$PATH:~/bin/
+      '';
       interactiveShellInit = ''
         export EDITOR=nvim
 
