@@ -28,6 +28,7 @@ in
     ];
     extraModulePackages = [
       config.boot.kernelPackages.v4l2loopback
+      config.boot.kernelPackages.virtualbox
     ];
     extraModprobeConfig = ''
       options v4l2loopback exclusive_caps=1 video_nr=10 card_label="v4l2-cam"
