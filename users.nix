@@ -32,6 +32,7 @@
 
   environment = {
     variables = {
+      QT_SCREEN_SCALE_FACTORS = "2";
       URXVT_PERL_PLUGINS = "${pkgs.rxvt_unicode-with-plugins}/lib/urxvt/perl";
     };
   };
