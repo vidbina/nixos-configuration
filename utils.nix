@@ -76,11 +76,14 @@
     whois
     xclip
     xfe # GUI file manager
+    xorg.xdpyinfo
     xorg.xev
     xorg.xhost
     xorg.xkbcomp
     xorg.xmodmap
     xorg.xprop
+    xorg.xwininfo
+    xrectsel
     xsel
     xtrlock-pam
     zbar
