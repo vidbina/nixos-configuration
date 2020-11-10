@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     calcurse
     khal
+    nextcloud-client
     planner
     tasksh
     taskwarrior
