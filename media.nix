@@ -5,7 +5,7 @@
 
   environment.systemPackages = with pkgs; [
     ffcast
-    ffmpeg
+    ffmpeg-full
     minitube
     mpv
     obs-studio
