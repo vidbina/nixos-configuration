@@ -22,15 +22,16 @@
     go
     html-tidy
     httpie
-    jq
+    httplab # interactive web server
+    jq # pretty-print JSON
     k9s
     neovim
     shfmt
-    shfmt
     sqlite_3_31_1
     subversion
+    wuzz # cURL-like TUI HTTP request inspection tool
     xxd
-    yq
+    yq # pretty-print YAML
   ]
   ++
   (with haskellPackages; [
