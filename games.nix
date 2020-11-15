@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     anki
     godot
+    stockfish
     #steam
     #steam-run
   ];
