@@ -21,6 +21,7 @@
     glibc
     gnumake
     go
+    go-jira
     html-tidy
     httpie
     httplab # interactive web server
