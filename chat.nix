@@ -8,6 +8,7 @@
         # https://nixos.org/manual/nixpkgs/stable/#sec-weechat
         configure = { availablePlugins, ... }: {
           plugins = with availablePlugins; [
+            perl
             python
           ];
           scripts = with weechatScripts; [
