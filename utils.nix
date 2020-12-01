@@ -89,9 +89,10 @@
     zbar
     zip
   ]
-  ++
-  (with pythonPackages; [
-    glances # alternative to gotop or htop
-  ])
+  ++ (
+    with pythonPackages; [
+      glances # alternative to gotop or htop
+    ]
+  )
   ;
 }

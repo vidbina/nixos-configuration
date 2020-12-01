@@ -10,10 +10,11 @@ stdenv.mkDerivation rec {
 
   src = let
     base = "https://download.tuxfamily.org/qet/tags";
-  in fetchurl {
-    url = "${base}/${tag}/qelectrotech-${version}-src.tar.gz";
-    sha256 = "1b5van2n6lc9l6xmb1vzkgbx7prxvpw0kjj9dkpwmzj6gxichi4i";
-  };
+  in
+    fetchurl {
+      url = "${base}/${tag}/qelectrotech-${version}-src.tar.gz";
+      sha256 = "1b5van2n6lc9l6xmb1vzkgbx7prxvpw0kjj9dkpwmzj6gxichi4i";
+    };
 
   buildInputs = [
     qt5.qmake

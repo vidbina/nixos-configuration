@@ -30,10 +30,16 @@ stdenv.mkDerivation rec {
     cd src
   '';
 
-  buildInputs = [ cmake ccid qttools pkgconfig pcsclite qttranslations
-                  hicolor_icon_theme
-                ];
-  
+  buildInputs = [
+    cmake
+    ccid
+    qttools
+    pkgconfig
+    pcsclite
+    qttranslations
+    hicolor_icon_theme
+  ];
+
   meta = with stdenv.lib; {
     description = "UI application for managing smart card PIN/PUK codes and certificates";
     homepage = "http://www.id.ee/";
