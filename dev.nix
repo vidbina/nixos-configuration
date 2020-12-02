@@ -8,7 +8,6 @@
     #stdenv
     (import ./emacs.nix { inherit pkgs; })
     asciinema
-    bazaar
     (
       buildGoPackage rec {
         pname = "checkmake";
