@@ -54,7 +54,6 @@
     gdb
     ghc
     ghcid
-    gitAndTools.ghorg
     git
     git-lfs
     github-cli
