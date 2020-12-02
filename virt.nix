@@ -4,8 +4,9 @@
   environment.systemPackages = with pkgs; [
     dive
     docker_compose
-    singularity
     qemu
+    runc
+    singularity
   ];
 
   virtualisation = {
