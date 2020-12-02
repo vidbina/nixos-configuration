@@ -115,8 +115,6 @@ in
       ];
     };
 
-    nixosManual.showManual = true;
-
     # Enable the OpenSSH daemon.
     # openssh.enable = true;
 
