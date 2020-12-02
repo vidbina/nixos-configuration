@@ -68,7 +68,7 @@
     k9s
     neovim
     shfmt
-    sqlite_3_31_1
+    sqlite
     subversion
     wuzz # cURL-like TUI HTTP request inspection tool
     xxd
