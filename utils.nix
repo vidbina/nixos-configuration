@@ -15,6 +15,7 @@
     exfat # for handling FAT partitions
     file
     fzf
+    glances
     gnome3.eog # for image viewing
     gnupg22
     gotop
@@ -88,11 +89,5 @@
     xtrlock-pam
     zbar
     zip
-  ]
-  ++ (
-    with pythonPackages; [
-      glances # alternative to gotop or htop
-    ]
-  )
-  ;
+  ];
 }
