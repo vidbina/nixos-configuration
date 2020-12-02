@@ -4,11 +4,8 @@
   environment.systemPackages = with pkgs; [
     dive
     docker_compose
-    #packer
     singularity
-    #vagrant
     qemu
-    #minikube
   ];
 
   virtualisation = {
