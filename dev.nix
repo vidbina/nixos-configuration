@@ -76,10 +76,7 @@
   ]
   ++ (
     with haskellPackages; [
-      #hfmt # broken, see ~/.config/nixpkgs/config.nix
-      #hadolint # broken, see ~/.config/nixpkgs/config.nix
       apply-refact # for hlint --refactor
-      hindent
       hlint
       hscolour
       stylish-haskell
