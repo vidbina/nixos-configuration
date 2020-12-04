@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    freecad
+    #freecad
     openscad
   ];
 }
