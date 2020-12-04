@@ -1,5 +1,4 @@
 { pkgs }:
-
 let
   current = pkgs.emacs;
   bundle = (pkgs.emacsPackagesNgGen current).emacsWithPackages;

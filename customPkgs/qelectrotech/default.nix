@@ -1,4 +1,4 @@
-with import <nixpkgs> {};
+with import <nixpkgs> { };
 #with stdenv fetchurl qt5;
 
 #{ stdenv, cups, fetchurl, qt5 }:
@@ -8,9 +8,10 @@ stdenv.mkDerivation rec {
   version = "0.6";
   tag = "20180306";
 
-  src = let
-    base = "https://download.tuxfamily.org/qet/tags";
-  in
+  src =
+    let
+      base = "https://download.tuxfamily.org/qet/tags";
+    in
     fetchurl {
       url = "${base}/${tag}/qelectrotech-${version}-src.tar.gz";
       sha256 = "1b5van2n6lc9l6xmb1vzkgbx7prxvpw0kjj9dkpwmzj6gxichi4i";

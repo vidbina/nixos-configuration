@@ -1,4 +1,4 @@
-with import <nixpkgs> {};
+with import <nixpkgs> { };
 with qt5;
 
 #{ stdenv, fetchurl, cmake, ccid, qttools, qttranslations, pkgconfig, pcsclite , hicolor_icon_theme }:

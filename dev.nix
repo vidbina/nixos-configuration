@@ -94,5 +94,5 @@
   )
   ;
 
-  nixpkgs.config = {};
+  nixpkgs.config = { };
 }

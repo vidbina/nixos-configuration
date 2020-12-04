@@ -1,5 +1,4 @@
 { config, pkgs, ... }:
-
 let
   lowBatteryNotifier = pkgs.writeScript "lowBatteryNotifier"
     ''
@@ -96,9 +95,10 @@ in
 
     cron = {
       enable = true;
-      systemCronJobs = let
-        userName = config.users.users.vidbina.name;
-      in
+      systemCronJobs =
+        let
+          userName = config.users.users.vidbina.name;
+        in
         [
           "* * * * * ${userName} bash -x ${lowBatteryNotifier} > /tmp/cron.batt.log 2>&1"
         ];
