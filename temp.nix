@@ -19,9 +19,5 @@
         }
       )
     )
-  ] ++ (
-    with pythonPackages; [
-      glances # alternative to htop for in-tree res utilisation and web view
-    ]
-  );
+  ];
 }

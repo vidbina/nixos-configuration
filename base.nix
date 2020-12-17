@@ -1,5 +1,4 @@
 { config, pkgs, ... }:
-
 let
   lowBatteryNotifier = pkgs.writeScript "lowBatteryNotifier"
     ''
@@ -24,24 +23,30 @@ in
       "virtio_ring"
       "virtio_net"
       "vboxguest"
+      "v4l2loopback"
     ];
+    extraModulePackages = [
+      config.boot.kernelPackages.v4l2loopback
+      config.boot.kernelPackages.virtualbox
+    ];
+    extraModprobeConfig = ''
+      options v4l2loopback exclusive_caps=1 video_nr=10 card_label="v4l2-cam"
+    '';
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
       grub.device = "/dev/nvme0n1";
     };
-    initrd.luks.devices = [
-      {
-        name = "base.crypt.small";
+    initrd.luks.devices = {
+      "base.crypt.small" = {
         device = "/dev/nvme0n1p3"; # 100 GiB
         preLVM = true;
-      }
-      {
-        name = "store";
+      };
+      "store" = {
         device = "/dev/nvme0n1p5"; # 300 GiB
         preLVM = true;
-      }
-    ];
+      };
+    };
   };
 
   fileSystems."/home" = {
@@ -65,9 +70,9 @@ in
     cpu.intel.updateMicrocode = true;
   };
 
+  console.font = "latarcyrheb-sun32";
   # Select internationalisation properties.
   i18n = {
-    consoleFont = "latarcyrheb-sun32";
     #   consoleKeyMap = "us";
     #   defaultLocale = "en_US.UTF-8";
   };
@@ -77,6 +82,7 @@ in
       agent = {
         enable = true;
         enableSSHSupport = true;
+        pinentryFlavor = "qt";
       };
     };
   };
@@ -89,9 +95,10 @@ in
 
     cron = {
       enable = true;
-      systemCronJobs = let
-        userName = config.users.users.vidbina.name;
-      in
+      systemCronJobs =
+        let
+          userName = config.users.users.vidbina.name;
+        in
         [
           "* * * * * ${userName} bash -x ${lowBatteryNotifier} > /tmp/cron.batt.log 2>&1"
         ];
@@ -108,8 +115,6 @@ in
       ];
     };
 
-    nixosManual.showManual = true;
-
     # Enable the OpenSSH daemon.
     # openssh.enable = true;
 
@@ -122,13 +127,12 @@ in
       autorun = true;
       # dpi = 180;
       displayManager = {
-        slim = {
+        defaultSession = "none+xmonad";
+
+        lightdm = {
           enable = true;
-          theme = pkgs.fetchurl {
-            url = "https://gitlab.com/vidbina/asabina-slim-theme/-/archive/a3698d20e133bf1765adcbec9d2de87ac5fdf0e3/asabina-slim-theme-a3698d20e133bf1765adcbec9d2de87ac5fdf0e3.tar.gz";
-            sha256 = "1xw58r6g2i3j6qkrdmxlslm11d3072irrc7r4kh8jj64cnqz9xx5";
-          };
         };
+
         sessionCommands = ''
           alias freeze="${pkgs.xtrlock-pam}/bin/xtrlock-pam -b none"
         '';
@@ -150,7 +154,7 @@ in
 
   # The NixOS release to be compatible with for stateful data such as databases.
   system = {
-    stateVersion = "19.09";
+    stateVersion = "20.03";
   };
 
   # Set your time zone.
@@ -163,4 +167,17 @@ in
   #   Asia/Bangkok
   #   Europe/Amsterdam
   #   Europe/Berlin
+
+  # TODO: Use a dict of named coordinates and fetch a given location from that dict
+  location = {
+    provider = "manual";
+    # Berlin
+    latitude = "52.520008";
+    longitude = "13.404954";
+    # Thailand/Bangkok
+    # USA/LA
+    # USA/NYC
+    # Suriname/Paramaribo
+    # Curacao/Willemstad
+  };
 }

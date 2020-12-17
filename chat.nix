@@ -2,15 +2,22 @@
 
 {
   environment.systemPackages = with pkgs; [
+    tdesktop
     (
-      tdesktop.overrideAttrs (
-        oldAttrs: rec {
-          nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [
-            wrapGAppsHook
+      weechat.override {
+        # https://nixos.org/manual/nixpkgs/stable/#sec-weechat
+        configure = { availablePlugins, ... }: {
+          plugins = with availablePlugins; [
+            perl
+            python
           ];
-        }
-      )
+          scripts = with weechatScripts; [
+            wee-slack
+            weechat-autosort
+          ];
+        };
+      }
     )
-    weechat
+    zoom-us
   ];
 }

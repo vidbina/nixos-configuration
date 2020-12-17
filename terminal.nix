@@ -20,6 +20,10 @@
       autosuggestions = {
         enable = true;
       };
+      shellInit = ''
+        export PATH=$PATH:~/bin/
+        source ~/bin/teleport.zsh
+      '';
       interactiveShellInit = ''
         export EDITOR=nvim
 
@@ -35,6 +39,9 @@
         # enable bash completion
         autoload -U +X bashcompinit && \
         bashcompinit
+
+        # Code completion for go-jira
+        eval "$(jira --completion-script-zsh)"
       '';
       promptInit = ''
         bindkey -v # use vim key bindings

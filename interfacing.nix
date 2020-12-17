@@ -27,18 +27,11 @@
     # TODO: invert scrolling
   };
 
-  services.xserver.multitouch = {
-    enable = false;
-    invertScroll = true;
-    ignorePalm = true;
-    # TODO: improve responsiveness
-  };
-
   services.xserver.libinput = {
     enable = true;
     naturalScrolling = true;
     clickMethod = "clickfinger";
-    #   scrollMethod = "twofinger";
+    scrollMethod = "twofinger";
     disableWhileTyping = true;
     tapping = false;
   };
@@ -77,4 +70,19 @@
       ExecStart = "${pkgs.dunst}/bin/dunst -print";
     };
   };
+
+  # systemd.user.services.redshift = {
+  #   enable = true;
+  #   description = "Redshift";
+  #   documentation = [
+  #     "man redshift"
+  #   ];
+  #   partOf = [
+  #     "graphical-session.target"
+  #   ];
+  #   wantedBy = [
+  #     "default.target"
+  #   ]
+  #   serviceConfig
+  # }
 }

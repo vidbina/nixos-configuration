@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     calcurse
     khal
+    nextcloud-client
     planner
     tasksh
     taskwarrior
@@ -17,19 +18,20 @@
             sha256 = "1fmfrsy9z2nff0bxwj7xsfbwkb9y1dmssvy5wkmf9ngihyzj3w1k";
             url = "https://dl.ganttproject.biz/ganttproject-${version}/ganttproject-${version}-r2335.zip";
           };
-          installPhase = let
+          installPhase =
+            let
 
-            desktopItem = makeDesktopItem {
-              name = "ganttproject";
-              exec = "ganttproject";
-              icon = "ganttproject";
-              desktopName = "GanttProject";
-              genericName = "Shedule and manage projects";
-              comment = oldAttrs.meta.description;
-              categories = "Office;Application;";
-            };
+              desktopItem = makeDesktopItem {
+                name = "ganttproject";
+                exec = "ganttproject";
+                icon = "ganttproject";
+                desktopName = "GanttProject";
+                genericName = "Shedule and manage projects";
+                comment = oldAttrs.meta.description;
+                categories = "Office;Application;";
+              };
 
-          in
+            in
             ''
               mkdir -pv "$out/share/ganttproject"
               cp -rv *  "$out/share/ganttproject"
@@ -48,6 +50,7 @@
         }
       )
     )
+    vdirsyncer
     vym
   ];
 }
