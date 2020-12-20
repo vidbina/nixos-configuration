@@ -85,12 +85,21 @@ in
         pinentryFlavor = "qt";
       };
     };
+    light.enable = true;
   };
 
   # List services that you want to enable:
   services = {
     acpid = {
       enable = true;
+    };
+
+    actkbd = {
+      enable = true;
+      bindings = [
+        { keys = [ 224 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/light -A 10"; }
+        { keys = [ 225 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/light -U 10"; }
+      ];
     };
 
     cron = {
