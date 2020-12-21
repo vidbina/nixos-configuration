@@ -2,6 +2,8 @@
 
 {
   environment.systemPackages = with pkgs; [
+    signal-cli
+    signal-desktop
     tdesktop
     (
       weechat.override {
