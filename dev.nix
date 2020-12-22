@@ -66,6 +66,7 @@
     gnumake
     go
     go-jira
+    hexyl
     html-tidy
     httpie
     httplab # interactive web server
