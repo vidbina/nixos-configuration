@@ -59,6 +59,7 @@
     gdb
     ghc
     ghcid
+    ghidra-bin
     git
     git-lfs
     github-cli
