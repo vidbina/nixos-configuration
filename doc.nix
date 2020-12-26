@@ -8,6 +8,7 @@
     aspellDicts.nl
     biber
     evince
+    ghostscript
     haskellPackages.pandoc
     haskellPackages.pandoc-citeproc
     libreoffice
