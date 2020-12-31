@@ -74,7 +74,6 @@
     jq # pretty-print JSON
     k9s
     neovim
-    qtcreator
     shfmt
     sqlite
     subversion
