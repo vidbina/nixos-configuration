@@ -15,6 +15,7 @@
     okular
     pdftk
     scim
+    visidata
     xournal
     zathura
   ];
