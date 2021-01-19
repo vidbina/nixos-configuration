@@ -95,10 +95,9 @@ remote-test:
 remote-switch:
 	${SUDO} ${NIXOS_REBUILD} -I nixpkgs=${MY_NIXPKGS_REPO}/archive/${MY_NIXPKGS_COMMIT}.tar.gz switch
 
-.PHONY:
-	all \
+.PHONY: all test \
 	setup \
-	switch test \
+	switch \
 	local-test local-switch \
 	remote-test remote-switch \
 	upgrade-test upgrade-switch
