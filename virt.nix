@@ -9,18 +9,21 @@
     singularity
   ];
 
+  boot = rec {
+    kernelModules = [
+      "virtio"
+      "virtio_pci"
+      "virtio_ring"
+      "virtio_net"
+    ];
+
+    extraModulePackages = [
+    ];
+  };
+
   virtualisation = {
     docker = {
       enable = true;
-    };
-    virtualbox = {
-      guest = {
-        enable = true;
-      };
-      host = {
-        enable = true;
-        enableExtensionPack = true;
-      };
     };
   };
 }

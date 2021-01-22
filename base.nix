@@ -17,17 +17,10 @@ in
 
     kernelModules = [
       "af_packet"
-      "vboxsf"
-      "virtio"
-      "virtio_pci"
-      "virtio_ring"
-      "virtio_net"
-      "vboxguest"
       "v4l2loopback"
     ];
     extraModulePackages = [
       config.boot.kernelPackages.v4l2loopback
-      config.boot.kernelPackages.virtualbox
     ];
     extraModprobeConfig = ''
       options v4l2loopback exclusive_caps=1 video_nr=10 card_label="v4l2-cam"

@@ -21,8 +21,6 @@
         "lp"
         "network"
         "networkmanager"
-        "vboxsf"
-        "vboxusers"
         "wheel"
         "wireshark"
       ];
