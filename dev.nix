@@ -16,6 +16,7 @@
     gnumake
     go
     go-jira
+    hadolint
     hexyl
     html-tidy
     htmlTidy
