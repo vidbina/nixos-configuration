@@ -6,7 +6,6 @@
     #htmlTidy
     #mitscheme
     #stdenv
-    (import ./emacs.nix { inherit pkgs; })
     asciinema
     cmakeCurses
     darcs
