@@ -26,6 +26,7 @@
     k9s
     mitscheme
     neovim
+    nodejs
     shfmt
     sqlite
     subversion
