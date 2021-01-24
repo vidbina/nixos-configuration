@@ -179,4 +179,11 @@ in
     # Suriname/Paramaribo
     # Curacao/Willemstad
   };
+
+  nixpkgs.config = with pkgs; {
+    allowUnfreePredicate = (pkg: builtins.elem (stdenv.lib.getName pkg) [
+      "aseprite"
+      "zoom"
+    ]);
+  };
 }
