@@ -7,6 +7,7 @@
     pamixer
     paprefs
     pavucontrol
+    pulseeffects
     puredata
   ];
 
