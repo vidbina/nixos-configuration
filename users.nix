@@ -17,7 +17,6 @@
       extraGroups = [
         "beep"
         "dialout"
-        "docker"
         "lp"
         "network"
         "networkmanager"

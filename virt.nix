@@ -21,6 +21,8 @@
     ];
   };
 
+  users.users.vidbina.extraGroups = [ "docker" ];
+
   virtualisation = {
     docker = {
       enable = true;
