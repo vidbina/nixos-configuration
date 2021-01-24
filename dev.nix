@@ -2,10 +2,6 @@
 
 {
   environment.systemPackages = with pkgs; [
-    # deno # WIP
-    #htmlTidy
-    #mitscheme
-    #stdenv
     asciinema
     cmakeCurses
     darcs
@@ -22,10 +18,12 @@
     go-jira
     hexyl
     html-tidy
+    htmlTidy
     httpie
     httplab # interactive web server
     jq # pretty-print JSON
     k9s
+    mitscheme
     neovim
     shfmt
     sqlite
