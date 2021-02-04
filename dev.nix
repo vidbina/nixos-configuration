@@ -48,13 +48,10 @@ let
     };
   };
 
-  neovim-vidbina = with pkgs; neovim.overrideAttrs (old: rec {
-    #LD_LIBRARY_PATH = stdenv.lib.makeLibraryPath [ stdenv.cc.cc.lib ];
-    shellHook = ''
-      export VIMRUNTIME=$PWD/runtime
-      export VIDBINA=hi
-    '';
-  });
+  neovim-vidbina = with pkgs; neovim.override {
+    viAlias = true;
+    #withNodeJs = true;
+  };
 in
 {
   environment.systemPackages = with pkgs; [
