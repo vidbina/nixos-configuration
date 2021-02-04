@@ -1,5 +1,16 @@
 { config, pkgs, ... }:
+let
+  visidata-vidbina = with pkgs; visidata.overrideAttrs (old: rec {
+    version = "2.1.1";
 
+    src = fetchFromGitHub {
+      owner = "saulpw";
+      repo = "visidata";
+      rev = "v${version}";
+      sha256 = "sha256:018z06bfcw0l4k2zdwbgxna9fss4wdqj64ckw5qjis14sb3zkr28";
+    };
+  });
+in
 {
   environment.systemPackages = with pkgs; [
     aspell
@@ -15,17 +26,7 @@
     okular
     pdftk
     scim
-    (visidata.overrideAttrs (old: rec {
-      version = "2.1.1";
-
-      src = fetchFromGitHub {
-        owner = "saulpw";
-        repo = "visidata";
-        rev = "v${version}";
-        sha256 = "sha256:018z06bfcw0l4k2zdwbgxna9fss4wdqj64ckw5qjis14sb3zkr28";
-      };
-    }))
-    visidata
+    visidata-vidbina
     xournal
     zathura
   ];
