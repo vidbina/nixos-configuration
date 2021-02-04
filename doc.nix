@@ -24,6 +24,7 @@ in
     haskellPackages.pandoc-citeproc
     libreoffice
     okular
+    pandoc-plantuml-filter
     pdftk
     scim
     visidata-vidbina
