@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
-
+let
+  pass-vidbina = with pkgs; pass.withExtensions (exts: [ exts.pass-otp ]);
+in
 {
   environment.systemPackages = with pkgs; [
     acpi # show batt status and other ACPI info
@@ -52,7 +54,7 @@
     nix-prefetch-git
     nixpkgs-fmt
     nixpkgs-lint
-    (pass.withExtensions (exts: [ exts.pass-otp ]))
+    pass-vidbina
     pciutils
     pinentry_qt5
     pmtools # ACPI utils
