@@ -51,6 +51,7 @@ in
     nix-prefetch-git
     nixpkgs-fmt
     nixpkgs-lint
+    p7zip
     pass-vidbina
     pciutils
     pinentry_qt5
