@@ -87,6 +87,7 @@ in
     xorg.xev
     xorg.xhost
     xorg.xkbcomp
+    xorg.xkill
     xorg.xmodmap
     xorg.xprop
     xorg.xwininfo
