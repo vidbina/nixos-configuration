@@ -17,10 +17,15 @@ let
   #});
 
   pass-vidbina = with pkgs; pass.withExtensions (exts: [ exts.pass-otp ]);
+  androidsdk = with pkgs; (androidenv.composeAndroidPackages { }).androidsdk;
 in
 {
+  nixpkgs.config = {
+    android_sdk.accept_license = true;
+  };
   environment.systemPackages = with pkgs; [
     acpi # show batt status and other ACPI info
+    androidsdk
     arandr
     beep
     ccze
