@@ -15,7 +15,7 @@ MY_NIXPKGS_LOCAL_ARGS=-I nixos=${HOME}/nixpkgs/nixos -I nixpkgs=${HOME}/nixpkgs
 MY_NIXPKGS_REPO?=https://github.com/vidbina/nixpkgs
 
 # Output of `git describe --dirty --always`
-MY_NIXPKGS_COMMIT?=20.09-1194-g2eaeea7983d
+MY_NIXPKGS_COMMIT?=20.09-1837-g9d22f070675
 
 # Sets up /etc/nixos and performs a switch
 #
