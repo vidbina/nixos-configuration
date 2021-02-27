@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
+    alacritty
     cool-retro-term
     kitty
     rxvt_unicode.terminfo
