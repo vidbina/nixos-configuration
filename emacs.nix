@@ -1,8 +1,8 @@
-{ pkgs }:
+{ pkgs, ... }:
 let
   current = pkgs.emacs;
   bundle = (pkgs.emacsPackagesNgGen current).emacsWithPackages;
-  complete = bundle (
+  emacs-vidbina = bundle (
     epkgs: (
       with epkgs.melpaStablePackages; [
         evil
@@ -15,4 +15,8 @@ let
     )
   );
 in
-complete
+{
+  environment.systemPackages = with pkgs; [
+    emacs-vidbina
+  ];
+}
