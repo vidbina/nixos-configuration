@@ -70,7 +70,7 @@ in
     gnumake
     go
     go-jira
-    hadolint
+    hadolint # Dockerfile linter
     hexyl
     html-tidy
     htmlTidy
