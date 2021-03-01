@@ -7,5 +7,6 @@
     neomutt
     offlineimap
     thunderbird
+    urlview
   ];
 }
