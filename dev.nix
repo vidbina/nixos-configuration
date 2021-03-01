@@ -81,6 +81,7 @@ in
     mitscheme
     neovim-vidbina
     nodejs
+    shellcheck
     shfmt
     sqlite
     subversion
