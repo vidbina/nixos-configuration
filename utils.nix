@@ -83,6 +83,7 @@ in
     whois
     xclip
     xfe # GUI file manager
+    xorg.xbacklight
     xorg.xdpyinfo
     xorg.xev
     xorg.xhost
