@@ -18,5 +18,7 @@ in
 {
   environment.systemPackages = with pkgs; [
     emacs-vidbina
+    fd
+    ripgrep
   ];
 }
