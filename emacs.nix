@@ -3,7 +3,12 @@ let
   current = pkgs.emacs;
   bundle = (pkgs.emacsPackagesNgGen current).emacsWithPackages;
   emacs-vidbina = bundle (
-    epkgs: (
+    epkgs:
+    (
+      with epkgs; [
+        vterm
+      ]
+    ) ++ (
       with epkgs.melpaStablePackages; [
         evil
         nix-mode
