@@ -15,7 +15,8 @@ let
       ]
     ) ++ (
       with epkgs.melpaPackages; [
-        molokai-theme
+        doom-modeline
+        doom-themes
       ]
     )
   );
