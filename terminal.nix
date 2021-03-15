@@ -33,9 +33,9 @@
         zmodload -i zsh/complist
         source ${./zsh/zstyle.zsh}
 
-        autoload -U promptinit && \
-        promptinit && \
-        prompt adam2 8bit yellow red blue
+        # autoload -U promptinit && \
+        # promptinit && \
+        # prompt adam2 8bit yellow red blue
 
         # enable bash completion
         autoload -U +X bashcompinit && \
@@ -43,6 +43,9 @@
 
         # Code completion for go-jira
         eval "$(jira --completion-script-zsh)"
+
+        # Install starship
+        eval "$(starship init zsh)"
       '';
       promptInit = ''
         bindkey -v # use vim key bindings
