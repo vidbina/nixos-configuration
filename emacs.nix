@@ -14,11 +14,12 @@ let
       ]
     )
   );
+  ripgrep-for-doom-emacs = (pkgs.ripgrep.override { withPCRE2 = true; });
 in
 {
   environment.systemPackages = with pkgs; [
     emacs-vidbina
     fd
-    ripgrep
+    ripgrep-for-doom-emacs
   ];
 }
