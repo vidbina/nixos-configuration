@@ -9,7 +9,7 @@
     tasksh
     taskwarrior
     timewarrior
-    vdirsyncer
+    vdirsyncerStable
     vym
   ];
 }
