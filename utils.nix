@@ -18,6 +18,12 @@ let
 
   pass-vidbina = with pkgs; pass.withExtensions (exts: [ exts.pass-otp ]);
   androidsdk = with pkgs; (androidenv.composeAndroidPackages { }).androidsdk;
+  rofi-vidbina = with pkgs; rofi.override {
+    plugins = [
+      rofi-calc
+      rofi-emoji
+    ];
+  };
 in
 {
   nixpkgs.config = {
@@ -66,6 +72,7 @@ in
     python36 # we all need a python interpreter sometimes
     ranger # TUI file mananager
     redshift
+    rofi-vidbina
     screenfetch
     scrot
     st
