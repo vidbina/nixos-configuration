@@ -6,15 +6,17 @@
     enableGhostscriptFonts = true;
     fonts = with pkgs; [
       emojione
+      fira-code
       font-awesome-ttf
       noto-fonts-emoji
       powerline-fonts
     ];
     fontconfig.defaultFonts.monospace = [
       "DejaVu Sans Mono"
-      "Noto Emoji"
       "EmojiOne Color"
+      "Fira Code Nerd"
       "Noto Color Emoji"
+      "Noto Emoji"
     ];
   };
 }
