@@ -11,10 +11,16 @@ RM = "rm"
 #		and remote-switch). Defining MY_NIXPKGS_REPO and/or MY_NIXPKGS_COMMIT prior
 #		to invoking any of the "remote" rules will override the default values of
 #		the following variables:
-MY_NIXPKGS_REPO?=https://github.com/vidbina/nixpkgs
+MY_NIXPKGS_REPO ?= "https://github.com/vidbina/nixpkgs"
 
 # Output of `git describe --dirty --always`
-MY_NIXPKGS_COMMIT?=20.09-1982-g60b18a066e8
+# Update manually to maintain a tracked ref to the last working installation
+MY_NIXPKGS_COMMIT ?= "20.09-2033-g12d9950bf47"
+
+.PHONY: version
+version:
+	cd "$(MY_NIXPKGS_PATH)" && git describe --dirty --always
+
 
 # Path to my nixpkgs
 MY_NIXPKGS_PATH = $(HOME)/nixpkgs
