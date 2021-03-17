@@ -1,9 +1,10 @@
 SHELL = /usr/bin/env bash
 
 # Commands
-CP = "cp"
-NIXOS_REBUILD = "$(shell sudo nixos-rebuild --show-trace)"
-RM = "rm"
+CP = cp
+NIXOS_REBUILD = nixos-rebuild --show-trace
+RM = rm
+SUDO = sudo
 
 # Git repository and branch in which I keep the nixpkgs which I want to install
 #
@@ -45,8 +46,8 @@ all: setup switch
 # 	Source: https://nixos.org/nixos/manual/index.html#sec-changing-config
 .PHONY: setup
 setup:
-	$(RM) -r /etc/nixos/customPkgs /etc/nixos/config
-	$(CP) -Lr "*.nix" zsh customPkgs config /etc/nixos/.
+	@$(SUDO) $(RM) -r /etc/nixos/customPkgs /etc/nixos/config
+	@$(SUDO) $(CP) -Lr *.nix zsh customPkgs config /etc/nixos/.
 
 # Performs nixos-rebuilds against the nixpkgs version of this system
 #
@@ -55,11 +56,11 @@ setup:
 # 	already using
 .PHONY: test
 test:
-	$(NIXOS_REBUILD) test
+	@$(SUDO) $(NIXOS_REBUILD) test
 
 .PHONY: switch
 switch:
-	$(NIXOS_REBUILD) switch
+	@$(SUDO) $(NIXOS_REBUILD) switch
 
 # Performs nixos-rebuilds against the upgraded nixpkgs
 #
@@ -72,11 +73,11 @@ switch:
 # 	operation even breaks the configuration as packages get dropped or renamed.
 .PHONY: upgrade-test
 upgrade-test:
-	$(NIXOS_REBUILD) test --upgrade
+	@$(SUDO) $(NIXOS_REBUILD) test --upgrade
 
 .PH0NY: upgrade-switch
 upgrade-switch:
-	$(NIXOS_REBUILD) switch --upgrade
+	@$(SUDO) $(NIXOS_REBUILD) switch --upgrade
 
 # Performs nixos-rebuilds against a local clone of nixpkgs
 #
@@ -88,15 +89,15 @@ upgrade-switch:
 # 	Source: https://nixos.org/nixos/manual/#sec-changing-config
 .PHONY: local-boot
 local-boot:
-	$(NIXOS_REBUILD) $(MY_NIXPKGS_LOCAL_ARGS) boot
+	@$(SUDO) $(NIXOS_REBUILD) $(MY_NIXPKGS_LOCAL_ARGS) boot
 
 .PHONY: local-test
 local-test:
-	$(NIXOS_REBUILD) $(MY_NIXPKGS_LOCAL_ARGS) test
+	@$(SUDO) $(NIXOS_REBUILD) $(MY_NIXPKGS_LOCAL_ARGS) test
 
 .PHONY: local-switch
 local-switch:
-	$(NIXOS_REBUILD) $(MY_NIXPKGS_LOCAL_ARGS) switch
+	@$(SUDO) $(NIXOS_REBUILD) $(MY_NIXPKGS_LOCAL_ARGS) switch
 
 # Performs nixos-rebuilds against a remote nixpkgs
 #
@@ -111,8 +112,10 @@ local-switch:
 # 	to ensure package version parity between machines.
 .PHONY: remote-test
 remote-test:
-	$(NIXOS_REBUILD) -I nixpkgs="$(MY_NIXPKGS_REPO)/archive/$(MY_NIXPKGS_COMMIT).tar.gz" test
+	@$(SUDO) $(NIXOS_REBUILD) \
+		-I nixpkgs="$(MY_NIXPKGS_REPO)/archive/$(MY_NIXPKGS_COMMIT).tar.gz" test
 
 .PHONY: remote-switch
 remote-switch:
-	$(NIXOS_REBUILD) -I nixpkgs="$(MY_NIXPKGS_REPO)/archive/$(MY_NIXPKGS_COMMIT).tar.gz" switch
+	@$(SUDO) $(NIXOS_REBUILD) \
+		-I nixpkgs="$(MY_NIXPKGS_REPO)/archive/$(MY_NIXPKGS_COMMIT).tar.gz" switch
