@@ -5,6 +5,7 @@
     calcurse
     khal
     nextcloud-client
+    obsidian
     planner
     tasksh
     taskwarrior

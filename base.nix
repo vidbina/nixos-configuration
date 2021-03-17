@@ -183,6 +183,7 @@ in
   nixpkgs.config = with pkgs; {
     allowUnfreePredicate = (pkg: builtins.elem (stdenv.lib.getName pkg) [
       "aseprite"
+      "obsidian"
       "zoom"
     ]);
   };
