@@ -1,3 +1,5 @@
+SHELL = /usr/bin/env bash
+
 # Commands
 CP=cp
 NIXOS_REBUILD=nixos-rebuild --show-trace
