@@ -17,6 +17,9 @@ MY_NIXPKGS_REPO?=https://github.com/vidbina/nixpkgs
 # Output of `git describe --dirty --always`
 MY_NIXPKGS_COMMIT?=20.09-1982-g60b18a066e8
 
+# Path to my nixpkgs
+MY_NIXPKGS_PATH=${HOME}/nixpkgs
+
 # Sets up /etc/nixos and performs a switch
 #
 # 	In order to perform an upgrade when just using the default rule, one would
