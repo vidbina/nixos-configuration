@@ -33,6 +33,7 @@ in
     acpi # show batt status and other ACPI info
     androidsdk
     arandr
+    bat # fancy cat (in Rust)
     beep
     ccze
     ctags # generate tags
@@ -41,6 +42,7 @@ in
     dict
     duc # disk usage utility (view disk space usage)
     entr
+    exa # fancy ls (in Rust)
     exfat # for handling FAT partitions
     file
     fzf
@@ -76,6 +78,7 @@ in
     screenfetch
     scrot
     st
+    starship # fancy prompt (in Rust)
     tabbed
     tcpdump
     tmux
