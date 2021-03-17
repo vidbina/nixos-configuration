@@ -29,11 +29,13 @@ MY_NIXPKGS_LOCAL_ARGS=-I nixos=${MY_NIXPKGS_PATH}/nixos -I nixpkgs=${MY_NIXPKGS_
 #
 #		in order to first trigger an upgrade of version of the nixos channel that
 #		your system tracks.
+.PHONY: all
 all: setup switch
 
 # Sets up the configuration in /etc/nixos
 #
 # 	Source: https://nixos.org/nixos/manual/index.html#sec-changing-config
+.PHONY: setup
 setup:
 	${SUDO} ${RM} -r /etc/nixos/customPkgs /etc/nixos/config
 	${SUDO} ${CP} -Lr *.nix zsh customPkgs config /etc/nixos/.
@@ -43,9 +45,11 @@ setup:
 # 	Unless you add packages using these rules, nothing should really change
 # 	about your system you still use the exact same version of what you were
 # 	already using
+.PHONY: test
 test:
 	${SUDO} ${NIXOS_REBUILD} test
 
+.PHONY: switch
 switch:
 	${SUDO} ${NIXOS_REBUILD} switch
 
@@ -58,9 +62,11 @@ switch:
 # 	the packages involved. Any of these make rules can potentially trigger a
 # 	lot of downloads and subsequent version upgrades of packages, perhaps this
 # 	operation even breaks the configuration as packages get dropped or renamed.
+.PHONY: upgrade-test
 upgrade-test:
 	${SUDO} ${NIXOS_REBUILD} test --upgrade
 
+.PHONY: upgrade-switch
 upgrade-switch:
 	${SUDO} ${NIXOS_REBUILD} switch --upgrade
 
@@ -72,12 +78,15 @@ upgrade-switch:
 # 	upstream first.
 #
 # 	Source: https://nixos.org/nixos/manual/#sec-changing-config
+.PHONY: local-boot
 local-boot:
 	${SUDO} ${NIXOS_REBUILD} ${MY_NIXPKGS_LOCAL_ARGS} boot
 
+.PHONY: local-test
 local-test:
 	${SUDO} ${NIXOS_REBUILD} ${MY_NIXPKGS_LOCAL_ARGS} test
 
+.PHONY: local-switch
 local-switch:
 	${SUDO} ${NIXOS_REBUILD} ${MY_NIXPKGS_LOCAL_ARGS} switch
 
@@ -92,15 +101,10 @@ local-switch:
 # 	NOTE: When a change is made to the specified branch, one should invoke
 # 	these rules on all the machines that are build against the branch in order
 # 	to ensure package version parity between machines.
+.PHONY: remote-test
 remote-test:
 	${SUDO} ${NIXOS_REBUILD} -I nixpkgs=${MY_NIXPKGS_REPO}/archive/${MY_NIXPKGS_COMMIT}.tar.gz test
 
+.PHONY: remote-switch
 remote-switch:
 	${SUDO} ${NIXOS_REBUILD} -I nixpkgs=${MY_NIXPKGS_REPO}/archive/${MY_NIXPKGS_COMMIT}.tar.gz switch
-
-.PHONY: all test \
-	setup \
-	switch \
-	local-test local-switch \
-	remote-test remote-switch \
-	upgrade-test upgrade-switch
