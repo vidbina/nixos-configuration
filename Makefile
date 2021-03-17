@@ -3,9 +3,6 @@ CP=cp
 NIXOS_REBUILD=nixos-rebuild --show-trace
 SUDO=sudo
 
-# Command arguments in case I want to build against $HOME/nixpkgs
-MY_NIXPKGS_LOCAL_ARGS=-I nixos=${HOME}/nixpkgs/nixos -I nixpkgs=${HOME}/nixpkgs
-
 # Git repository and branch in which I keep the nixpkgs which I want to install
 #
 #		The MY_NIXPKGS_* variables are only used in the remote rules (remote-test
@@ -19,6 +16,9 @@ MY_NIXPKGS_COMMIT?=20.09-1982-g60b18a066e8
 
 # Path to my nixpkgs
 MY_NIXPKGS_PATH=${HOME}/nixpkgs
+
+# Command arguments in case I want to build against $HOME/nixpkgs
+MY_NIXPKGS_LOCAL_ARGS=-I nixos=${MY_NIXPKGS_PATH}/nixos -I nixpkgs=${MY_NIXPKGS_PATH}
 
 # Sets up /etc/nixos and performs a switch
 #
