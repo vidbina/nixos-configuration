@@ -24,8 +24,14 @@ let
 in
 {
   environment.systemPackages = with pkgs; [
-    emacs-vidbina
     fd
     ripgrep-for-doom-emacs
   ];
+
+  services = {
+    emacs = {
+      enable = true;
+      package = emacs-vidbina;
+    };
+  };
 }
