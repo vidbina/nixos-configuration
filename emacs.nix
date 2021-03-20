@@ -12,6 +12,7 @@ let
       with epkgs.melpaStablePackages; [
         evil
         nix-mode
+        pdf-tools
       ]
     ) ++ (
       with epkgs.melpaPackages; [
