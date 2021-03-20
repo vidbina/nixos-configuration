@@ -31,6 +31,7 @@ in
 
   services = {
     emacs = {
+      # Restart using `systemctl --user restart emacs`
       enable = true;
       package = emacs-vidbina;
     };

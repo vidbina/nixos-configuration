@@ -27,6 +27,7 @@
       '';
       interactiveShellInit = ''
         export EDITOR=nvim
+        export VISUAL="emacsclient -c -a emacs"
 
         setopt histignorespace # keeps lines preceded with SPACE out of history
 
