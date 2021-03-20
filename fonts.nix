@@ -8,6 +8,7 @@
       emojione
       fira-code
       font-awesome-ttf
+      iosevka
       noto-fonts-emoji
       powerline-fonts
     ];
