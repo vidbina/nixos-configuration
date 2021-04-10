@@ -61,6 +61,13 @@ in
 
   hardware = {
     cpu.intel.updateMicrocode = true;
+
+    opengl = {
+      enable = true;
+      extraPackages = with pkgs; [
+        intel-media-driver
+      ];
+    };
   };
 
   console.font = "latarcyrheb-sun32";
