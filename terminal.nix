@@ -22,7 +22,7 @@
         enable = true;
       };
       shellInit = ''
-        export PATH=$PATH:~/bin/
+        export PATH=$PATH:~/bin:~/.emacs.d/bin
         source ~/bin/teleport.zsh
       '';
       interactiveShellInit = ''
