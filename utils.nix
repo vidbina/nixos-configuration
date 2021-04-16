@@ -77,6 +77,7 @@ in
     rofi-vidbina
     screenfetch
     scrot
+    slop
     st
     starship # fancy prompt (in Rust)
     tabbed
