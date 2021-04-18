@@ -6,6 +6,7 @@
     msmtp
     neomutt
     notmuch
+    notmuch-mutt
     offlineimap
     thunderbird
     urlview
