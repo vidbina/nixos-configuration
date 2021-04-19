@@ -63,7 +63,7 @@ in
     ghc
     ghcid
     ghidra-bin
-    git
+    gitAndTools.gitFull # to include send-email
     git-lfs
     github-cli
     glibc
