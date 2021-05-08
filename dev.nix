@@ -52,6 +52,10 @@ let
     viAlias = true;
     #withNodeJs = true;
   };
+
+  sqlite-interactive = (pkgs.sqlite.override {
+    interactive = true;
+  });
 in
 {
   environment.systemPackages = with pkgs; [
@@ -83,7 +87,7 @@ in
     nodejs
     shellcheck
     shfmt
-    sqlite
+    sqlite-interactive
     subversion
     wuzz # cURL-like TUI HTTP request inspection tool
     xxd
