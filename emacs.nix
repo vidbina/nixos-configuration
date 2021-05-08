@@ -29,6 +29,15 @@ in
     jupyter-for-emacs
     multimarkdown
     ripgrep-for-doom-emacs
+
+    (makeDesktopItem {
+      name = "org-protocol";
+      exec = "emacsclient %u";
+      comment = "Org Protocol";
+      desktopName = "org-protocol";
+      type = "Application";
+      mimeType = "x-scheme-handler/org-protocol";
+    })
   ];
 
   services = {
