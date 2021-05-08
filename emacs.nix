@@ -22,10 +22,12 @@ in
 {
   environment.systemPackages = with pkgs; [
     clang
+    cmake
     coreutils
     emacs-vidbina
     fd
     jupyter-for-emacs
+    multimarkdown
     ripgrep-for-doom-emacs
   ];
 
