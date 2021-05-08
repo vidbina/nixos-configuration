@@ -23,6 +23,7 @@ in
   environment.systemPackages = with pkgs; [
     clang
     coreutils
+    emacs-vidbina
     fd
     jupyter-for-emacs
     ripgrep-for-doom-emacs
