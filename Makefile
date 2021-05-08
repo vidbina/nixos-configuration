@@ -20,7 +20,7 @@ MY_NIXPKGS_COMMIT ?= "20.09-2382-gdb4dda79f8f"
 
 .PHONY: version
 version:
-	cd "$(MY_NIXPKGS_PATH)" && git describe --dirty --always
+	@cd "$(MY_NIXPKGS_PATH)" && git describe --dirty --always
 
 
 # Path to my nixpkgs
