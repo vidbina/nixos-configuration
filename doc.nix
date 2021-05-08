@@ -12,12 +12,14 @@ let
   });
   texlive-asabina = with pkgs; (texlive.combine {
     inherit (texlive)
-      scheme-basic
+      scheme-medium
       luatex
 
+      atenddvi
       IEEEtran
       background
       bashful
+      capt-of
       collection-basic
       collection-fontsrecommended
       collection-langeuropean
@@ -43,6 +45,7 @@ let
       titlepic
       tocloft
       ulem
+      wrapfig
       xargs
       xetex
       xstring
