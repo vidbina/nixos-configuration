@@ -17,7 +17,6 @@ let
   #});
 
   pass-vidbina = with pkgs; pass.withExtensions (exts: [ exts.pass-otp ]);
-  androidsdk = with pkgs; (androidenv.composeAndroidPackages { }).androidsdk;
   rofi-vidbina = with pkgs; rofi.override {
     plugins = [
       rofi-calc
@@ -27,11 +26,9 @@ let
 in
 {
   nixpkgs.config = {
-    android_sdk.accept_license = true;
   };
   environment.systemPackages = with pkgs; [
     acpi # show batt status and other ACPI info
-    androidsdk
     arandr
     bat # fancy cat (in Rust)
     beep

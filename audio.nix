@@ -3,12 +3,9 @@
 {
   environment.systemPackages = with pkgs; [
     alsaUtils
-    blueman
     pamixer
     paprefs
     pavucontrol
-    pulseeffects
-    puredata
   ];
 
   hardware.bluetooth = {

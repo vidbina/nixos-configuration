@@ -17,16 +17,11 @@ in
   environment.systemPackages = with pkgs; [
     aseprite-unfree
     #blender
-    dia
     #fontforge-gtk
     gimp
     glxinfo # test utils for OpenGL
     #gmsh
-    graphviz
-    imagemagick
     inkscape
     #krita
-    plantuml
-    scribus
   ];
 }

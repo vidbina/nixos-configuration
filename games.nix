@@ -4,7 +4,6 @@
   environment.systemPackages = with pkgs; [
     anki
     godot
-    stockfish
     #(
     #  with python3Packages; buildPythonPackage rec {
     #    pname = "chs";

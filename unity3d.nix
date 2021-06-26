@@ -7,5 +7,4 @@
     unity3d
   ];
 
-  security.chromiumSuidSandbox.enable = true;
 }

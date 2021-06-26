@@ -18,22 +18,15 @@
   services.xserver.autoRepeatDelay = 180;
   services.xserver.autoRepeatInterval = 50;
 
-  services.xserver.synaptics = {
-    enable = false;
-    horizEdgeScroll = false;
-    palmDetect = true;
-    tapButtons = false;
-    twoFingerScroll = true;
-    # TODO: invert scrolling
-  };
-
   services.xserver.libinput = {
     enable = true;
-    naturalScrolling = true;
-    clickMethod = "clickfinger";
-    scrollMethod = "twofinger";
-    disableWhileTyping = true;
-    tapping = false;
+    touchpad = {
+      clickMethod = "clickfinger";
+      naturalScrolling = true;
+      scrollMethod = "twofinger";
+      disableWhileTyping = true;
+      tapping = false;
+    };
   };
 
   systemd.user.services.ibus-daemon = {

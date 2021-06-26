@@ -17,10 +17,8 @@ let
 in
 {
   environment.systemPackages = with pkgs; [
-    signal-cli
     signal-desktop
     tdesktop
     weechat-vidbina
-    zoom-us
   ];
 }

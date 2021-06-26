@@ -62,7 +62,6 @@ in
     asciinema
     checkmake-vidbina
     cmakeCurses
-    darcs
     gdb
     ghc
     ghcid
@@ -73,18 +72,16 @@ in
     glibc
     gnumake
     go
-    go-jira
-    hadolint # Dockerfile linter
     hexyl
     html-tidy
     htmlTidy
     httpie
     httplab # interactive web server
     jq # pretty-print JSON
-    k9s
     mitscheme
     neovim-vidbina
     nodejs
+    rnix-lsp # LSP
     shellcheck
     shfmt
     sqlite-interactive
@@ -103,7 +100,6 @@ in
   )
   ++ (
     with pythonPackages; [
-      yamllint
     ]
   )
   ;

@@ -62,11 +62,8 @@ in
     biber
     evince
     ghostscript
-    haskellPackages.pandoc
-    haskellPackages.pandoc-citeproc
     libreoffice
     okular
-    pandoc-plantuml-filter
     texlive-asabina
     pdftk
     scim

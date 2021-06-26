@@ -160,7 +160,7 @@ in
 
   # The NixOS release to be compatible with for stateful data such as databases.
   system = {
-    stateVersion = "20.03";
+    stateVersion = "21.05";
   };
 
   # Set your time zone.
@@ -191,7 +191,6 @@ in
     allowUnfreePredicate = (pkg: builtins.elem (stdenv.lib.getName pkg) [
       "aseprite"
       "obsidian"
-      "zoom"
     ]);
   };
 }

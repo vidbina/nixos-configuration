@@ -42,9 +42,6 @@
         autoload -U +X bashcompinit && \
         bashcompinit
 
-        # Code completion for go-jira
-        eval "$(jira --completion-script-zsh)"
-
         # Install starship
         eval "$(starship init zsh)"
       '';
