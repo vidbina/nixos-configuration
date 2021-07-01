@@ -6,7 +6,9 @@ let
     epkgs:
     (
       with epkgs; [
+        notmuch
         vterm
+        pdf-tools
       ]
     ) ++ (
       with epkgs.melpaStablePackages; [
