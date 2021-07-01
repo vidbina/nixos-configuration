@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
+    isync
     mb2md
     msmtp
     mu
