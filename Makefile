@@ -16,7 +16,7 @@ MY_NIXPKGS_REPO ?= "https://github.com/vidbina/nixpkgs"
 
 # Output of `git describe --dirty --always`
 # Update manually to maintain a tracked ref to the last working installation
-MY_NIXPKGS_COMMIT ?= "21.05-588-g8112fbe212f"
+MY_NIXPKGS_COMMIT ?= "21.05-664-gacc107f4be1"
 
 
 .PHONY: version
