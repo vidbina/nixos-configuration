@@ -76,7 +76,6 @@ in
     scrot
     slop
     st
-    starship # fancy prompt (in Rust)
     tabbed
     tcpdump
     tmux

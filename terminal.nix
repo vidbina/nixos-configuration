@@ -41,9 +41,6 @@
         # enable bash completion
         autoload -U +X bashcompinit && \
         bashcompinit
-
-        # Install starship
-        eval "$(starship init zsh)"
       '';
       promptInit = ''
         bindkey -v # use vim key bindings
