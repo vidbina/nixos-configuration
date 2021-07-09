@@ -20,6 +20,7 @@ in
     #fontforge-gtk
     gimp
     glxinfo # test utils for OpenGL
+    graphviz
     #gmsh
     inkscape
     #krita
