@@ -34,9 +34,9 @@
         zmodload -i zsh/complist
         source ${./zsh/zstyle.zsh}
 
-        # autoload -U promptinit && \
-        # promptinit && \
-        # prompt adam2 8bit yellow red blue
+        autoload -U promptinit && \
+        promptinit && \
+        prompt adam2 8bit yellow red blue
 
         # enable bash completion
         autoload -U +X bashcompinit && \
