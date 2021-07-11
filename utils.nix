@@ -61,6 +61,7 @@ in
     nix-prefetch-git
     nixpkgs-fmt
     nixpkgs-lint
+    lxappearance
     p7zip
     pass-vidbina
     pciutils
