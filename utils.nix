@@ -53,6 +53,7 @@ in
     htop # for viewing process metrics
     indent
     iotop
+    imagemagick
     jmtpfs
     libnotify
     mc
