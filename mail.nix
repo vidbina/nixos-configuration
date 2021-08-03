@@ -10,7 +10,6 @@
     notmuch
     notmuch-mutt
     offlineimap
-    thunderbird
     urlview
   ];
 }

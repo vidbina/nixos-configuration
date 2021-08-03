@@ -18,8 +18,10 @@ in
     aseprite-unfree
     #blender
     #fontforge-gtk
+    ditaa
     gimp
     glxinfo # test utils for OpenGL
+    gnuplot
     graphviz
     #gmsh
     inkscape
