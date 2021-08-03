@@ -25,6 +25,7 @@ in
     graphviz
     #gmsh
     inkscape
+    plantuml
     #krita
   ];
 }
