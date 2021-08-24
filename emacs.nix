@@ -40,6 +40,24 @@ in
       type = "Application";
       mimeType = "x-scheme-handler/org-protocol";
     })
+
+    # https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-0.9.5.html
+    # https://www.emacswiki.org/emacs/MailtoHandler
+    # https://dev.spacekookie.de/kookie/nomicon/commit/9e5896496cfd5da5754018887f7ad3b256b3ad80.diff
+    (makeDesktopItem {
+      name = "emacs-mu4e";
+      exec = ''
+        emacsclient -c --eval "(browse-url-mail \"%u\")"
+      '';
+      comment = "Emacs mu4e";
+      desktopName = "emacs-mu4e";
+      type = "Application";
+      mimeType = lib.concatStringsSep ";" [
+        # Email
+        "x-scheme-handler/mailto;"
+        "message/rfc822"
+      ];
+    })
   ];
 
   services = {
