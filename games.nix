@@ -33,7 +33,7 @@
 
     #    #propagatedBuildInputs = [ setuptools ];
 
-    #    meta = with stdenv.lib; {
+    #    meta = with lib; {
     #      homepage = https://github.com/nickzuber/chs;
     #      description = "A command-line interface to play chess against the Stockfish engine";
     #      license = licenses.mit;

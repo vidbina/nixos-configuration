@@ -40,7 +40,7 @@ stdenv.mkDerivation rec {
     ./prefix.patch
   ];
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "free software to create electric diagrams";
     homepage = "https://qelectrotech.org";
     license = licenses.gpl2;

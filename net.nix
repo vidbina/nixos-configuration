@@ -111,7 +111,7 @@
           { }
           (
             import ./config/openvpn.nix {
-              toUpper = pkgs.stdenv.lib.toUpper;
+              toUpper = pkgs.lib.toUpper;
             }
           );
       };

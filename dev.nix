@@ -35,7 +35,7 @@ let
       mv checkmake.1 $out/share/man/man1/checkmake.1
     '';
 
-    meta = with stdenv.lib; {
+    meta = with lib; {
       description = "Experimental tool for linting and checking Makefiles";
       homepage = https://github.com/mrtazz/checkmake;
       license = licenses.mit;

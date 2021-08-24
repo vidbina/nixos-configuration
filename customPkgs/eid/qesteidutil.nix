@@ -40,7 +40,7 @@ stdenv.mkDerivation rec {
     hicolor_icon_theme
   ];
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "UI application for managing smart card PIN/PUK codes and certificates";
     homepage = "http://www.id.ee/";
     license = licenses.lgpl2;
