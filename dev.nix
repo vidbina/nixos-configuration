@@ -78,6 +78,7 @@ in
     httpie
     httplab # interactive web server
     jq # pretty-print JSON
+    kakoune
     mitscheme
     neovim-vidbina
     nodejs
