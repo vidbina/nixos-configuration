@@ -25,6 +25,12 @@ let
   };
 in
 {
+  nix = {
+    package = pkgs.nixUnstable;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
   nixpkgs.config = {
   };
   environment.systemPackages = with pkgs; [
@@ -58,7 +64,6 @@ in
     libnotify
     mc
     networkmanagerapplet
-    nix
     nix-prefetch-git
     nixpkgs-fmt
     nixpkgs-lint
