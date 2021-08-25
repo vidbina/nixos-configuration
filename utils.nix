@@ -93,8 +93,10 @@ in
     unzip
     usbutils
     w3m
+    webkitgtk
     wget
     whois
+    xcalib
     xclip
     xfe # GUI file manager
     xorg.xbacklight
