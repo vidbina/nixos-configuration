@@ -1,0 +1,27 @@
+{
+  "nodes": {
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1627984341,
+        "narHash": "sha256-MRjUWSNaYiHii3oXs8Qn7+FiZyYct+bRQqxT70GpmUU=",
+        "owner": "vidbina",
+        "repo": "nixpkgs",
+        "rev": "4feab93d28ee3b404c4b1f0f951943db10c98785",
+        "type": "github"
+      },
+      "original": {
+        "owner": "vidbina",
+        "ref": "current-21.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
