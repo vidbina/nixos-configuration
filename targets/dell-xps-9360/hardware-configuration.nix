@@ -5,7 +5,7 @@
 
 {
   imports =
-    [ #<nixpkgs/nixos/modules/installer/scan/not-detected.nix>
+    [
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "rtsx_pci_sdmmc" ];
@@ -13,18 +13,19 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/1623a3d9-cf4c-40d4-94a5-78b166a73982";
+    {
+      device = "/dev/disk/by-uuid/1623a3d9-cf4c-40d4-94a5-78b166a73982";
       fsType = "btrfs";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/6EC8-AA9F";
+    {
+      device = "/dev/disk/by-uuid/6EC8-AA9F";
       fsType = "vfat";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/b75e5b9b-01fa-40ac-914f-7c81f5341672"; }
-    ];
+    [{ device = "/dev/disk/by-uuid/b75e5b9b-01fa-40ac-914f-7c81f5341672"; }];
 
   nix.maxJobs = lib.mkDefault 4;
   powerManagement.cpuFreqGovernor = "powersave";
