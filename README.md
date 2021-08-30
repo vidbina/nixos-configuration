@@ -4,6 +4,22 @@ This is the NixOS :snowflake: configuration that I use on my Dell XPS.
 
 # Usage
 
+## :warning: Using Flake (i.e.: `nixos-rebuild --flake`)
+
+[Flakes](https://nixos.wiki/wiki/Flakes) provides a mechanism for pinning all
+depedencies in an easier manner than the traditional `nixos-rebuild` approach
+where one has to refer to a ref and provide the corresponding hash or one has
+to check out the nixpkgs repo and move the HEAD to the intended state. Flakes
+ship with a [lock file](./flakes.lock) that pins all versions and allow for
+easier tooling to update dependencies (using `nix flake lock --update-input` or
+`nix flake update`).
+
+```bash
+nixos-rebuild test --flake '.#dell-xps-9360'
+```
+
+## Traditional `nixos-rebuild`
+
 > :bulb: Last update was tested with `make setup && make remote-test` and
 > applied with `make setup && make remote-switch`. Just run this and be done
 > with it. :wink:
@@ -17,10 +33,6 @@ or `nixos-rebuild switch`. Testing a configuration is convenient to test
 changes that you aren't sure you may want to persist yet. After playing around
 with the new configuration for a while one can persist the changes by running a
 switch operations. :wink:
-
-# Enable Overlays
-
-By simlinking the overlays directory to ~/.config/nixpkgs/overlays.
 
 > In both `nixos-rebuild test` as in `nixos-rebuild switch` all changes are
 > actually installed. The only difference is that `nixos-rebuild switch`
@@ -164,3 +176,7 @@ helper and then just fold over a list of regions to generate the list
 for the helper in net.nix. In case this is just too messy for you, revert to
 the instructions at the head of this paragraph for a much easier but possibly
 more verbose setup. :wink:
+
+### Enable Overlays
+
+By simlinking the overlays directory to ~/.config/nixpkgs/overlays.
