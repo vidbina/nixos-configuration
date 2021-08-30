@@ -1,6 +1,8 @@
 { nixpkgs, nixos-hardware }: nixpkgs.lib.nixosSystem {
   system = "x86_64-linux";
+
   modules = [
+    nixos-hardware.nixosModules.dell-xps-13-9360
     ./hardware-configuration.nix
 
     ../../base.nix
