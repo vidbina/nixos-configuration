@@ -18,6 +18,6 @@
       }));
     in
     {
-      nixosConfigurations.dell-xps-9360= targetToConfig ("dell-xps-9360");
+      nixosConfigurations.dell-xps-9360 = targetToConfig ("dell-xps-9360");
     };
 }
