@@ -70,7 +70,12 @@ in
     };
   };
 
-  console.font = "latarcyrheb-sun32";
+  console = {
+    earlySetup = true;
+    font = "ter-i32b";
+    packages = with pkgs; [ terminus_font ];
+  };
+
   # Select internationalisation properties.
   i18n = {
     #   consoleKeyMap = "us";
