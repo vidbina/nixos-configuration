@@ -83,38 +83,39 @@
         ];
     };
 
-    openvpn =
-      let
-        describeConnection =
-          { handle
-          , configFile
-          , passFile
-          , autoStart ? false
-          , updateResolvConf ? true
-          , additionalConfig ? ""
-          ,
-          }: {
-            "${handle}" = {
-              autoStart = autoStart;
-              updateResolvConf = updateResolvConf;
-              config = ''
-                config ${configFile}
-                auth-user-pass ${passFile}
-                ${additionalConfig}
-              '';
-            };
-          };
-      in
-      {
-        servers = builtins.foldl'
-          (acc: val: acc // describeConnection (val))
-          { }
-          (
-            import ./config/openvpn.nix {
-              toUpper = pkgs.lib.toUpper;
-            }
-          );
-      };
+    # TODO: Remove dep on untracked config dir
+    #openvpn =
+    #  let
+    #    describeConnection =
+    #      { handle
+    #      , configFile
+    #      , passFile
+    #      , autoStart ? false
+    #      , updateResolvConf ? true
+    #      , additionalConfig ? ""
+    #      ,
+    #      }: {
+    #        "${handle}" = {
+    #          autoStart = autoStart;
+    #          updateResolvConf = updateResolvConf;
+    #          config = ''
+    #            config ${configFile}
+    #            auth-user-pass ${passFile}
+    #            ${additionalConfig}
+    #          '';
+    #        };
+    #      };
+    #  in
+    #  {
+    #    servers = builtins.foldl'
+    #      (acc: val: acc // describeConnection (val))
+    #      { }
+    #      (
+    #        import ./config/openvpn.nix {
+    #          toUpper = pkgs.lib.toUpper;
+    #        }
+    #      );
+    #  };
 
     openssh = {
       enable = false;
