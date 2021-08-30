@@ -9,12 +9,17 @@
     nixos-hardware = {
       url = github:NixOS/nixos-hardware/master;
     };
+
+    home-manager = {
+      url = github:nix-community/home-manager/master;
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, nixos-hardware }:
+  outputs = { self, nixpkgs, nixos-hardware, home-manager }:
     let
       targetToConfig = (targetDir: (import (./targets + "/${targetDir}") {
-        inherit nixpkgs nixos-hardware;
+        inherit nixpkgs nixos-hardware home-manager;
       }));
     in
     {

@@ -1,4 +1,4 @@
-{ nixpkgs, nixos-hardware }: nixpkgs.lib.nixosSystem {
+{ nixpkgs, nixos-hardware, ... }: nixpkgs.lib.nixosSystem {
   system = "x86_64-linux";
 
   modules = [
