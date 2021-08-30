@@ -1,9 +1,21 @@
-{ nixpkgs, nixos-hardware, ... }: nixpkgs.lib.nixosSystem {
+{ nixpkgs, nixos-hardware, home-manager, ... }: nixpkgs.lib.nixosSystem {
   system = "x86_64-linux";
 
   modules = [
     nixos-hardware.nixosModules.dell-xps-13-9360
     ./hardware-configuration.nix
+
+    # FIX: Infinite recursion
+    # ../../home-manager.nix
+    home-manager.nixosModules.home-manager {
+      home-manager = {
+        useGlobalPkgs = true;
+        useUserPackages = true;
+        users.vidbina = {
+          programs.home-manager.enable = true;
+        };
+      };
+    }
 
     ../../base.nix
 
