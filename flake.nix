@@ -14,7 +14,7 @@
   outputs = { self, nixpkgs, nixos-hardware }:
     let
       targetToConfig = (targetDir: (import (./targets + "/${targetDir}") {
-        inherit nixpkgs;
+        inherit nixpkgs nixos-hardware;
       }));
     in
     {
