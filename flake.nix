@@ -10,8 +10,9 @@
       url = github:NixOS/nixos-hardware/master;
     };
 
+    # TODO: Keep home-manager version on-par with nixpkgs version
     home-manager = {
-      url = github:nix-community/home-manager/master;
+      url = github:nix-community/home-manager/release-21.05;
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
