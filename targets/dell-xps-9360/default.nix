@@ -21,6 +21,7 @@
     ../../fonts.nix
     ../../interfacing.nix
     ../../terminal.nix
+    ../../x.nix
     ../../xmonad.nix
     ../../net.nix
 
