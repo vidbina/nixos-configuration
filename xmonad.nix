@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -12,10 +12,13 @@
   ];
 
   # NOTE: Set XMonad as wm again. Make sure to set .xmonad/xmonad.hs
-  services.xserver.windowManager = pkgs.lib.mkForce {
-    xmonad = {
-      enableContribAndExtras = true;
-      enable = true;
+  services.xserver = {
+    displayManager.defaultSession = "none+xmonad";
+    windowManager = pkgs.lib.mkForce {
+      xmonad = {
+        enableContribAndExtras = true;
+        enable = true;
+      };
     };
   };
 }
