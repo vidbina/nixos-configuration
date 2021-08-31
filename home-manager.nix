@@ -1,6 +1,12 @@
-{ home-manager }: home-manager.nixosModules.home-manager {
+{ ... }: {
   home-manager = {
-    useGlobalPackages = true;
+    useGlobalPkgs = true;
     useUserPackages = true;
+
+    users.vidbina = {
+      programs = {
+        home-manager.enable = true;
+      };
+    };
   };
 }

@@ -6,16 +6,8 @@
     ./hardware-configuration.nix
 
     # FIX: Infinite recursion
-    # ../../home-manager.nix
-    home-manager.nixosModules.home-manager {
-      home-manager = {
-        useGlobalPkgs = true;
-        useUserPackages = true;
-        users.vidbina = {
-          programs.home-manager.enable = true;
-        };
-      };
-    }
+    home-manager.nixosModules.home-manager
+    ../../home-manager.nix
 
     ../../base.nix
 
