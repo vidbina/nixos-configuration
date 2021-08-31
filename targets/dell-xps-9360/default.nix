@@ -5,7 +5,6 @@
     nixos-hardware.nixosModules.dell-xps-13-9360
     ./hardware-configuration.nix
 
-    # FIX: Infinite recursion
     home-manager.nixosModules.home-manager
     ../../home-manager.nix
 
@@ -21,9 +20,11 @@
     ../../fonts.nix
     ../../interfacing.nix
     ../../terminal.nix
+    ../../net.nix
+
+    # X
     ../../x.nix
     ../../xmonad.nix
-    ../../net.nix
 
     # other
     ../../audio.nix

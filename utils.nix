@@ -31,8 +31,7 @@ in
       experimental-features = nix-command flakes
     '';
   };
-  nixpkgs.config = {
-  };
+  nixpkgs.config = { };
   environment.systemPackages = with pkgs; [
     acpi # show batt status and other ACPI info
     arandr
