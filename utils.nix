@@ -96,21 +96,6 @@ in
     webkitgtk
     wget
     whois
-    xcalib
-    xclip
-    xfe # GUI file manager
-    xorg.xbacklight
-    xorg.xdpyinfo
-    xorg.xev
-    xorg.xhost
-    xorg.xkbcomp
-    xorg.xkill
-    xorg.xmodmap
-    xorg.xprop
-    xorg.xwininfo
-    xrectsel
-    xsel
-    xtrlock-pam
     zbar
     zip
   ];

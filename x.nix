@@ -1,4 +1,22 @@
 { pkgs, ... }: {
+  environment.systemPackages = with pkgs; [
+    xcalib
+    xclip
+    xfe # GUI file manager
+    xorg.xbacklight
+    xorg.xdpyinfo
+    xorg.xev
+    xorg.xhost
+    xorg.xkbcomp
+    xorg.xkill
+    xorg.xmodmap
+    xorg.xprop
+    xorg.xwininfo
+    xrectsel
+    xsel
+    xtrlock-pam
+  ];
+
   services = {
     # Enable the X11 windowing system.
     xserver = {
