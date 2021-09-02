@@ -1,4 +1,4 @@
-{ ... }: {
+{ lib, specialArgs, config, options, modulesPath }: {
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
