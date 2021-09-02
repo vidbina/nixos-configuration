@@ -18,6 +18,20 @@ easier tooling to update dependencies (using `nix flake lock --update-input` or
 nixos-rebuild test --flake '.#dell-xps-9360'
 ```
 
+### Debug, Tweaking, Tuning or Screwing Around
+
+For debug purposes, it helps to fire up a nix repl to inspect the configuration
+a bit.
+
+```nix
+f = builtins.getFlake "/path/to/this/repo/that/contains/the/flake"
+# Look at inputs, e.g.: nixpkgs
+f.inputs.nixpkgs
+
+# Look at output, e.g.: nixosConfiguration
+f.outputs.nixosConfiguration
+```
+
 ## Traditional `nixos-rebuild`
 
 > :bulb: Last update was tested with `make setup && make remote-test` and
