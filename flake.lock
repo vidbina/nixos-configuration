@@ -57,7 +57,24 @@
       "inputs": {
         "home-manager": "home-manager",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "vidbina-xmonad-config": "vidbina-xmonad-config"
+      }
+    },
+    "vidbina-xmonad-config": {
+      "locked": {
+        "lastModified": 1630613151,
+        "narHash": "sha256-oMkY42GoJ9X7DqCeGECaeng9gt5ORQpvo5U7WW4osX8=",
+        "owner": "vidbina",
+        "repo": "xmonad-config",
+        "rev": "6bce451087df9d34d3e4cfcae44439c967514bad",
+        "type": "github"
+      },
+      "original": {
+        "owner": "vidbina",
+        "ref": "experiment-nix-flake",
+        "repo": "xmonad-config",
+        "type": "github"
       }
     }
   },

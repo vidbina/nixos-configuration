@@ -1,10 +1,11 @@
-{ nixpkgs, nixos-hardware, home-manager, ... }: nixpkgs.lib.nixosSystem {
+{ nixpkgs, nixos-hardware, home-manager, vidbina-xmonad-config }: nixpkgs.lib.nixosSystem {
   system = "x86_64-linux";
 
   modules = [
     nixos-hardware.nixosModules.dell-xps-13-9360
     ./hardware-configuration.nix
 
+    ((vidbina-xmonad-config.nixosModule { config = nixpkgs.config; }) "vidbina")
     home-manager.nixosModules.home-manager
     ../../home-manager.nix
 

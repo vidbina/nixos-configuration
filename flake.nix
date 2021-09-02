@@ -16,12 +16,16 @@
       # TODO: Keep home-manager version on-par with nixpkgs version
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    vidbina-xmonad-config = {
+      url = github:vidbina/xmonad-config/experiment-nix-flake;
+    };
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, home-manager }:
+  outputs = { self, nixpkgs, nixos-hardware, home-manager, vidbina-xmonad-config }:
     let
       targetToConfig = (targetDir: (import (./targets + "/${targetDir}") {
-        inherit nixpkgs nixos-hardware home-manager;
+        inherit nixpkgs nixos-hardware home-manager vidbina-xmonad-config;
       }));
     in
     {
