@@ -3,20 +3,7 @@
 , home-manager
 , vidbina-xmonad-config
 , vidbina-xmobar-config
-}:
-
-
-let
-  home-manager-configuration = import ../../home-manager.nix {
-    lib = nixpkgs.lib;
-    username = "vidbina";
-  };
-  home-manager-xmonad-configuration = vidbina-xmonad-config.nixosModule {
-    config = nixpkgs.config;
-    username = "vidbina";
-  };
-in
-nixpkgs.lib.nixosSystem {
+}: nixpkgs.lib.nixosSystem {
   system = "x86_64-linux";
 
   modules = [
@@ -24,8 +11,24 @@ nixpkgs.lib.nixosSystem {
     ./hardware-configuration.nix
 
     home-manager.nixosModules.home-manager
-    home-manager-configuration
-    home-manager-xmonad-configuration
+
+    {
+      home-manager = {
+        useGlobalPkgs = true;
+        useUserPackages = true;
+        users.vidbina = {
+          home.file = (import vidbina-xmobar-config).config.home.file;
+          programs = {
+            home-manager.enable = true;
+          };
+
+          manual = {
+            html.enable = true;
+            manpages.enable = true;
+          };
+        };
+      };
+    }
 
     ../../base.nix
 
