@@ -6,6 +6,10 @@ let
     lib = nixpkgs.lib;
     username = "vidbina";
   };
+  home-manager-xmonad-configuration = vidbina-xmonad-config.nixosModule {
+    config = nixpkgs.config;
+    username = "vidbina";
+  };
 in
 nixpkgs.lib.nixosSystem {
   system = "x86_64-linux";
@@ -14,9 +18,9 @@ nixpkgs.lib.nixosSystem {
     nixos-hardware.nixosModules.dell-xps-13-9360
     ./hardware-configuration.nix
 
-    ((vidbina-xmonad-config.nixosModule { config = nixpkgs.config; }) "vidbina")
     home-manager.nixosModules.home-manager
     home-manager-configuration
+    home-manager-xmonad-configuration
 
     ../../base.nix
 

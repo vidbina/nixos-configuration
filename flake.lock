@@ -63,11 +63,11 @@
     },
     "vidbina-xmonad-config": {
       "locked": {
-        "lastModified": 1630617188,
-        "narHash": "sha256-yVhUJ8dBomTmxZiag58fZnkmXhoTOMSJDb/fKq4z990=",
+        "lastModified": 1630662535,
+        "narHash": "sha256-ljY4ig+VDHub+0jlyo1khitJNa8m8J5guaQz7615+Ps=",
         "owner": "vidbina",
         "repo": "xmonad-config",
-        "rev": "55c197b4ce46c2e048d532010c227169da6211a5",
+        "rev": "ee889d2ce74c276936288c77a077ea96dcb2967d",
         "type": "github"
       },
       "original": {
