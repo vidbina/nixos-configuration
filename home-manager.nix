@@ -1,16 +1,9 @@
-{ lib, specialArgs, config, options, modulesPath }: {
-  options = {
-    username = lib.mkOption {
-      type = lib.types.str;
-      default = "foo";
-    };
-  };
-
+{ lib, username }: {
   config.home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
 
-    users."${config.username}" = {
+    users."${username}" = {
       # https://nix-community.github.io/home-manager/options.html
       programs = {
         home-manager.enable = true;
