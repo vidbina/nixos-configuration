@@ -17,9 +17,8 @@
         useGlobalPkgs = true;
         useUserPackages = true;
         users.vidbina = {
-          home.file = vidbina-xmobar-config.nixosModule {
-            config = { };
-          };
+          home.file = vidbina-xmobar-config.nixosModule;
+
           programs = {
             home-manager.enable = true;
           };
@@ -29,9 +28,7 @@
             manpages.enable = true;
           };
 
-          xsession.windowManager.xmonad = vidbina-xmonad-config.nixosModule {
-            config = { };
-          };
+          xsession.windowManager.xmonad = vidbina-xmonad-config.nixosModule;
         };
       };
     }

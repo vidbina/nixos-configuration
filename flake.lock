@@ -64,11 +64,11 @@
     },
     "vidbina-xmobar-config": {
       "locked": {
-        "lastModified": 1630676799,
-        "narHash": "sha256-7Oklq5IwMqnf4ixCH0PZTKl+SizfVVjHwR5wK72TO98=",
+        "lastModified": 1630683541,
+        "narHash": "sha256-zi7izf77WF27fHGUFtW5fPiprh0RHxAwl7bJ+dJi89c=",
         "owner": "vidbina",
         "repo": "xmobar-configuration",
-        "rev": "241477db13764e6deca4a0ef100145ba5bc2d2f5",
+        "rev": "ae6ce8ebca74f800c963594db0052ed7d87a31ab",
         "type": "github"
       },
       "original": {
@@ -80,11 +80,11 @@
     },
     "vidbina-xmonad-config": {
       "locked": {
-        "lastModified": 1630676780,
-        "narHash": "sha256-dZm91mhdjAL5bNKxjqtusHCA5HYSRxA36i36/wQ/lzQ=",
+        "lastModified": 1630683565,
+        "narHash": "sha256-mc+zA6+D9j7OXOFjagI+KWanmiBraKpWhPgjvOOAa4c=",
         "owner": "vidbina",
         "repo": "xmonad-config",
-        "rev": "45ef32ed9d0c89d28c6b81c6619f1b7370a9063e",
+        "rev": "963dc5d6fecdc30f28f17fbf4c49dae6293b6e55",
         "type": "github"
       },
       "original": {
