@@ -20,6 +20,10 @@
     vidbina-xmonad-config = {
       url = github:vidbina/xmonad-config/experiment-nix-flake;
     };
+
+    vidbina-xmobar-config = {
+      url = github:vidbina/xmobar-configuration/experiment-nix-flake;
+    };
   };
 
   outputs = { self, nixpkgs, nixos-hardware, home-manager, vidbina-xmonad-config }:
