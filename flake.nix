@@ -13,7 +13,6 @@
 
     home-manager = {
       url = github:nix-community/home-manager/release-21.05;
-      # TODO: Keep home-manager version on-par with nixpkgs version
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
