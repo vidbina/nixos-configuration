@@ -26,10 +26,22 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, home-manager, vidbina-xmonad-config }:
+  outputs =
+    { self
+    , nixpkgs
+    , nixos-hardware
+    , home-manager
+    , vidbina-xmonad-config
+    , vidbina-xmobar-config
+    }@inputs:
     let
       targetToConfig = (targetDir: (import (./targets + "/${targetDir}") {
-        inherit nixpkgs nixos-hardware home-manager vidbina-xmonad-config;
+        inherit
+          nixpkgs
+          nixos-hardware
+          home-manager
+          vidbina-xmonad-config
+          vidbina-xmobar-config;
       }));
     in
     {

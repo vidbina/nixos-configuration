@@ -64,11 +64,11 @@
     },
     "vidbina-xmobar-config": {
       "locked": {
-        "lastModified": 1630664893,
-        "narHash": "sha256-jehGgoj6Rxrf8o+WxuLsB5cfk9KqUcHGVllI8xptdrM=",
+        "lastModified": 1630672462,
+        "narHash": "sha256-I9K/3oytOPKVBFxC0z3kcGFT+KcWoOFNNu6VBOOKYZU=",
         "owner": "vidbina",
         "repo": "xmobar-configuration",
-        "rev": "b2fe9ffb8dc945b58a02f48777884cc92a51d3e8",
+        "rev": "2432ece79729dc34c385daf151e0152782582dda",
         "type": "github"
       },
       "original": {

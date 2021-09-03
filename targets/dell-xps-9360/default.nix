@@ -1,4 +1,9 @@
-{ nixpkgs, nixos-hardware, home-manager, vidbina-xmonad-config }:
+{ nixpkgs
+, nixos-hardware
+, home-manager
+, vidbina-xmonad-config
+, vidbina-xmobar-config
+}:
 
 
 let
