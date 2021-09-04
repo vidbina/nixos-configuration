@@ -1,10 +1,14 @@
-{ lib, username }: {
+# TODO: Rename to home-configuration.nix
+
+{ lib, ... }@inputs: username: {
   config.home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
 
-    users."${username}" = {
-      # https://nix-community.github.io/home-manager/options.html
+    users."${username}" = with inputs; {
+      home.file = vidbina-xmobar-config.nixosModule;
+
+      # man home-configuration.nix
       programs = {
         home-manager.enable = true;
       };
@@ -16,6 +20,8 @@
         # Use `man home-configuration.nix`
         manpages.enable = true;
       };
+
+      xsession.windowManager.xmonad = vidbina-xmonad-config.nixosModule;
     };
   };
 }

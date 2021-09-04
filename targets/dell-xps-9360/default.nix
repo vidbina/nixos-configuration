@@ -11,27 +11,15 @@
     ./hardware-configuration.nix
 
     home-manager.nixosModules.home-manager
-
-    {
-      home-manager = {
-        useGlobalPkgs = true;
-        useUserPackages = true;
-        users.vidbina = {
-          home.file = vidbina-xmobar-config.nixosModule;
-
-          programs = {
-            home-manager.enable = true;
-          };
-
-          manual = {
-            html.enable = true;
-            manpages.enable = true;
-          };
-
-          xsession.windowManager.xmonad = vidbina-xmonad-config.nixosModule;
-        };
-      };
-    }
+    (import ../../home-manager.nix
+      {
+        inherit
+          vidbina-xmobar-config
+          vidbina-xmonad-config;
+        lib = nixpkgs.lib;
+      }
+      "vidbina"
+    )
 
     ../../base.nix
 
