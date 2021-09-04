@@ -1,4 +1,4 @@
-{ nixpkgs, nixos-hardware, home-manager }@inputs: home-configuration:
+{ nixpkgs, nixos-hardware, home-manager }@inputs: config:
 nixpkgs.lib.nixosSystem {
   system = "x86_64-linux";
 
@@ -7,7 +7,6 @@ nixpkgs.lib.nixosSystem {
     ./hardware-configuration.nix
 
     home-manager.nixosModules.home-manager
-    home-configuration
 
     ../../base.nix
 
@@ -47,5 +46,7 @@ nixpkgs.lib.nixosSystem {
     ../../tron.nix # tools for electronics engineering
     #../../unity3d.nix
     ../../virt.nix
+
+    config
   ];
 }

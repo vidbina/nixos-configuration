@@ -32,16 +32,21 @@
     , home-manager
     , vidbina-xmonad-config
     , vidbina-xmobar-config
-    }@inputs:
+    } @ args:
     let
-      targetConfig = (targetDir: hmConfig: (import (./targets + "/${targetDir}")
+      targetConfig = (target: config: (import (./targets + "/${target}")
         {
           inherit
             nixpkgs
             nixos-hardware
             home-manager;
         }
-        hmConfig));
+        (nixpkgs.lib.recursiveUpdate config {
+          config.networking = {
+            hostName = target;
+            domain = "bina.me";
+          };
+        })));
       userConfig = (import ./home-configuration.nix {
         inherit vidbina-xmonad-config vidbina-xmobar-config;
       });
