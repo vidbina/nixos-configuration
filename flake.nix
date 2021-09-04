@@ -34,16 +34,21 @@
     , vidbina-xmobar-config
     }@inputs:
     let
-      targetToConfig = (targetDir: (import (./targets + "/${targetDir}") {
-        inherit
-          nixpkgs
-          nixos-hardware
-          home-manager
-          vidbina-xmonad-config
-          vidbina-xmobar-config;
-      }));
+      targetConfig = (targetDir: hmConfig: (import (./targets + "/${targetDir}")
+        {
+          inherit
+            nixpkgs
+            nixos-hardware
+            home-manager;
+        }
+        hmConfig));
+      userConfig = (import ./home-configuration.nix {
+        inherit vidbina-xmonad-config vidbina-xmobar-config;
+      });
     in
     {
-      nixosConfigurations.dell-xps-9360 = targetToConfig ("dell-xps-9360");
+      nixosConfigurations = {
+        dell-xps-9360 = (targetConfig "dell-xps-9360") (userConfig "vidbina");
+      };
     };
 }

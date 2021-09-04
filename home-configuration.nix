@@ -1,11 +1,11 @@
-# TODO: Rename to home-configuration.nix
-
-{ lib, ... }@inputs: username: {
+{ vidbina-xmobar-config
+, vidbina-xmonad-config
+}: username: {
   config.home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
 
-    users."${username}" = with inputs; {
+    users."${username}" = {
       home.file = vidbina-xmobar-config.nixosModule;
 
       # man home-configuration.nix

@@ -1,9 +1,5 @@
-{ nixpkgs
-, nixos-hardware
-, home-manager
-, vidbina-xmonad-config
-, vidbina-xmobar-config
-}: nixpkgs.lib.nixosSystem {
+{ nixpkgs, nixos-hardware, home-manager }@inputs: home-configuration:
+nixpkgs.lib.nixosSystem {
   system = "x86_64-linux";
 
   modules = [
@@ -11,15 +7,7 @@
     ./hardware-configuration.nix
 
     home-manager.nixosModules.home-manager
-    (import ../../home-manager.nix
-      {
-        inherit
-          vidbina-xmobar-config
-          vidbina-xmonad-config;
-        lib = nixpkgs.lib;
-      }
-      "vidbina"
-    )
+    home-configuration
 
     ../../base.nix
 
