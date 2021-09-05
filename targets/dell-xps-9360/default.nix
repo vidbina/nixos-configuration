@@ -17,6 +17,7 @@ nixpkgs.lib.nixosSystem {
     # basics
     ../../dev.nix
     ../../emacs.nix
+    ../../vim.nix
     ../../fonts.nix
     ../../interfacing.nix
     ../../terminal.nix

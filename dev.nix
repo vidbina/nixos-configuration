@@ -1,10 +1,5 @@
 { config, pkgs, ... }:
 let
-  neovim-vidbina = with pkgs; neovim.override {
-    viAlias = true;
-    #withNodeJs = true;
-  };
-
   sqlite-interactive = (pkgs.sqlite.override {
     interactive = true;
   });
@@ -32,7 +27,6 @@ in
     jq # pretty-print JSON
     kakoune
     mitscheme
-    neovim-vidbina
     nodejs
     rnix-lsp # LSP
     shellcheck
