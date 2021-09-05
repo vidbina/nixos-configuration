@@ -20,6 +20,12 @@
         manpages.enable = true;
       };
 
+      xdg.mimeApps.defaultApplications = {
+        "text/html" = [ "xsel-web.desktop" ];
+        "x-scheme-handler/http" = [ "xsel-web.desktop" ];
+        "x-scheme-handler/https" = [ "xsel-web.desktop" ];
+        "x-scheme-handler/ftp" = [ "xsel-web.desktop" ];
+      };
     };
   };
 }

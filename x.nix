@@ -2,6 +2,20 @@
   environment.systemPackages = with pkgs; [
     xcalib
     xclip
+    (makeDesktopItem {
+      name = "xsel-web";
+      exec = "echo \"%u\" | xsel -ib";
+      comment = "Open link by copying it into the clipboard with xsel";
+      desktopName = "xsel-web";
+      type = "Application";
+      categories = [ "Application;Network;WebBrowser;" ];
+      mimeType = lib.concatStringsSep ";" [
+        "text/html"
+        "x-scheme-handler/http"
+        "x-scheme-handler/https"
+        "x-scheme-handler/ftp"
+      ];
+    })
     xfe # GUI file manager
     xorg.xbacklight
     xorg.xdpyinfo
