@@ -41,6 +41,7 @@ in
     ctags # generate tags
     curl
     dbus-map
+    delta # diff (in Rust)
     dict
     duc # disk usage utility (view disk space usage)
     entr
