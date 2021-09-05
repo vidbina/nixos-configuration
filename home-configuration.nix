@@ -1,5 +1,4 @@
 { vidbina-xmobar-config
-, vidbina-xmonad-config
 }: username: {
   config.home-manager = {
     useGlobalPkgs = true;
@@ -21,7 +20,6 @@
         manpages.enable = true;
       };
 
-      xsession.windowManager.xmonad = vidbina-xmonad-config.nixosModule;
     };
   };
 }

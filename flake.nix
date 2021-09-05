@@ -16,10 +16,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    vidbina-xmonad-config = {
-      url = github:vidbina/xmonad-config/experiment-nix-flake;
-    };
-
     vidbina-xmobar-config = {
       url = github:vidbina/xmobar-configuration/experiment-nix-flake;
     };
@@ -30,7 +26,6 @@
     , nixpkgs
     , nixos-hardware
     , home-manager
-    , vidbina-xmonad-config
     , vidbina-xmobar-config
     } @ args:
     let
@@ -48,7 +43,7 @@
           };
         })));
       userConfig = (import ./home-configuration.nix {
-        inherit vidbina-xmonad-config vidbina-xmobar-config;
+        inherit vidbina-xmobar-config;
       });
     in
     {
