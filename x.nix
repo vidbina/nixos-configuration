@@ -1,14 +1,22 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+let
+  xsel-copy-url = pkgs.writeShellScript "xsel-copy-url" ''
+    url=$1
+    echo "$url" | xsel -ib
+    ${pkgs.libnotify}/bin/notify-send --category=url --urgency=low "🌍 Link Copied" "Paste to enter $url"
+  '';
+in
+{
   environment.systemPackages = with pkgs; [
     xcalib
     xclip
     (makeDesktopItem {
-      name = "xsel-web";
-      exec = "echo \"%u\" | xsel -ib";
+      name = "xsel-copy-url";
+      exec = "${xsel-copy-url} %U";
       comment = "Open link by copying it into the clipboard with xsel";
-      desktopName = "xsel-web";
+      desktopName = "xsel-copy-url";
       type = "Application";
-      categories = [ "Application;Network;WebBrowser;" ];
+      categories = [ "Network;WebBrowser;" ];
       mimeType = lib.concatStringsSep ";" [
         "text/html"
         "x-scheme-handler/http"
@@ -58,6 +66,5 @@
       videoDrivers = [ "intel" ];
       xkbOptions = "eurosign:e";
     };
-
   };
 }
