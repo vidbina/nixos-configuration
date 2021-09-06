@@ -54,7 +54,7 @@ in
       type = "Application";
       mimeType = lib.concatStringsSep ";" [
         # Email
-        "x-scheme-handler/mailto;"
+        "x-scheme-handler/mailto"
         "message/rfc822"
       ];
     })

@@ -8,6 +8,7 @@ nixpkgs.lib.nixosSystem {
 
     home-manager.nixosModules.home-manager
 
+    # TODO: Refactor to import from central place
     ../../base.nix
 
     ../../users.nix
