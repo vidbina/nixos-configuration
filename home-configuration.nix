@@ -20,11 +20,14 @@
         manpages.enable = true;
       };
 
-      xdg.mimeApps.defaultApplications = {
-        "text/html" = [ "xsel-web.desktop" ];
-        "x-scheme-handler/http" = [ "xsel-web.desktop" ];
-        "x-scheme-handler/https" = [ "xsel-web.desktop" ];
-        "x-scheme-handler/ftp" = [ "xsel-web.desktop" ];
+      xdg.mimeApps = {
+        enable = true;
+        defaultApplications = {
+          "text/html" = [ "xsel-copy-url.desktop" ];
+          "x-scheme-handler/http" = [ "xsel-copy-url.desktop" ];
+          "x-scheme-handler/https" = [ "xsel-copy-url.desktop" ];
+          "x-scheme-handler/ftp" = [ "xsel-copy-url.desktop" ];
+        };
       };
     };
   };
