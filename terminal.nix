@@ -8,6 +8,7 @@
     rxvt_unicode.terminfo
     terminator
     termite
+    dynamic-colors
   ];
 
   services.urxvtd.enable = true;
