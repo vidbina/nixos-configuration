@@ -13,10 +13,13 @@
       powerline-fonts
     ];
     fontconfig.defaultFonts.monospace = [
+      "Iosevka "
       "DejaVu Sans Mono"
-      "EmojiOne Color"
       "Fira Code Nerd"
+    ];
+    fontconfig.defaultFonts.emoji = [
       "Noto Color Emoji"
+      "EmojiOne Color"
       "Noto Emoji"
     ];
   };
