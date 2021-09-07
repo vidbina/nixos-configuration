@@ -4,9 +4,6 @@
   environment.systemPackages = with pkgs; [
     dive
     docker_compose
-    qemu
-    runc
-    singularity
   ];
 
   boot = rec {
