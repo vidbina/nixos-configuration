@@ -28,27 +28,63 @@
     , home-manager
     , vidbina-xmobar-config
     } @ args:
-    let
-      targetConfig = (target: config: (import (./targets + "/${target}")
-        {
-          inherit
-            nixpkgs
-            nixos-hardware
-            home-manager;
-        }
-        (nixpkgs.lib.recursiveUpdate config {
-          config.networking = {
-            hostName = target;
-            domain = "bina.me";
-          };
-        })));
-      userConfig = (import ./home-configuration.nix {
-        inherit vidbina-xmobar-config;
-      });
-    in
     {
       nixosConfigurations = {
-        dell-xps-9360 = (targetConfig "dell-xps-9360") (userConfig "vidbina");
+        dell-xps-9360 = nixpkgs.lib.nixosSystem {
+          #inherit system;
+          system = "x86_64-linux";
+          modules = [
+            nixos-hardware.nixosModules.dell-xps-13-9360
+            ./targets/dell-xps-9360/hardware-configuration.nix
+
+            home-manager.nixosModules.home-manager
+
+            ./base.nix
+
+            ./users.nix
+
+            ./utils.nix
+
+            # basics
+            ./dev.nix
+            ./emacs.nix
+            ./vim.nix
+            ./fonts.nix
+            ./interfacing.nix
+            ./terminal.nix
+            ./net.nix
+
+            # X
+            ./x.nix
+            ./xmonad.nix
+
+            # other
+            ./audio.nix
+            ./browser.nix
+            ./cad.nix # CAD tools (mostly 3d)
+            ./chat.nix
+            ./crypto.nix
+            ./doc.nix
+            #./eid.nix       # eID packages
+            ./games.nix
+            ./graphic.nix # tools for graphics editing and design
+            ##./i3.nix
+            ./mail.nix
+            ./math.nix
+            ./media.nix
+            ./productivity.nix
+            ./sec.nix
+            #./temp.nix
+            ./tron.nix # tools for electronics engineering
+            #./unity3d.nix
+            ./virt.nix
+
+            (import ./home-configuration.nix {
+              inherit vidbina-xmobar-config;
+              username = "vidbina";
+            })
+          ];
+        };
       };
     };
 }

@@ -1,5 +1,6 @@
 { vidbina-xmobar-config
-}: username: {
+, username
+}: {
   config.home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
