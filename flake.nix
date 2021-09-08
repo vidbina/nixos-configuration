@@ -38,6 +38,17 @@
             ./targets/dell-xps-9360/hardware-configuration.nix
 
             home-manager.nixosModules.home-manager
+            {
+              config.home-manager = {
+                users = {
+                  vidbina = {
+                    home = {
+                      file = vidbina-xmobar-config.nixosModule;
+                    };
+                  };
+                };
+              };
+            }
 
             ./base.nix
 
@@ -79,10 +90,7 @@
             #./unity3d.nix
             ./virt.nix
 
-            (import ./home-configuration.nix {
-              inherit vidbina-xmobar-config;
-              username = "vidbina";
-            })
+            ./home-configuration.nix
           ];
         };
       };

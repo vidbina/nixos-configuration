@@ -1,13 +1,12 @@
-{ vidbina-xmobar-config
-, username
-}: {
+#{ vidbina-xmobar-config
+#, username
+#}:
+{ lib, config, options, modulesPath, specialArgs, pkgs }: {
   config.home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
 
-    users."${username}" = {
-      home.file = vidbina-xmobar-config.nixosModule;
-
+    users = (lib.genAttrs [ "vidbina" ] (username: {
       # man home-configuration.nix
       programs = {
         home-manager.enable = true;
@@ -30,6 +29,6 @@
           "x-scheme-handler/ftp" = [ "xsel-copy-url.desktop" ];
         };
       };
-    };
+    }));
   };
 }
