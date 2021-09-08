@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  xsel-copy-url = pkgs.writeShellScript "xsel-copy-url" ''
+  xsel-copy-url = pkgs.writeScriptBin "xsel-copy-url" ''
     url=$1
     echo "$url" | xsel -ib
     ${pkgs.libnotify}/bin/notify-send --category=url --urgency=low "🌍 Link Copied" "Paste to enter $url"
@@ -10,9 +10,10 @@ in
   environment.systemPackages = with pkgs; [
     xcalib
     xclip
+    xsel-copy-url
     (makeDesktopItem {
       name = "xsel-copy-url";
-      exec = "${xsel-copy-url} %U";
+      exec = "${xsel-copy-url}/bin/xsel-copy-url %U";
       comment = "Open link by copying it into the clipboard with xsel";
       desktopName = "xsel-copy-url";
       type = "Application";
