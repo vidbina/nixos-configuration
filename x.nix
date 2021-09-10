@@ -62,7 +62,7 @@ in
       # $ nix-shell -p xorg.xdpyinfo
       # $ xdpyinfo | grep -B2 resolution
       monitorSection = ''
-        DisplaySize 423 238
+        DisplaySize 800 300
       '';
       videoDrivers = [ "intel" ];
       xkbOptions = "eurosign:e";
