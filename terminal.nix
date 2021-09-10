@@ -11,8 +11,6 @@
     dynamic-colors
   ];
 
-  services.urxvtd.enable = true;
-
   programs = {
     bash = {
       enableCompletion = true;
@@ -23,8 +21,6 @@
         enable = true;
       };
       shellInit = ''
-        export PATH=$PATH:~/bin:~/.emacs.d/bin
-        source ~/bin/teleport.zsh
       '';
       interactiveShellInit = ''
         export EDITOR=nvim
