@@ -2,7 +2,7 @@
 let
   xsel-copy-url = pkgs.writeScriptBin "xsel-copy-url" ''
     url=$1
-    echo "$url" | xsel -ib
+    echo "$url" | ${pkgs.xsel}/bin/xsel -ib
     ${pkgs.libnotify}/bin/notify-send --category=url --urgency=low "🌍 Link Copied" "Paste to enter $url"
   '';
 in
