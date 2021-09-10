@@ -53,9 +53,9 @@
               "color15" = "#ffffff"; # bright white, White
             };
             fonts = [
-              "xft:DejaVu Sans Mono:pixelsize=12:antialias=true"
-              "xft:Fira Code:size=12:antialias=true"
-              "xft:Iosevka:size=12"
+              "xft:DejaVu Sans Mono:pixelsize=28:antialias=true"
+              "xft:Fira Code:size=28:antialias=true"
+              "xft:Iosevka:size=28:antialias=true"
             ];
             keybindings = {
               "C-minus" = "perl:font-size:decrease";
