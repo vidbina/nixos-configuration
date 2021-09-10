@@ -13,19 +13,6 @@
             my-rxvt-unicode = pkgs.rxvt-unicode.override {
               configure = { availablePlugins, ... }: {
                 plugins = (builtins.attrValues availablePlugins) ++ [
-                  (pkgs.writeTextFile rec {
-                    name = "urxvt-colors";
-                    text = ''
-                      #! perl
-                      sub on_user_command {
-                        my ($self, $cmd) = @_;
-                        my $output = `dynamic-colors cycle`;
-                        $self->cmd_parse($output);
-                      }
-                    '';
-                    destination = "/lib/urxvt/perl/${name}";
-                    executable = true;
-                  })
                 ];
               };
             };
@@ -40,7 +27,6 @@
                 "default"
                 "font-size"
                 "url-select"
-                "urxvt-colors"
               ];
               "url-select.autocopy" = true;
               # TODO: Define launcher using ${xsel-copy-url}/bin/xsel-copy-url
@@ -76,7 +62,6 @@
               "C-plus" = "perl:font-size:increase";
               "C-=" = "perl:font-size:reset";
               "M-u" = "perl:url-select:select_next";
-              "F12" = "perl:urxvt-colors:";
             };
           };
       };
