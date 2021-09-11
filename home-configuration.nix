@@ -27,14 +27,20 @@
                 "default"
                 "font-size"
                 "url-select"
+                "color-themes"
               ];
               "url-select.autocopy" = true;
-              # TODO: Define launcher using ${xsel-copy-url}/bin/xsel-copy-url
               "url-select.launcher" = "xsel-copy-url";
               "url-select.underline" = true;
+
+              "color-themes.themedir" = "~/.themes/urxvt";
+              "color-themes.state-file" = "~/.urxvt-theme";
+              "color-themes.autosave" = 1;
+
               # See `man urxvt` for guidance on the colors
               "background" = "#000000";
               "foreground" = "#ffffff";
+              "cursorColor" = "#00ff00";
               "color0" = "#000000"; # black, Black
               "color1" = "#ff0000"; # red, Red3
               "color2" = "#55ff55"; # green, Green3
@@ -62,6 +68,10 @@
               "C-plus" = "perl:font-size:increase";
               "C-=" = "perl:font-size:reset";
               "M-u" = "perl:url-select:select_next";
+              "M-C-n" = "perl:color-themes:next";
+              "M-C-p" = "perl:color-themes:prev";
+              "M-C-l" = "perl:color-themes:load-state";
+              "M-C-s" = "perl:color-themes:save-state";
             };
           };
       };
