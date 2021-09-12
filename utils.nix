@@ -96,7 +96,6 @@ in
     screenfetch
     scrot
     slop
-    st
     tabbed
     tcpdump
     tmux

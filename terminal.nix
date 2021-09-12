@@ -6,6 +6,7 @@
     cool-retro-term
     kitty
     rxvt_unicode.terminfo
+    st
     terminator
     termite
     dynamic-colors
