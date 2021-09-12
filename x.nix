@@ -18,7 +18,7 @@ in
       desktopName = "xsel-copy-url";
       type = "Application";
       categories = [ "Network;WebBrowser;" ];
-      mimeType = lib.concatStringsSep ";" [
+      mimeType = builtins.concatStringsSep ";" [
         "text/html"
         "x-scheme-handler/http"
         "x-scheme-handler/https"

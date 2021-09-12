@@ -52,7 +52,7 @@ in
       comment = "Emacs mu4e";
       desktopName = "emacs-mu4e";
       type = "Application";
-      mimeType = lib.concatStringsSep ";" [
+      mimeType = builtins.concatStringsSep ";" [
         # Email
         "x-scheme-handler/mailto"
         "message/rfc822"
