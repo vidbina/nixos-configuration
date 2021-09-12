@@ -21,8 +21,11 @@
     ./fonts.nix
     ./interfacing.nix
     ./terminal.nix
-    ./xmonad.nix
     ./net.nix
+
+    # X
+    ./x.nix
+    ./xmonad.nix
 
     # other
     ./audio.nix
