@@ -33,6 +33,7 @@
               "url-select.launcher" = "xsel-copy-url";
               "url-select.underline" = true;
 
+              # TODO: Use themes from dotfiles repo
               "color-themes.themedir" = "~/.themes/urxvt";
               "color-themes.state-file" = "~/.urxvt-theme";
               "color-themes.autosave" = 1;

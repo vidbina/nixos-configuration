@@ -11,6 +11,7 @@
       font-awesome-ttf
       iosevka
       noto-fonts-emoji
+      # TODO: Use Powerline fonts
       powerline-fonts
     ];
     fontconfig.defaultFonts.monospace = [

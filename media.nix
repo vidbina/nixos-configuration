@@ -9,11 +9,5 @@
     playerctl
     v4l-utils
     vlc
-
-
-
-
-
-
   ];
 }
