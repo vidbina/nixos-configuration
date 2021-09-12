@@ -43,8 +43,10 @@ in
   services = {
     # Enable the X11 windowing system.
     xserver = {
+      enable = true;
+
       autorun = true;
-      # dpi = 180;
+
       displayManager = {
         lightdm = {
           enable = true;
@@ -55,15 +57,12 @@ in
         '';
       };
 
-      enable = true;
       exportConfiguration = true;
-      layout = "us";
-      # 846x476 millimeters reported by Dell XPS 13
-      # $ nix-shell -p xorg.xdpyinfo
-      # $ xdpyinfo | grep -B2 resolution
-      monitorSection = ''
-        DisplaySize 800 300
-      '';
+      layout = builtins.concatStringsSep "," [
+        "us"
+        "caps:ctrl_modifier"
+      ];
+      # TODO: Study libinput, modules
       videoDrivers = [ "intel" ];
       xkbOptions = "eurosign:e";
     };
