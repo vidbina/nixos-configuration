@@ -58,13 +58,13 @@ in
       };
 
       exportConfiguration = true;
-      layout = builtins.concatStringsSep "," [
-        "us"
-        "caps:ctrl_modifier"
-      ];
+      layout = "us";
       # TODO: Study libinput, modules
       videoDrivers = [ "intel" ];
-      xkbOptions = "eurosign:e";
+      xkbOptions = builtins.concatStringsSep "," [
+        "eurosign:e"
+        "caps:ctrl_modifier"
+      ];
     };
   };
 }
