@@ -4,6 +4,7 @@ SHELL = /usr/bin/env bash
 CP = cp
 NIXOS_REBUILD = nixos-rebuild --show-trace
 RM = rm
+RSYNC = rsync
 SUDO = sudo
 
 # Git repository and branch in which I keep the nixpkgs which I want to install
@@ -47,8 +48,7 @@ all: setup switch
 # 	Source: https://nixos.org/nixos/manual/index.html#sec-changing-config
 .PHONY: setup
 setup:
-	@$(SUDO) $(RM) -r /etc/nixos/customPkgs /etc/nixos/config
-	@$(SUDO) $(CP) -Lr *.nix zsh customPkgs config /etc/nixos/.
+	@$(SUDO) $(RSYNC) -avr --exclude='flake*' --exclude='customPkgs/' --exclude='tmp/*' --exclude='.git/*' --exclude 'result' . /tmp/nixos
 
 # Performs nixos-rebuilds against the nixpkgs version of this system
 #
