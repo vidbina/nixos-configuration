@@ -20,8 +20,8 @@
       "Fira Code Nerd"
     ];
     fontconfig.defaultFonts.emoji = [
-      "Noto Color Emoji"
       "EmojiOne Color"
+      "Noto Color Emoji"
       "Noto Emoji"
     ];
   };
