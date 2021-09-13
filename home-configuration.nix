@@ -1,10 +1,10 @@
+# man home-configuration.nix
 { lib, config, options, modulesPath, specialArgs, pkgs }: {
-  config.home-manager = {
+  home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
 
     users = (lib.genAttrs [ config.my-config.handle ] (username: {
-      # man home-configuration.nix
       programs = {
         home-manager.enable = true;
 
