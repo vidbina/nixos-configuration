@@ -1,34 +1,73 @@
-{ config, pkgs, ... }:
+{ config, options, pkgs, lib, ... }:
 
+let
+  cfg = config.my-config;
+in
 {
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users = {
-    defaultUserShell = "/run/current-system/sw/bin/zsh";
-    users.vidbina = {
-      isNormalUser = true;
-      uid = 1988;
-      name = "vidbina";
-      description = "David Asabina <vid@bina.me>";
-      createHome = true;
-      cryptHomeLuks = "/dev/store/store";
-      home = "/home/vidbina";
-      extraGroups = [
-        "beep"
-        "dialout"
-        "lp"
-        "network"
-        "networkmanager"
-        "wheel"
-        "wireshark"
-      ];
-      initialPassword = "#unsecure";
+  options = with pkgs.lib; {
+    my-config = {
+      handle = mkOption {
+        type = types.str;
+        default = "vidbina";
+        description = "Username for which to configure the system";
+      };
+
+      uid = mkOption {
+        type = types.ints.positive;
+        default = 1988;
+      };
+
+      name = mkOption {
+        type = types.str;
+        default = "vidbina";
+      };
+
+      email = mkOption {
+        type = types.str;
+        default = "vid@bina.me";
+      };
+
+      description = mkOption {
+        type = types.str;
+        default = "David Asabina <vid@bina.me>";
+      };
+
+      cryptHomeLuks = mkOption {
+        type = types.str;
+        default = "/dev/store/store";
+      };
     };
   };
 
-  environment = {
-    variables = {
-      QT_SCREEN_SCALE_FACTORS = "2";
-      URXVT_PERL_PLUGINS = "${pkgs.rxvt_unicode-with-plugins}/lib/urxvt/perl";
+  config = {
+    # Define a user account. Don't forget to set a password with ‘passwd’.
+    users = {
+      defaultUserShell = "/run/current-system/sw/bin/zsh";
+
+      users = (lib.genAttrs [ cfg.handle ] (username: with cfg; {
+        inherit uid name description cryptHomeLuks; # from cfg
+
+        isNormalUser = true;
+        createHome = true;
+        home = "/home/${username}";
+        extraGroups = [
+          "beep"
+          "dialout"
+          "lp"
+          "network"
+          "networkmanager"
+          "wheel"
+          "wireshark"
+        ];
+        initialPassword = "#unsecure";
+      }));
+    };
+
+    environment = {
+      variables = {
+        QT_SCREEN_SCALE_FACTORS = "2";
+        URXVT_PERL_PLUGINS = "${pkgs.rxvt_unicode-with-plugins}/lib/urxvt/perl";
+      };
     };
   };
 }
