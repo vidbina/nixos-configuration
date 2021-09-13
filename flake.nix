@@ -37,22 +37,23 @@
             nixos-hardware.nixosModules.dell-xps-13-9360
             ./targets/dell-xps-9360/hardware-configuration.nix
 
-            home-manager.nixosModules.home-manager
-            {
-              config.home-manager = {
-                users = {
-                  vidbina = {
-                    home = {
-                      file = vidbina-xmobar-config.nixosModule;
-                    };
-                  };
-                };
-              };
-            }
-
             ./base.nix
 
             ./users.nix
+
+            home-manager.nixosModules.home-manager
+
+            # Infuse config/dotfile flakes
+            # NOTE: Define after importing users.nix (because of my-config dep)
+            ({ config, lib, ... }: {
+              config.home-manager = {
+                users = (lib.genAttrs [ config.my-config.handle ] (username: {
+                  home = {
+                    file = vidbina-xmobar-config.nixosModule;
+                  };
+                }));
+              };
+            })
 
             ./utils.nix
 

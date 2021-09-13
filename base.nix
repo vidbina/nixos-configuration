@@ -111,7 +111,7 @@ in
       enable = true;
       systemCronJobs =
         let
-          userName = config.users.users.vidbina.name;
+          userName = config.my-config.name;
         in
         [
           "* * * * * ${userName} bash -x ${lowBatteryNotifier} > /tmp/cron.batt.log 2>&1"

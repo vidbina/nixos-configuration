@@ -9,7 +9,7 @@ in
       handle = mkOption {
         type = types.str;
         default = "vidbina";
-        description = "Username for which to configure the system";
+        description = "Handle under which to configure the user. This is the Nix keyname and may be different from the username, but for good measure should not.";
       };
 
       uid = mkOption {
@@ -19,7 +19,7 @@ in
 
       name = mkOption {
         type = types.str;
-        default = "vidbina";
+        default = cfg.handle;
       };
 
       email = mkOption {

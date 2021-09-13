@@ -3,7 +3,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
 
-    users = (lib.genAttrs [ "vidbina" ] (username: {
+    users = (lib.genAttrs [ config.my-config.handle ] (username: {
       # man home-configuration.nix
       programs = {
         home-manager.enable = true;

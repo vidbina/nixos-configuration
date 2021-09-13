@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -18,7 +18,9 @@
     ];
   };
 
-  users.users.vidbina.extraGroups = [ "docker" ];
+  users.users = (lib.genAttrs [ config.my-config.handle ] (username: {
+    extraGroups = [ "docker" ];
+  }));
 
   virtualisation = {
     docker = {
