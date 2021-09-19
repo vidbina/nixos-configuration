@@ -8,6 +8,14 @@
       programs = {
         home-manager.enable = true;
 
+        direnv = {
+          enable = true;
+          nix-direnv = {
+            enable = true;
+            enableFlakes = true;
+          };
+        };
+
         urxvt =
           let
             my-rxvt-unicode = pkgs.rxvt-unicode.override {
