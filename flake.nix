@@ -15,10 +15,6 @@
       url = github:nix-community/home-manager/release-21.05;
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    vidbina-xmobar-config = {
-      url = github:vidbina/xmobar-configuration/experiment-nix-flake;
-    };
   };
 
   outputs =
@@ -26,7 +22,6 @@
     , nixpkgs
     , nixos-hardware
     , home-manager
-    , vidbina-xmobar-config
     } @ args:
     {
       nixosConfigurations = {
@@ -47,12 +42,12 @@
               config.home-manager = {
                 users = (lib.genAttrs [ config.my-config.handle ] (username: {
                   home = {
-                    file = vidbina-xmobar-config.nixosModule;
                   };
                 }));
               };
             })
           ];
+
         };
       };
     };

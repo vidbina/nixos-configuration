@@ -57,24 +57,7 @@
       "inputs": {
         "home-manager": "home-manager",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs",
-        "vidbina-xmobar-config": "vidbina-xmobar-config"
-      }
-    },
-    "vidbina-xmobar-config": {
-      "locked": {
-        "lastModified": 1630683541,
-        "narHash": "sha256-zi7izf77WF27fHGUFtW5fPiprh0RHxAwl7bJ+dJi89c=",
-        "owner": "vidbina",
-        "repo": "xmobar-configuration",
-        "rev": "ae6ce8ebca74f800c963594db0052ed7d87a31ab",
-        "type": "github"
-      },
-      "original": {
-        "owner": "vidbina",
-        "ref": "experiment-nix-flake",
-        "repo": "xmobar-configuration",
-        "type": "github"
+        "nixpkgs": "nixpkgs"
       }
     }
   },
