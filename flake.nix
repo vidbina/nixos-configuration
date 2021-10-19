@@ -4,7 +4,7 @@
 
   inputs = {
     nixpkgs = {
-      url = github:vidbina/nixpkgs/current-21.05;
+      url = github:NixOS/nixpkgs/nixos-21.05;
     };
 
     nixos-hardware = {
