@@ -37,10 +37,17 @@ in
     xorg.xwininfo
     xrectsel
     xsel
+    xsettingsd
     xtrlock-pam
   ];
 
   services = {
+    urxvtd = {
+      enable = true;
+    };
+
+    # TODO: Use usbguard
+
     # Enable the X11 windowing system.
     xserver = {
       enable = true;
