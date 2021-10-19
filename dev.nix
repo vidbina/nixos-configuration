@@ -22,10 +22,10 @@ in
     hexyl
     html-tidy
     htmlTidy
-    httpie
+    httpie # cURL-like CLI tool
     httplab # interactive web server
     jq # pretty-print JSON
-    kakoune
+    kakoune # editor
     mitscheme
     nodejs
     rnix-lsp # LSP

@@ -110,6 +110,7 @@ in
     webkitgtk
     wget
     whois
+    xh # slicker HTTPie (in Rust)
     zbar
     zip
   ];
