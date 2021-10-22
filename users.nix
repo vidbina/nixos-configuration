@@ -69,5 +69,10 @@ in
         QT_SCREEN_SCALE_FACTORS = "2";
       };
     };
+
+    # TODO: Refactor into a smarter implementation
+    # Something that is more multi-user compatible
+    # The current config is single-user oriented
+    nix.trustedUsers = [ cfg.handle ];
   };
 }
