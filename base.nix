@@ -208,7 +208,7 @@ in
   };
 
   nix = {
-    useSandbox = false;
+    useSandbox = true;
   };
 
   nixpkgs.config = with pkgs; {
