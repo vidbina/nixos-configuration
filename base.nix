@@ -50,6 +50,9 @@ in
     ./tron.nix # tools for electronics engineering
     #./unity3d.nix
     ./virt.nix
+
+    # 3rd-party caches
+    ./caches.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
