@@ -78,6 +78,7 @@ in
     libnotify
     mc
     networkmanagerapplet
+    niv
     nix-prefetch-git
     nixpkgs-fmt
     nixpkgs-lint
