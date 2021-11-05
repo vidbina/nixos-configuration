@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  current = pkgs.emacs;
+  current = pkgs.emacsUnstable;
   bundle = (pkgs.emacsPackagesNgGen current).emacsWithPackages;
   emacs-vidbina = bundle (
     epkgs:
@@ -26,7 +26,6 @@ in
     clang
     cmake
     coreutils
-    emacs-vidbina
     fd
     jupyter-for-emacs
     multimarkdown
@@ -34,7 +33,7 @@ in
 
     (makeDesktopItem {
       name = "org-protocol";
-      exec = "emacsclient %u";
+      exec = "${emacs-vidbina}/bin/emacsclient --create-frame %u";
       comment = "Org Protocol";
       desktopName = "org-protocol";
       type = "Application";
@@ -47,7 +46,7 @@ in
     (makeDesktopItem {
       name = "emacs-mu4e";
       exec = ''
-        emacsclient -c --eval "(browse-url-mail \"%u\")"
+        ${emacs-vidbina}/bin/emacsclient --create-frame --eval "(browse-url-mail \"%u\")"
       '';
       comment = "Emacs mu4e";
       desktopName = "emacs-mu4e";
@@ -63,7 +62,7 @@ in
   services = {
     emacs = {
       # Restart using `systemctl --user restart emacs`
-      enable = false;
+      enable = true;
       package = emacs-vidbina;
     };
   };
