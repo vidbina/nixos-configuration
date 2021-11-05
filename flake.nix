@@ -15,6 +15,10 @@
       url = github:nix-community/home-manager/release-21.05;
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    emacs-overlay = {
+      url = github:nix-community/emacs-overlay;
+    };
   };
 
   outputs =
@@ -22,6 +26,7 @@
     , nixpkgs
     , nixos-hardware
     , home-manager
+    , emacs-overlay
     } @ args:
     {
       nixosConfigurations = {
@@ -41,10 +46,13 @@
             ({ config, lib, ... }: {
               config.home-manager = {
                 users = (lib.genAttrs [ config.my-config.handle ] (username: {
-                  home = {
-                  };
+                  home = { };
                 }));
               };
+
+              config.nixpkgs.overlays = [
+                (import emacs-overlay)
+              ];
             })
           ];
 
