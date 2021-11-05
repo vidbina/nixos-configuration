@@ -18,6 +18,17 @@ easier tooling to update dependencies (using `nix flake lock --update-input` or
 nixos-rebuild test --flake '.#dell-xps-9360'
 ```
 
+### Using a nix-shell to use the experimental features
+
+Flakes are experimental as of time of writing (2021.11.05). Use nix inside of a
+nix-shell to access the flakes feature and then prefix your nix commands with
+`sudo` to deal with the trusted user issue in case you encounter it.
+
+```bash
+nix-shell --packages nixUnstable
+sudo nix --experimental-features 'nix-command flakes' flake check
+```
+
 ### Debug, Tweaking, Tuning or Screwing Around
 
 For debug purposes, it helps to fire up a nix repl to inspect the configuration
