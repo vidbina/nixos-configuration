@@ -98,7 +98,7 @@ For debug purposes, it helps to fire up a nix repl to inspect the configuration
 a bit.
 
 ```nix
-f = builtins.getFlake "/path/to/this/repo/that/contains/the/flake"
+f = builtins.getFlake (toString ./.)
 # Look at inputs, e.g.: nixpkgs
 f.inputs.nixpkgs
 
