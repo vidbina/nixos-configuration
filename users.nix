@@ -31,11 +31,6 @@ in
         type = types.str;
         default = "David Asabina <vid@bina.me>";
       };
-
-      cryptHomeLuks = mkOption {
-        type = types.str;
-        default = "/dev/store/store";
-      };
     };
   };
 
@@ -45,7 +40,7 @@ in
       defaultUserShell = "/run/current-system/sw/bin/zsh";
 
       users = (lib.genAttrs [ cfg.handle ] (username: with cfg; {
-        inherit uid name description cryptHomeLuks; # from cfg
+        inherit uid name description; # from cfg
 
         isNormalUser = true;
         createHome = true;
