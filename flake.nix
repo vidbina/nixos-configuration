@@ -51,6 +51,8 @@
               }));
             };
 
+            config.networking.hostName = "vidbina-${target}";
+
             config.nixpkgs.overlays = [
               (import emacs-overlay)
             ];
