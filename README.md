@@ -6,19 +6,61 @@ This is the NixOS :snowflake: configuration that I use on my Dell XPS.
 
 ## :warning: Using Flake (i.e.: `nixos-rebuild --flake`)
 
-[Flakes](https://nixos.wiki/wiki/Flakes) provides a mechanism for pinning all
-depedencies in an easier manner than the traditional `nixos-rebuild` approach
-where one has to refer to a ref and provide the corresponding hash or one has
-to check out the nixpkgs repo and move the HEAD to the intended state. Flakes
-ship with a [lock file](./flakes.lock) that pins all versions and allow for
-easier tooling to update dependencies (using `nix flake lock --update-input` or
-`nix flake update`).
+[Flakes](https://nixos.wiki/wiki/Flakes) provide a mechanism for managing
+dependencies through a [lock file](./flakes.lock) that pins all dependency
+versions and allows for easier tooling to update these dependencies (using `nix
+flake lock --update-input` or `nix flake update`).
+
+> The use of `nixos-rebuild` without flakes would require one to prepare the
+> configurations directory (/etc/nixos) while also explicitly pointing towards
+> the nixpkgs rev to build against.
+
+Within the Flake, multiple configurations are defined to correspond to the
+different build targets (devices) and one can specify one of these
+configurations build a NixOS system for through the `--flake` CLI option.
 
 ```bash
 nixos-rebuild test --flake '.#dell-xps-9360'
 ```
 
+### Installing Flakes on NixOS
+
+See https://nixos.wiki/wiki/Flakes for more information.
+
+1. Update `/etc/nixos/configuration.nix` to specify the installation of
+   `nixFlakes` and enable the necessary experimental feature flag.
+
+   ```nix
+   { pkgs, ... }: {
+     nix = {
+       package = pkgs.nixFlakes;
+       extraOptions = ''
+         experimental-features = nix-command flakes
+       '';
+      };
+   }
+   ```
+
+2. Then simply execute `sudo nixos-rebuild test` to apply the configuration
+   change.
+
+> In our pre-Flakes previous approach, we copied the needed nix files into
+> `/etc/nixos` through the `make setup` rule before applying these changes
+> through a `nixos-rebuild` run.
+> With the use of Flakes, we don't have to think about explicitly managing
+> `/etc/nixos` anymore and the change proposed to `/etc/nixos` in this section
+> should be the only change you'd ever need to make to this directory.
+> If you have never worked with the previous configuration (with the different
+> make rules that we cooked up), consider yourself fortunate and just
+
 ### Using a nix-shell to use the experimental features
+
+> The more reliable way to get flakes working on a system is to follow the
+> instructions for Installing Flakes on NixOS. This section documents my toying
+> around with different ways to get flake capability in my setup, but these
+> didn't ever work without pain on my end -- which is only due to my lack of
+> understanding of Nix and not nix itself obviously. Here be dragons. :dragon:
+> Everything here may feel like bandaids.
 
 Flakes are experimental as of time of writing (2021.11.05). Use nix inside of a
 nix-shell to access the flakes feature and then prefix your nix commands with
@@ -28,6 +70,27 @@ nix-shell to access the flakes feature and then prefix your nix commands with
 nix-shell --packages nixUnstable
 sudo nix --experimental-features 'nix-command flakes' flake check
 ```
+
+Use of nixos-rebuild within a nix-shell may be problematic and when attempts to
+run nixos-rebuild outside of a nix-shell results to `error: unrecognised flag
+'--extra-experimental-features'`, one may consider installing `nixUnstable` with
+`nix-env` as follows:
+
+```bash
+nix-env -f '<nixpkgs>' -iA nixUnstable
+```
+
+Note that this section already outlined two ways to try to get access to
+nixUnstable. If you simply want to be able to run a `nix flake check` on  a
+machine that doesn't have the flakes feature flag enabled, it may be more than
+fine to just fire this up inside of a nix-shell. Calling `nixos-rebuild` from
+the shell, however; proved tricky to me and I am too lazy to really figure out
+why. My hunch is that there are some components of the ecosystem that are now
+installed from the nixFlakes pacakge, while there are still some tools in the
+call-chain that have no idea how to properly deal with the
+experimental-features flag. As such, following the instructions from the wiki
+and (in the previous section) will guarantee you considerably less pain. Trust
+me, it's worth it.
 
 ### Debug, Tweaking, Tuning or Screwing Around
 
