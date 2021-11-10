@@ -54,6 +54,15 @@ let
   });
 in
 {
+  documentation = {
+    dev = {
+      enable = true;
+    };
+    man = {
+      generateCaches = true;
+    };
+  };
+
   environment.systemPackages = with pkgs; [
     aspell
     aspellDicts.de
