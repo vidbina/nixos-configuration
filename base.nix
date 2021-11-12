@@ -15,6 +15,9 @@ in
 
     ./home-configuration.nix
 
+    # necessary evils
+    ./unfree.nix
+
     ./utils.nix
 
     # basics
@@ -149,13 +152,5 @@ in
 
   nix = {
     useSandbox = true;
-  };
-
-  nixpkgs.config = with pkgs; {
-    allowUnfreePredicate = (pkg: builtins.elem (lib.getName pkg) [
-      "aseprite"
-      "obsidian"
-      "zoom"
-    ]);
   };
 }
