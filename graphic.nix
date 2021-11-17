@@ -55,6 +55,18 @@
           # replace this with the correct SHA256
           outputHash = "sha256-VE86evwyHv8znhFeDi1iOvxAnLXjfxg1hHqWSgw5c9c=";
         };
+
+        #elk-full = stdenv.mkDerivation {
+        #  # https://www.eclipse.org/elk/documentation/contributors/buildingelk.html
+        #  pname = "elk"
+        #  version = "0.7.1"
+        #  src = fetchFromGitHub {
+        #    owner = "eclipse";
+        #    repo = "elk";
+        #    rev = "v${version}";
+        #    sha256 = lib.fakeSha256;
+        #  }
+        #};
       in stdenv.mkDerivation {
         # https://nixos.org/manual/nixpkgs/unstable/#runnable-jar
         inherit pname version src;
