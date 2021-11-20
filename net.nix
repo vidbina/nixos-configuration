@@ -131,12 +131,4 @@
       enable = true;
     };
   };
-
-  security = {
-    wrappers = {
-      nethogs = {
-        source = "${pkgs.nethogs.out}/bin/nethogs";
-      };
-    };
-  };
 }
