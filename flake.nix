@@ -4,7 +4,7 @@
 
   inputs = {
     nixpkgs = {
-      url = github:NixOS/nixpkgs/nixos-21.05;
+      url = github:NixOS/nixpkgs/master;
     };
 
     nixos-hardware = {
@@ -12,7 +12,7 @@
     };
 
     home-manager = {
-      url = github:nix-community/home-manager/release-21.05;
+      url = github:nix-community/home-manager/master;
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
