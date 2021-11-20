@@ -90,7 +90,7 @@ in
     pmtools # ACPI utils
     pstree
     pv
-    python36 # we all need a python interpreter sometimes
+    python38 # we all need a python interpreter sometimes
     ranger # TUI file mananager
     redshift
     rofi-vidbina
