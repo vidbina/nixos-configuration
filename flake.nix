@@ -4,7 +4,7 @@
 
   inputs = {
     nixpkgs = {
-      url = github:NixOS/nixpkgs/master;
+      url = github:NixOS/nixpkgs/nixos-unstable;
     };
 
     nixos-hardware = {
@@ -12,8 +12,7 @@
     };
 
     home-manager = {
-      url = github:nix-community/home-manager/master;
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = github:nix-community/home-manager;
     };
 
     emacs-overlay = {
