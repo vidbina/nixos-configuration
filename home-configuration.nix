@@ -1,9 +1,5 @@
 # man home-configuration.nix
 { lib, config, options, modulesPath, specialArgs, pkgs }: {
-  environment.systemPackages = with pkgs; [
-    home-manager
-  ];
-
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;

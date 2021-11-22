@@ -127,7 +127,7 @@ in
   };
 
   # Set your time zone.
-  time.timeZone = "Europe/Berlin";
+  time.timeZone = "Asia/Bangkok";
   # Example values:
   #   America/Los_Angeles
   #   America/Mexico_City
