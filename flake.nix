@@ -38,18 +38,9 @@
           (./. + "/targets/${target}/hardware-configuration.nix")
           (./. + "/targets/${target}/custom.nix")
 
-
-          home-manager.nixosModules.home-manager
-
           # Infuse config/dotfile flakes
           # NOTE: Define after importing users.nix (because of my-config dep)
           ({ config, lib, ... }: {
-            config.home-manager = {
-              users = (lib.genAttrs [ config.my-config.handle ] (username: {
-                home = { };
-              }));
-            };
-
             config.networking.hostName = "vidbina-${target}";
 
             config.nixpkgs.overlays = [

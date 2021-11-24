@@ -13,8 +13,6 @@ in
   imports = [
     ./users.nix
 
-    ./home-configuration.nix
-
     # necessary evils
     ./unfree.nix
 
