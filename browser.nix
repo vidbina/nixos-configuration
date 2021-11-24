@@ -3,8 +3,8 @@
 {
   environment.systemPackages = with pkgs; [
     firefox
-    nyxt
     qutebrowser
+    chromium
   ];
 
   nixpkgs.config.firefox = {
