@@ -11,10 +11,6 @@
       url = github:NixOS/nixos-hardware/master;
     };
 
-    home-manager = {
-      url = github:nix-community/home-manager;
-    };
-
     emacs-overlay = {
       url = github:nix-community/emacs-overlay;
     };
@@ -24,7 +20,6 @@
     { self
     , nixpkgs
     , nixos-hardware
-    , home-manager
     , emacs-overlay
     } @ args:
     let

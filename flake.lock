@@ -15,24 +15,6 @@
         "type": "github"
       }
     },
-    "home-manager": {
-      "inputs": {
-        "nixpkgs": "nixpkgs"
-      },
-      "locked": {
-        "lastModified": 1637398047,
-        "narHash": "sha256-H6yh2VvABMhrkjYrPccc0Buak4L9jtFzsb98FsNDM2Q=",
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "rev": "c82bc787b8990c89f2f7d57df652ce2424129b92",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "type": "github"
-      }
-    },
     "nixos-hardware": {
       "locked": {
         "lastModified": 1629975021,
@@ -51,20 +33,6 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1637485046,
-        "narHash": "sha256-uifEwo9wJflq3XDq3RMZHc5YP69w5Vap/e5FwgDu9AY=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "b56d7a70a7158f81d964a55cfeb78848a067cc7d",
-        "type": "github"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "type": "indirect"
-      }
-    },
-    "nixpkgs_2": {
-      "locked": {
         "lastModified": 1637155076,
         "narHash": "sha256-26ZPNiuzlsnXpt55Q44+yzXvp385aNAfevzVEKbrU5Q=",
         "owner": "NixOS",
@@ -82,9 +50,8 @@
     "root": {
       "inputs": {
         "emacs-overlay": "emacs-overlay",
-        "home-manager": "home-manager",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs"
       }
     }
   },
