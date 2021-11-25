@@ -99,7 +99,6 @@ in
     slop
     tabbed
     tcpdump
-    tmux
     transmission # for Torrent downloads
     trayer
     tree # pkgs/tools/system/tree
