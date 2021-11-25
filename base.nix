@@ -85,6 +85,8 @@ in
       enable = true;
     };
 
+    blueman.enable = true;
+
     actkbd = {
       enable = true;
       bindings = [
