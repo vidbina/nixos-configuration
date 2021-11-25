@@ -110,13 +110,6 @@ in
       enable = true;
     };
 
-    redshift = {
-      enable = false;
-      extraOptions = [
-        "-c ~/.config/redshift.conf"
-      ];
-    };
-
     # Enable CUPS to print documents.
     # printing.enable = true;
   };
