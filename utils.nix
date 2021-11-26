@@ -17,12 +17,6 @@ let
   #});
 
   pass-vidbina = with pkgs; pass.withExtensions (exts: [ exts.pass-otp ]);
-  rofi-vidbina = with pkgs; rofi.override {
-    plugins = [
-      rofi-calc
-      rofi-emoji
-    ];
-  };
 in
 {
   nix = {
@@ -77,7 +71,6 @@ in
     pv
     python38 # we all need a python interpreter sometimes
     ranger # TUI file mananager
-    rofi-vidbina
     screenfetch
     scrot
     slop
