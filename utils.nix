@@ -77,7 +77,6 @@ in
     pv
     python38 # we all need a python interpreter sometimes
     ranger # TUI file mananager
-    redshift
     rofi-vidbina
     screenfetch
     scrot
