@@ -35,7 +35,6 @@ in
   environment.systemPackages = with pkgs; [
     acpi # show batt status and other ACPI info
     arandr
-    bat # fancy cat (in Rust)
     beep
     ccze
     ctags # generate tags
