@@ -20,7 +20,6 @@ in
 
     # basics
     ./dev.nix
-    ./emacs.nix
     ./fonts.nix
     ./interfacing.nix
     ./terminal.nix
