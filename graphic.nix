@@ -5,6 +5,7 @@
     #blender
     #fontforge-gtk
     ditaa
+    drawio
     gimp
     glxinfo # test utils for OpenGL
     gnuplot
