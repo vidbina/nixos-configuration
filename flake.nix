@@ -28,10 +28,10 @@
         #inherit system;
         system = "x86_64-linux";
         modules = [
-          #nixos-hardware.nixosModules."${module}"
           ./base.nix
           (./. + "/targets/${target}/hardware-configuration.nix")
           (./. + "/targets/${target}/custom.nix")
+          module
 
           # Infuse config/dotfile flakes
           # NOTE: Define after importing users.nix (because of my-config dep)
