@@ -37,7 +37,7 @@ in
   config = {
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users = {
-      defaultUserShell = "/run/current-system/sw/bin/zsh";
+      defaultUserShell = pkgs.zsh;
 
       users = (lib.genAttrs [ cfg.handle ] (username: with cfg; {
         inherit uid name description; # from cfg
