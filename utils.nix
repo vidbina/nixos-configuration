@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, options, pkgs, ... }:
 let
   #josm-vidbina = with pkgs; josm.overrideAttrs (oldAttrs: rec {
   #  buildCommand = ''
@@ -20,6 +20,9 @@ let
 in
 {
   nix = {
+    nixPath = options.nix.nixPath.default ++ [
+      "nixpkgs-overlays=${./overlays-compat}"
+    ];
     package = pkgs.nixUnstable;
     extraOptions = ''
       experimental-features = nix-command flakes
