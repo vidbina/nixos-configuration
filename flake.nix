@@ -10,17 +10,12 @@
     nixos-hardware = {
       url = github:NixOS/nixos-hardware/master;
     };
-
-    emacs-overlay = {
-      url = github:nix-community/emacs-overlay;
-    };
   };
 
   outputs =
     { self
     , nixpkgs
     , nixos-hardware
-    , emacs-overlay
     } @ args:
     let
       # TODO: Use flake-utils to do this well
@@ -37,10 +32,6 @@
           # NOTE: Define after importing users.nix (because of my-config dep)
           ({ config, lib, ... }: {
             config.networking.hostName = "vidbina-${target}";
-
-            config.nixpkgs.overlays = [
-              (import emacs-overlay)
-            ];
           })
         ];
       };
