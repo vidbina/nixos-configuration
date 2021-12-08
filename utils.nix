@@ -20,9 +20,6 @@ let
 in
 {
   nix = {
-    nixPath = options.nix.nixPath.default ++ [
-      "nixpkgs-overlays=${toString ./overlays-compat}/"
-    ];
     package = pkgs.nixUnstable;
     extraOptions = ''
       experimental-features = nix-command flakes
