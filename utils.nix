@@ -21,7 +21,7 @@ in
 {
   nix = {
     nixPath = options.nix.nixPath.default ++ [
-      "nixpkgs-overlays=${./overlays-compat}"
+      "nixpkgs-overlays=/etc/nixos/overlays-compat/"
     ];
     package = pkgs.nixUnstable;
     extraOptions = ''
