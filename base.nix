@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
 let
+  pathIfExists = (p: if (builtins.pathExists p) then [ p ] else [ ]);
   lowBatteryNotifier = pkgs.writeScript "lowBatteryNotifier"
     ''
       BAT_PCT=`${pkgs.acpi}/bin/acpi -b | ${pkgs.gnugrep}/bin/grep -P -o '[0-9]+(?=%)'`
@@ -52,7 +53,7 @@ in
 
     # 3rd-party caches
     ./caches.nix
-  ];
+  ] ++ (pathIfExists ./personal.nix);
 
   console = {
     earlySetup = true;
@@ -108,17 +109,6 @@ in
   system = {
     stateVersion = "21.05";
   };
-
-  # Set your time zone.
-  time.timeZone = "Asia/Bangkok";
-  # Example values:
-  #   America/Los_Angeles
-  #   America/Mexico_City
-  #   America/New_York
-  #   America/Paramaribo
-  #   Asia/Bangkok
-  #   Europe/Amsterdam
-  #   Europe/Berlin
 
   # TODO: Use a dict of named coordinates and fetch a given location from that dict
   location = {
