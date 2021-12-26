@@ -105,11 +105,6 @@ in
     # printing.enable = true;
   };
 
-  # The NixOS release to be compatible with for stateful data such as databases.
-  system = {
-    stateVersion = "21.05";
-  };
-
   # TODO: Use a dict of named coordinates and fetch a given location from that dict
   location = {
     provider = "manual";

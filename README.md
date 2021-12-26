@@ -196,6 +196,11 @@ Use it to capture personal details of your configuration that are not as interes
 ```nix
 { config, pkgs, ... }:
 {
+  # The NixOS release to be compatible with for stateful data such as databases.
+  system = {
+    stateVersion = "22.05";
+  };
+
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
   # Example values:
