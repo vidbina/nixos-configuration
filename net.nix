@@ -36,8 +36,7 @@
     networkmanager = {
       enable = true;
 
-      dns = "dnsmasq";
-      insertNameservers = [ "127.0.0.1" ];
+      dns = "default";
       packages = with pkgs; [ networkmanager_openvpn ];
     };
 
@@ -48,7 +47,7 @@
 
   services = {
     dnsmasq = {
-      enable = true;
+      enable = false;
       extraConfig = ''
         address=/.local/127.0.0.1
       '';
