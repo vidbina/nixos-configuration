@@ -41,7 +41,6 @@ in
     ./games.nix
     ./graphic.nix # tools for graphics editing and design
     ##./i3.nix
-    ./mail.nix
     ./math.nix
     ./media.nix
     ./productivity.nix
