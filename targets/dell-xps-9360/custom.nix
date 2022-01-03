@@ -6,6 +6,14 @@
     cleanTmpDir = true;
     #tmpOnTmpfs = true;
 
+    kernel.sysctl = {
+      "vm.overcommit_memory" = 2;
+
+      # TODO: Remove once kernel issue is resolved
+      # https://askubuntu.com/questions/1185491/ubuntu-19-10-freezes-and-lags-reguarly
+      "vm.swappiness" = 25;
+    };
+
     kernelModules = [
       "af_packet"
       "v4l2loopback"

@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
 let
+  pathIfExists = (p: if (builtins.pathExists p) then [ p ] else [ ]);
   lowBatteryNotifier = pkgs.writeScript "lowBatteryNotifier"
     ''
       BAT_PCT=`${pkgs.acpi}/bin/acpi -b | ${pkgs.gnugrep}/bin/grep -P -o '[0-9]+(?=%)'`
@@ -13,8 +14,6 @@ in
   imports = [
     ./users.nix
 
-    ./home-configuration.nix
-
     # necessary evils
     ./unfree.nix
 
@@ -22,8 +21,6 @@ in
 
     # basics
     ./dev.nix
-    ./emacs.nix
-    ./vim.nix
     ./fonts.nix
     ./interfacing.nix
     ./terminal.nix
@@ -44,7 +41,6 @@ in
     ./games.nix
     ./graphic.nix # tools for graphics editing and design
     ##./i3.nix
-    ./mail.nix
     ./math.nix
     ./media.nix
     ./productivity.nix
@@ -56,7 +52,7 @@ in
 
     # 3rd-party caches
     ./caches.nix
-  ];
+  ] ++ (pathIfExists ./personal.nix);
 
   console = {
     earlySetup = true;
@@ -87,13 +83,7 @@ in
       enable = true;
     };
 
-    actkbd = {
-      enable = true;
-      bindings = [
-        # { keys = [ 224 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/light -A 10"; }
-        # { keys = [ 225 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/light -U 10"; }
-      ];
-    };
+    blueman.enable = true;
 
     cron = {
       enable = true;
@@ -110,32 +100,9 @@ in
       enable = true;
     };
 
-    redshift = {
-      enable = false;
-      extraOptions = [
-        "-c ~/.config/redshift.conf"
-      ];
-    };
-
     # Enable CUPS to print documents.
     # printing.enable = true;
   };
-
-  # The NixOS release to be compatible with for stateful data such as databases.
-  system = {
-    stateVersion = "21.05";
-  };
-
-  # Set your time zone.
-  time.timeZone = "Europe/Berlin";
-  # Example values:
-  #   America/Los_Angeles
-  #   America/Mexico_City
-  #   America/New_York
-  #   America/Paramaribo
-  #   Asia/Bangkok
-  #   Europe/Amsterdam
-  #   Europe/Berlin
 
   # TODO: Use a dict of named coordinates and fetch a given location from that dict
   location = {

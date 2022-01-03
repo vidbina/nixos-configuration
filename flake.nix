@@ -4,20 +4,11 @@
 
   inputs = {
     nixpkgs = {
-      url = github:NixOS/nixpkgs/nixos-21.05;
+      url = github:NixOS/nixpkgs/nixos-unstable;
     };
 
     nixos-hardware = {
       url = github:NixOS/nixos-hardware/master;
-    };
-
-    home-manager = {
-      url = github:nix-community/home-manager/release-21.05;
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    emacs-overlay = {
-      url = github:nix-community/emacs-overlay;
     };
   };
 
@@ -25,8 +16,6 @@
     { self
     , nixpkgs
     , nixos-hardware
-    , home-manager
-    , emacs-overlay
     } @ args:
     let
       # TODO: Use flake-utils to do this well
@@ -34,28 +23,15 @@
         #inherit system;
         system = "x86_64-linux";
         modules = [
-          #nixos-hardware.nixosModules."${module}"
           ./base.nix
           (./. + "/targets/${target}/hardware-configuration.nix")
           (./. + "/targets/${target}/custom.nix")
-
-
-          home-manager.nixosModules.home-manager
+          module
 
           # Infuse config/dotfile flakes
           # NOTE: Define after importing users.nix (because of my-config dep)
           ({ config, lib, ... }: {
-            config.home-manager = {
-              users = (lib.genAttrs [ config.my-config.handle ] (username: {
-                home = { };
-              }));
-            };
-
             config.networking.hostName = "vidbina-${target}";
-
-            config.nixpkgs.overlays = [
-              (import emacs-overlay)
-            ];
           })
         ];
       };

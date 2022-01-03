@@ -50,6 +50,8 @@ all: setup switch
 setup:
 	@$(SUDO) $(RSYNC) -avr --exclude='flake*' --exclude='customPkgs/' --exclude='tmp/*' --exclude='.git/*' --exclude 'result' . /tmp/nixos
 
+# TODO: Add --flake '.#TARGET' --verbose helper
+
 # Performs nixos-rebuilds against the nixpkgs version of this system
 #
 # 	Unless you add packages using these rules, nothing should really change

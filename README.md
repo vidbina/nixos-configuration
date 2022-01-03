@@ -1,6 +1,6 @@
 # NixOS :snowflake: configuration
 
-This is the NixOS :snowflake: configuration that I use on my Dell XPS.
+This is the NixOS :snowflake: configuration that I use on my machines.
 
 # Usage
 
@@ -20,7 +20,7 @@ different build targets (devices) and one can specify one of these
 configurations build a NixOS system for through the `--flake` CLI option.
 
 ```bash
-nixos-rebuild test --flake '.#dell-xps-9360'
+sudo nixos-rebuild test --flake '.#dell-xps-9360'
 ```
 
 ### Installing Flakes on NixOS
@@ -186,6 +186,37 @@ remote endpoint is that of a branch, and you are not the maintainer of that
 endpoint you will have to exercise the same caution that you practiced when
 invoking `upgrade-test` or `upgrade-switch` rules since packages could be
 removed or renamed between revisions.
+
+## Personal Config
+
+The optional .personal.nix file is included if it exists.
+
+Use it to capture personal details of your configuration that are not as interesting or too sensitive to track into version control. Observe the following snippet for a sense of what I decided to track in this file:
+
+```nix
+{ config, pkgs, ... }:
+{
+  # The NixOS release to be compatible with for stateful data such as databases.
+  system = {
+    stateVersion = "22.05";
+  };
+
+  # Set your time zone.
+  time.timeZone = "Europe/Berlin";
+  # Example values:
+  #   America/Los_Angeles
+  #   America/Mexico_City
+  #   America/New_York
+  #   America/Paramaribo
+  #   Asia/Bangkok
+  #   Europe/Amsterdam
+  #   Europe/Berlin
+}
+```
+
+Note that I track my time zone information inside of this file such that I:
+1. don't have to keep working with a dirty repo or
+2. leave a papertrail of my geographic presence in this repo.
 
 ## OpenVPN
 
