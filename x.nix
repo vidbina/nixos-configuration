@@ -16,6 +16,7 @@
     xsel
     xsettingsd
     xtrlock-pam
+    xtruss
   ];
 
   services = {
