@@ -45,7 +45,7 @@ in
     glances
     gnome3.eog # for image viewing
     gnum4 # m4 for colorit, which is installed with dict
-    gnupg22
+    gnupg
     gotop
     gucharmap # GUI charmap
     hardinfo # system profiler and benchmark tool
