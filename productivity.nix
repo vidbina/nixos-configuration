@@ -4,7 +4,6 @@
   environment.systemPackages = with pkgs; [
     calcurse
     khal
-    obsidian
     tasksh
     taskwarrior
     timewarrior

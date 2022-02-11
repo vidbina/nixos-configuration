@@ -16,6 +16,5 @@ in
     signal-desktop
     tdesktop
     weechat-vidbina
-    zoom-us
   ];
 }
