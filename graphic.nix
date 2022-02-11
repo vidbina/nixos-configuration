@@ -12,7 +12,7 @@
     graphviz
     #gmsh
     inkscape
-    plantuml-vidbina
+    plantuml
     #krita
   ];
 

@@ -118,6 +118,6 @@ in
   };
 
   nix = {
-    useSandbox = true;
+    settings.sandbox = true;
   };
 }

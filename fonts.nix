@@ -9,7 +9,7 @@
       emojione
       fira-code
       font-awesome-ttf
-      iosevka
+      #iosevka
       noto-fonts-emoji
       # TODO: Use Powerline fonts
       powerline-fonts

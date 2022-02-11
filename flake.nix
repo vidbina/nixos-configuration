@@ -28,7 +28,6 @@
           (./. + "/targets/${target}/custom.nix")
           module
 
-          # Infuse config/dotfile flakes
           # NOTE: Define after importing users.nix (because of my-config dep)
           ({ config, lib, ... }: {
             config.networking.hostName = "vidbina-${target}";
