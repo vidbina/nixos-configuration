@@ -52,7 +52,7 @@ in
 
     # 3rd-party caches
     ./caches.nix
-  ] ++ (pathIfExists ./personal.nix);
+  ] ++ (pathIfExists /home/vidbina/nixos-configuration/personal.nix);
 
   console = {
     earlySetup = true;

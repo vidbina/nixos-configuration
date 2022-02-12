@@ -1,4 +1,4 @@
-* NixOS :snowflake: configuration
+* NixOS ❄️ Configuration
 :PROPERTIES:
 :CUSTOM_ID: nixos-snowflake-configuration
 :END:
@@ -21,7 +21,7 @@ The use of =nixos-rebuild= without flakes would require one to prepare the confi
 Within the Flake, multiple configurations are defined to correspond to the different build targets (devices) and one can specify one of these configurations build a NixOS system for through the =--flake= CLI option.
 
 #+begin_src shell
-sudo nixos-rebuild test --flake '.#dell-xps-9360'
+sudo nixos-rebuild test --flake '.#dell-xps-9360' --impure
 #+end_src
 
 *** Installing Flakes on NixOS
@@ -174,6 +174,10 @@ Use it to capture personal details of your configuration that are not as interes
 Note that I track my time zone information inside of this file such that I:
 1. don't have to keep working with a dirty repo or
 2. leave a papertrail of my geographic presence in this repo.
+
+*** TODO Figure out a clean way to import personal.nix
+
+Currently the [[file:personal.nix]] is imported by referring to the full path [[file:~/home/vidbina/nixos-configuration/personal.nix]] which will warrant changes on your system. Since Flake-based configurations don't allow for referring to files that aren't tracked in git, I had to refer to my personal.nix by its full path and turn on the impure flag which is a design smell. ☹️
 
 ** OpenVPN
 :PROPERTIES:
