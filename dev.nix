@@ -9,6 +9,7 @@ in
     asciinema
     checkmake
     cmakeCurses
+    exercism
     gdb
     ghc
     ghcid
