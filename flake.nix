@@ -10,12 +10,17 @@
     nixos-hardware = {
       url = github:NixOS/nixos-hardware/master;
     };
+
+    sops-nix = {
+      url = github:Mic92/sops-nix;
+    };
   };
 
   outputs =
     { self
     , nixpkgs
     , nixos-hardware
+    , sops-nix
     } @ args:
     let
       # TODO: Use flake-utils to do this well
@@ -27,6 +32,7 @@
           (./. + "/targets/${target}/hardware-configuration.nix")
           (./. + "/targets/${target}/custom.nix")
           module
+          sops-nix.nixosModules.sops
 
           # NOTE: Define after importing users.nix (because of my-config dep)
           ({ config, lib, ... }: {
