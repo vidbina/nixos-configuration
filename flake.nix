@@ -41,15 +41,16 @@
         ];
       };
       targets = [ "dell-xps-9360" "dell-precision-5560" ];
-      hardwareModules = {
-        dell-xps-9360 = nixos-hardware.nixosModules.dell-xps-13-9360;
-        dell-precision-5560 = nixos-hardware.nixosModules.dell-precision-5530;
+      hardwareModules = with nixos-hardware.nixosModules; {
+        dell-xps-9360 = dell-xps-13-9360;
+        dell-precision-5560 = dell-precision-5530;
       };
     in
     {
-      nixosConfigurations = (nixpkgs.lib.genAttrs targets (target: mkLinuxSystem {
-        inherit target;
-        module = hardwareModules."${target}";
-      }));
+      nixosConfigurations = (nixpkgs.lib.genAttrs targets
+        (target: mkLinuxSystem {
+          inherit target;
+          module = hardwareModules."${target}";
+        }));
     };
 }
