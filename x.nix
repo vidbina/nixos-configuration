@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ config, pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     xcalib
     xclip
@@ -50,6 +50,22 @@
         "eurosign:e"
         "caps:ctrl_modifier"
       ];
+    };
+
+    # https://nixos.wiki/wiki/Logind
+    logind = {
+      lidSwitch = "suspend-then-hibernate";
+    };
+  };
+
+  systemd.services.lock-before-suspend = {
+    description = "Lock X before suspend";
+    wantedBy = [ "suspend.target" ];
+    before = [ "suspend.target" ];
+    serviceConfig = {
+      User = config.my-config.handle;
+      Environment = "DISPLAY=:0";
+      ExecStart = ''${pkgs.xtrlock-pam}/bin/xtrlock-pam -b none'';
     };
   };
 }
