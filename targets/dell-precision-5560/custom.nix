@@ -18,5 +18,10 @@
         libvdpau-va-gl
       ];
     };
+
+    # https://nixos.wiki/wiki/Nvidia
+    nvidia.powerManagement.enable = true;
   };
+
+  services.xserver.videoDrivers = [ "intel" "nvidia" ];
 }
