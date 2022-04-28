@@ -102,6 +102,19 @@ in
 
     # Enable CUPS to print documents.
     # printing.enable = true;
+
+    tlp = {
+      settings = {
+        # https://discourse.nixos.org/t/how-to-switch-cpu-governor-on-battery-power/8446/4
+        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+        CPU_SCALING_GOVERNOR_ON_AC = "powersave";
+        CPU_MAX_PERF_ON_BAT = 40;
+
+        # https://github.com/linrunner/TLP/issues/122
+        WIFI_PWR_ON_AC = 1;
+        WIFI_PWR_ON_BAT = 5;
+      };
+    };
   };
 
   # TODO: Use a dict of named coordinates and fetch a given location from that dict
