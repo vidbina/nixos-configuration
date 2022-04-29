@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 let
   pathIfExists = (p: if (builtins.pathExists p) then [ p ] else [ ]);
+
   lowBatteryNotifier = pkgs.writeScript "lowBatteryNotifier"
     ''
       BAT_PCT=`${pkgs.acpi}/bin/acpi -b | ${pkgs.gnugrep}/bin/grep -P -o '[0-9]+(?=%)'`

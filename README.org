@@ -1,17 +1,20 @@
 * NixOS ❄️ Configuration
 :PROPERTIES:
-:CUSTOM_ID: nixos-snowflake-configuration
+:CUSTOM_ID: nixos-configuration
 :END:
+
 This is the NixOS ❄️ configuration that I use on my machines.
 
 * Usage
 :PROPERTIES:
 :CUSTOM_ID: usage
 :END:
+
 ** :warning: Using Flake (i.e.: =nixos-rebuild --flake=)
 :PROPERTIES:
-:CUSTOM_ID: warning-using-flake-i.e.-nixos-rebuild---flake
+:CUSTOM_ID: usage-flake
 :END:
+
 [[https://nixos.wiki/wiki/Flakes][Flakes]] provide a mechanism for managing dependencies through a [[file:flake.lock][lock file]] that pins all dependency versions and allows for easier tooling to update these dependencies (using =nix flake lock --update-input= or =nix flake update=).
 
 #+begin_quote
@@ -26,8 +29,9 @@ sudo nixos-rebuild test --flake '.#dell-xps-9360' --impure
 
 *** Installing Flakes on NixOS
 :PROPERTIES:
-:CUSTOM_ID: installing-flakes-on-nixos
+:CUSTOM_ID: usage-flake-nixos-install
 :END:
+
 See https://nixos.wiki/wiki/Flakes for more information.
 
 1. Update =/etc/nixos/configuration.nix= to specify the installation of =nixFlakes= and enable the necessary experimental feature flag.
@@ -51,7 +55,7 @@ In our pre-Flakes previous approach, we copied the needed nix files into =/etc/n
 
 *** Using a nix-shell to use the experimental features
 :PROPERTIES:
-:CUSTOM_ID: using-a-nix-shell-to-use-the-experimental-features
+:CUSTOM_ID: usage-flake-experimental-with-nix-shell
 :END:
 
 #+begin_quote
@@ -75,7 +79,7 @@ Note that this section already outlined two ways to try to get access to nixUnst
 
 *** Debug, Tweaking, Tuning or Screwing Around
 :PROPERTIES:
-:CUSTOM_ID: debug-tweaking-tuning-or-screwing-around
+:CUSTOM_ID: usage-flake-troubleshoot
 :END:
 For debug purposes, it helps to fire up a nix repl to inspect the configuration a bit.
 
@@ -90,7 +94,7 @@ f.outputs.nixosConfiguration
 
 ** Traditional =nixos-rebuild=
 :PROPERTIES:
-:CUSTOM_ID: traditional-nixos-rebuild
+:CUSTOM_ID: usage-nixos-rebuild
 :END:
 
 #+begin_quote
@@ -105,13 +109,13 @@ In both =nixos-rebuild test= as in =nixos-rebuild switch= all changes are actual
 
 *** The easy way
 :PROPERTIES:
-:CUSTOM_ID: the-easy-way
+:CUSTOM_ID: usage-nixos-rebuild-easy
 :END:
 Run - =make= to setup the configuration in /etc/nixos and =nixos-rebuild switch= to it, making it permanent 😉 - profit 🏆
 
 *** The harder way
 :PROPERTIES:
-:CUSTOM_ID: the-harder-way
+:CUSTOM_ID: usage-nixos-rebuild-hard
 :END:
 Run
 - =make setup= to copy the configuration to =/etc/nixos=
@@ -121,7 +125,7 @@ Run
 
 *** Details
 :PROPERTIES:
-:CUSTOM_ID: details
+:CUSTOM_ID: usage-nixos-rebuild-details
 :END:
 The Makefile essentially describes 3 types of make rules:
 - =setup= rule sets up the =/etc/nixos= directory to be able to run =nixos-rebuild= at a later stage
@@ -142,9 +146,9 @@ The =local-test= and =local-switch= rules are useful if you need to build agains
 
 Finally, =remote-test= and =remote-switch= could be used to build against a remote nixpkgs archive. This is convenient if you want to build your configuration against a known endpoint between different machines. If the remote endpoint is that of a branch, and you are not the maintainer of that endpoint you will have to exercise the same caution that you practiced when invoking =upgrade-test= or =upgrade-switch= rules since packages could be removed or renamed between revisions.
 
-** Personal Config
+* Configuration
 :PROPERTIES:
-:CUSTOM_ID: personal-config
+:CUSTOM_ID: config
 :END:
 The optional [[file:personal.nix][personal.nix]] file is included if it exists.
 
@@ -153,11 +157,6 @@ Use it to capture personal details of your configuration that are not as interes
 #+begin_example nix
 { config, pkgs, ... }:
 {
-  # The NixOS release to be compatible with for stateful data such as databases.
-  system = {
-    stateVersion = "22.05";
-  };
-
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
   # Example values:
@@ -171,18 +170,35 @@ Use it to capture personal details of your configuration that are not as interes
 }
 #+end_example
 
-Note that I track my time zone information inside of this file such that I:
-1. don't have to keep working with a dirty repo or
-2. leave a papertrail of my geographic presence in this repo.
-
-*** TODO Figure out a clean way to import personal.nix
+** TODO Figure out a clean way to import personal.nix
 
 Currently the [[file:personal.nix]] is imported by referring to the full path [[file:~/home/vidbina/nixos-configuration/personal.nix]] which will warrant changes on your system. Since Flake-based configurations don't allow for referring to files that aren't tracked in git, I had to refer to my personal.nix by its full path and turn on the impure flag which is a design smell. ☹️
 
+** Timezone
+:PROPERTIES:
+:CUSTOM_ID: config-timezone
+:END:
+
+You can use the =time.timeZone= setting above to manage the time zones or edit the ~/.profile file to export the =TZ= variable as demonstrated below.
+
+#+begin_src bash
+TZ='America/Puerto_Rico'; export TZ
+#+end_src
+
+Obtaining valid values for timezones can be interactively solved using the =tzselect= command which, through a series of interactive prompts, obtains the information about your time zone and provides the correct TZ value as a response.
+
+Getting a glimpse of the date or time in a particular region or timezone can be accomplished by setting =TZ= prior to calling date as in the examples below:
+
+#+begin_src bash
+TZ='America/Puerto_Rico' date
+TZ='CEST' date
+#+end_src
+
 ** OpenVPN
 :PROPERTIES:
-:CUSTOM_ID: openvpn
+:CUSTOM_ID: config-openvpn
 :END:
+
 In order to configure OpenVPN, override the =openvpn= configuration in [[file:net.nix]] to comply with the following format:
 
 #+begin_example nix
@@ -245,8 +261,9 @@ where all configurations share the same passFile and naming scheme such that we'
 
 In summary, =config/openvpn.nix= contains a function that receives some functions needed for the internal housekeeping and simply returns a list of attrsets. In the provided example, we just needed to provide the =toUpper= helper and then just fold over a list of regions to generate the list for the helper in net.nix. In case this is just too messy for you, revert to the instructions at the head of this paragraph for a much easier but possibly more verbose setup. 😉
 
-*** Enable Overlays
+** Enable Overlays
 :PROPERTIES:
 :CUSTOM_ID: enable-overlays
 :END:
-By simlinking the overlays directory to ~/.config/nixpkgs/overlays.
+
+By simlinking the overlays directory to file:~/.config/nixpkgs/overlays.
