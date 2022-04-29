@@ -37,7 +37,7 @@
       enable = true;
 
       dns = "default";
-      packages = with pkgs; [ networkmanager_openvpn ];
+      plugins = with pkgs; [ networkmanager-openvpn ];
     };
 
     wireless = {
