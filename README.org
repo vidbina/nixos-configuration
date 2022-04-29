@@ -154,36 +154,49 @@ The optional [[file:personal.nix][personal.nix]] file is included if it exists.
 
 Use it to capture personal details of your configuration that are not as interesting or too sensitive to track into version control. Observe the following snippet for a sense of what I decided to track in this file:
 
-#+begin_example nix
+#+begin_src nix :noweb yes :tangle personal.example.nix
 { config, pkgs, ... }:
 {
-  # Set your time zone.
-  time.timeZone = "Europe/Berlin";
-  # Example values:
-  #   America/Los_Angeles
-  #   America/Mexico_City
-  #   America/New_York
-  #   America/Paramaribo
-  #   Asia/Bangkok
-  #   Europe/Amsterdam
-  #   Europe/Berlin
+  <<config-time>>
 }
-#+end_example
+#+end_src
 
 ** TODO Figure out a clean way to import personal.nix
 
-Currently the [[file:personal.nix]] is imported by referring to the full path [[file:~/home/vidbina/nixos-configuration/personal.nix]] which will warrant changes on your system. Since Flake-based configurations don't allow for referring to files that aren't tracked in git, I had to refer to my personal.nix by its full path and turn on the impure flag which is a design smell. ☹️
+Currently the [[file:personal.nix]] is imported by referring to the full path [[file:~/home/vidbina/nixos-configuration/personal.nix]] which will warrant changes on your system. Since Flake-based configurations don't allow referring to files that aren't tracked in git, I had to refer to [[file:personal.nix]] by its full path and enable the impure flag when invoking =nixos-rebuild= which is a design smell. ☹️
 
 ** Timezone
 :PROPERTIES:
 :CUSTOM_ID: config-timezone
 :END:
 
-You can use the =time.timeZone= setting above to manage the time zones or edit the ~/.profile file to export the =TZ= variable as demonstrated below.
+Time zones can be configured on a NixOS level through the =time.timeZone= variable.
+
+#+begin_src nix :noweb-ref config-time
+# Set your time zone.
+time.timeZone = "Europe/Berlin";
+# Example values:
+#   America/Los_Angeles
+#   America/Mexico_City
+#   America/New_York
+#   America/Paramaribo
+#   America/Puerto_Rico
+#   Asia/Bangkok
+#   Asia/Seoul
+#   Asia/Tokyo
+#   Europe/Amsterdam
+#   Europe/Berlin
+#+end_src
+
+You can use the =time.timeZone= setting above to manage the time zones or edit the ~/.profile file to export the =TZ= variable as demonstrated in the statement below.
 
 #+begin_src bash
 TZ='America/Puerto_Rico'; export TZ
 #+end_src
+
+#+begin_quote
+Configuring time as part of the system configuration may require you to produce a new [NixOS] generation simply to apply a timezone change. I've looked for ways to make time zone changes through home-manager or in a manner less "intrusive" but it seems that the NixOS configuration is the way to do this for now. 🤷🏿‍♂️
+#+end_quote
 
 Obtaining valid values for timezones can be interactively solved using the =tzselect= command which, through a series of interactive prompts, obtains the information about your time zone and provides the correct TZ value as a response.
 
