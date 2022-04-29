@@ -10,7 +10,7 @@ This is the NixOS ❄️ configuration that I use on my machines.
 :CUSTOM_ID: usage
 :END:
 
-** :warning: Using Flake (i.e.: =nixos-rebuild --flake=)
+** ⚠️ Using Flake (i.e.: =nixos-rebuild --flake=)
 :PROPERTIES:
 :CUSTOM_ID: usage-flake
 :END:
@@ -150,6 +150,7 @@ Finally, =remote-test= and =remote-switch= could be used to build against a remo
 :PROPERTIES:
 :CUSTOM_ID: config
 :END:
+
 The optional [[file:personal.nix][personal.nix]] file is included if it exists.
 
 Use it to capture personal details of your configuration that are not as interesting or too sensitive to track into version control. Observe the following snippet for a sense of what I decided to track in this file:
@@ -280,3 +281,19 @@ In summary, =config/openvpn.nix= contains a function that receives some function
 :END:
 
 By simlinking the overlays directory to file:~/.config/nixpkgs/overlays.
+
+** Debugging with =nixos-options=
+
+For convenience, you may use the =nixos-options= tool to introspect the actual configuration of your current system.
+
+The following command demonstrates how one could go about recursively checking all options within time =time= option.
+
+#+begin_src bash
+nixos-option -r time
+#+end_src
+
+While debugging my TLP configuration, I often looked up the =services.tlp= to figure out how the nixos-hardware along with my own settings merged in my actual config.
+
+#+begin_src bash
+nixos-option -r services.tlp
+#+end_src
