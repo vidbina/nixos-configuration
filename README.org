@@ -21,7 +21,7 @@ The use of =nixos-rebuild= without flakes would require one to prepare the confi
 Within the Flake, multiple configurations are defined to correspond to the different build targets (devices) and one can specify one of these configurations build a NixOS system for through the =--flake= CLI option.
 
 #+begin_src shell
-sudo nixos-rebuild test --flake '.#dell-xps-9360' --impure
+nixos-rebuild test --flake '.#dell-precision-5560' --use-remote-sudo --show-trace --verbose --impure
 #+end_src
 
 *** Installing Flakes on NixOS
