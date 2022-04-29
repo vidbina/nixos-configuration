@@ -22,12 +22,10 @@ in
     go
     hexyl
     html-tidy
-    htmlTidy
     httpie # cURL-like CLI tool
     httplab # interactive web server
     jq # pretty-print JSON
     kakoune # editor
-    mitscheme
     nodejs
     rnix-lsp # LSP
     shellcheck

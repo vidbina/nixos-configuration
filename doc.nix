@@ -21,7 +21,7 @@
     libreoffice
     okular
     pdftk
-    scim
+    sc-im
     visidata
     xournal
     zathura

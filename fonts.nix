@@ -8,7 +8,7 @@
       dejavu_fonts
       emojione
       fira-code
-      font-awesome-ttf
+      font-awesome
       #iosevka
       noto-fonts-emoji
       # TODO: Use Powerline fonts

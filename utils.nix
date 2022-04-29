@@ -67,7 +67,7 @@ in
     pass-vidbina
     pciutils
     pinentry_qt5
-    pmtools # ACPI utils
+    acpica-tools # ACPI utils
     pstree
     pv
     python38 # we all need a python interpreter sometimes

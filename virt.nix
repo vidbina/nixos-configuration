@@ -3,7 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     dive
-    docker_compose
+    docker-compose
   ];
 
   boot = rec {
