@@ -1,7 +1,4 @@
-* NixOS ❄️ Configuration
-:PROPERTIES:
-:CUSTOM_ID: nixos-configuration
-:END:
+#+title: NixOS ❄️ Configuration
 
 This is the NixOS ❄️ configuration that I use on my machines.
 
