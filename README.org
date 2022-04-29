@@ -50,7 +50,7 @@ See https://nixos.wiki/wiki/Flakes for more information.
 2. Then simply execute =sudo nixos-rebuild test= to apply the configuration change.
 
 #+begin_quote
-In our pre-Flakes previous approach, we copied the needed nix files into =/etc/nixos= through the =make setup= rule before applying these changes through a =nixos-rebuild= run. With the use of Flakes, we don't have to think about explicitly managing =/etc/nixos= anymore and the change proposed to =/etc/nixos= in this section should be the only change you'd ever need to make to this directory. If you have never worked with the previous configuration (with the different make rules that we cooked up), consider yourself fortunate and just
+In our [[#usage-nixos-rebuild][pre-Flakes previous approach]], we copied the needed nix files into =/etc/nixos= through the =make setup= rule before applying these changes through a =nixos-rebuild= run. With the use of Flakes, we don't have to think about explicitly managing =/etc/nixos= anymore and the change proposed to =/etc/nixos= in this section should be the only change you'd ever need to make to =/etc/nixos=. If you have never worked with the previous configuration (with the different make rules that we cooked up), consider yourself fortunate and just forget that we even mentioned it. 😌
 #+end_quote
 
 *** Using a nix-shell to use the experimental features
