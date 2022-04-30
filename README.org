@@ -24,6 +24,11 @@ Within the Flake, multiple configurations are defined to correspond to the diffe
 nixos-rebuild test --flake '.#dell-precision-5560' --use-remote-sudo --show-trace --verbose --impure
 #+end_src
 
+For convenience, the Make rule =all=, =test= or =switch= are defined to avoid us having to type too much whenever we want to roll an update, the rules mean the following:
+- =test=: run =nixos-rebuild test= and evaluate a configuration such that it can be tested *without producing a new generation* (with the caveat that some changes may require a reboot to properly test after all)
+- =switch=: run =nixos-rebuild switch= to evaluate a configuration and *produce a new generation* such that it can be selected as an option to boot from
+- =all=: alias to =switch=
+
 *** Installing Flakes on NixOS
 :PROPERTIES:
 :CUSTOM_ID: usage-flake-nixos-install
@@ -47,7 +52,7 @@ See https://nixos.wiki/wiki/Flakes for more information.
 2. Then simply execute =sudo nixos-rebuild test= to apply the configuration change.
 
 #+begin_quote
-In our [[#usage-nixos-rebuild][pre-Flakes previous approach]], we copied the needed nix files into =/etc/nixos= through the =make setup= rule before applying these changes through a =nixos-rebuild= run. With the use of Flakes, we don't have to think about explicitly managing =/etc/nixos= anymore and the change proposed to =/etc/nixos= in this section should be the only change you'd ever need to make to =/etc/nixos=. If you have never worked with the previous configuration (with the different make rules that we cooked up), consider yourself fortunate and just forget that we even mentioned it. 😌
+In our [[#usage-nixos-rebuild][pre-Flakes previous approach]], we copied the needed nix files into =/etc/nixos= through the =make nonflake-setup= rule before applying these changes through a =nixos-rebuild= run. With the use of Flakes, we don't have to think about explicitly managing =/etc/nixos= anymore and the change proposed to =/etc/nixos= in this section should be the only change you'd ever need to make to =/etc/nixos=. If you have never worked with the previous configuration (with the different make rules that we cooked up), consider yourself fortunate and just forget that we even mentioned it. 😌
 #+end_quote
 
 *** Using a nix-shell to use the experimental features
@@ -95,7 +100,9 @@ f.outputs.nixosConfiguration
 :END:
 
 #+begin_quote
-💡 Last update was tested with =make setup && make remote-test= and applied with =make setup && make remote-switch=. Just run this and be done with it. 😉
+💡 The last time I actually used the non-Flake approach, I tested it with =make nonflake-setup && make nonflake-remote-test= and applied the configuration with =make nonflake-setup && make nonflake-remote-switch= (actually, =make nonflake-setup= only needs to be run once so if you have run it before firing either of the test stages, then a subsequent switch may be triggered without firing the setup stage again). This approach just copies the nixos-configuration into =/etc/nixos= in the setup stage and then builds it against a nixpkgs target specified by the repo URI =MY_NIXPKGS_REPO= and the commit hash =MY_NIXPKGS_COMMIT= in the test and switch stages.
+
+The difference between the test and switch stages is that the switch stage actually commits a new generation to your system. The design assumes that the GitHub archive URL scheme applies so this may break if =MY_NIXPKGS_REPO= points to a non-GitHub-like forge.
 #+end_quote
 
 This NixOS configuration comes packages with a collection of make rules that are intended to make your life a little bit easier. The installation process for a NixOS configuration requires the making of changes to =/etc/nixos= followed by the installation of the given configuration by =nixos-rebuild test= or =nixos-rebuild switch=. Testing a configuration is convenient to test changes that you aren't sure you may want to persist yet. After playing around with the new configuration for a while one can persist the changes by running a switch operations. 😉
@@ -108,16 +115,18 @@ In both =nixos-rebuild test= as in =nixos-rebuild switch= all changes are actual
 :PROPERTIES:
 :CUSTOM_ID: usage-nixos-rebuild-easy
 :END:
-Run - =make= to setup the configuration in /etc/nixos and =nixos-rebuild switch= to it, making it permanent 😉 - profit 🏆
+Run
+- =make nonflake=: which sets up =/etc/nixos= and calls =nixos-rebuild switch= to make the configuration permanent 😉
+- profit 🏆
 
 *** The harder way
 :PROPERTIES:
 :CUSTOM_ID: usage-nixos-rebuild-hard
 :END:
 Run
-- =make setup= to copy the configuration to =/etc/nixos=
-- =make test= to install the configuration without producing a generation such that all changes are generally undone after reboot
-- =make switch= to commit the configuration to a generation such that all changes will still be around after a reboot 😉
+- =make nonflake-setup= to copy the configuration to =/etc/nixos=
+- =make nonflake-*-test= to install the configuration without producing a generation such that all changes are generally undone after reboot
+- =make nonflake-*-switch= to commit the configuration to a generation such that all changes will still be around after a reboot 😉
 - profit 💰
 
 *** Details
@@ -125,23 +134,23 @@ Run
 :CUSTOM_ID: usage-nixos-rebuild-details
 :END:
 The Makefile essentially describes 3 types of make rules:
-- =setup= rule sets up the =/etc/nixos= directory to be able to run =nixos-rebuild= at a later stage
+- =nonflake-setup= rule sets up the =/etc/nixos= directory to be able to run =nixos-rebuild= at a later stage
 - =test= rules perform a =nixos-rebuild= without committing it to the generations
 - =switch= rules perform a =nixos-rebuild= and commit it to the generations
 
 of which "test" and "switch" rules take the following form:
-- =test= and =switch=, referred to as the "basic" or "vanilla" rules
-- =local-test= and =local-switch=, referred to as the "local" rules
-- =remote-test= and =remote-switch=, referred to as the "remote" rules
-- =upgrade-test= and =upgrade-switch=, referred to as the "upgrade" rules
+- =nonflake-test= and =nonflake-switch=, referred to as the "basic" or "vanilla" rules
+- =nonflake-local-test= and =nonflake-local-switch=, referred to as the "local" rules
+- =nonflake-remote-test= and =nonflake-remote-switch=, referred to as the "remote" rules
+- =nonflake-upgrade-test= and =nonflake-upgrade-switch=, referred to as the "upgrade" rules
 
-Note that the vanilla rules (=test= and =switch=) are basically performed against the nixpkgs version of your system's selected channel (see =nixos-version --revision=). This could be updated by executing =sudo nix-channel --upgrade nixos=.
+Note that the vanilla rules (=nonflake-test= and =nonflake-switch=) are basically performed against the nixpkgs version of your system's selected channel (see =nixos-version --revision=). This could be updated by executing =sudo nix-channel --upgrade nixos=.
 
-Conversely, if you don't want to think about manually upgrading, you could use the =upgrade-test= and =upgrade-switch= rules which will install against the latest version of your selected channel. Between different nixos-rebuild operations, one should expect that occasionally packages can be removed or renamed thus resulting to failing builds, but this should be simple to fix.
+Conversely, if you don't want to think about manually upgrading, you could use the =nonflake-upgrade-test= and =nonflake-upgrade-switch= rules which will install against the latest version of your selected channel. Between different nixos-rebuild operations, one should expect that occasionally packages can be removed or renamed thus resulting to failing builds, but this should be simple to fix.
 
-The =local-test= and =local-switch= rules are useful if you need to build against a local clone of nixpkgs. This comes in handy when you've added, altered or removed modules or packages in nixpkgs. When using this approach, one should occasionally consider consolidating the updated upstream branch for the given channel with the local repository (either through a merge and/or rebase).
+The =nonflake-local-test= and =nonflake-local-switch= rules are useful if you need to build against a local clone of nixpkgs. This comes in handy when you've added, altered or removed modules or packages in nixpkgs. When using this approach, one should occasionally consider consolidating the updated upstream branch for the given channel with the local repository (either through a merge and/or rebase).
 
-Finally, =remote-test= and =remote-switch= could be used to build against a remote nixpkgs archive. This is convenient if you want to build your configuration against a known endpoint between different machines. If the remote endpoint is that of a branch, and you are not the maintainer of that endpoint you will have to exercise the same caution that you practiced when invoking =upgrade-test= or =upgrade-switch= rules since packages could be removed or renamed between revisions.
+Finally, =nonflake-remote-test= and =nonflake-remote-switch= could be used to build against a remote nixpkgs archive. This is convenient if you want to build your configuration against a known endpoint between different machines. If the remote endpoint is that of a branch, and you are not the maintainer of that endpoint you will have to exercise the same caution that you practiced when invoking =noflake-upgrade-test= or =nonflake-upgrade-switch= rules since packages could be removed or renamed between revisions.
 
 * Configuration
 :PROPERTIES:
