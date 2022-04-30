@@ -7,6 +7,25 @@ RM = rm
 RSYNC = rsync
 SUDO = sudo
 
+# Include config.mk to set or override parameters that are not tracked in git
+-include config.mk
+
+.PHONY: all
+all: switch
+
+.PHONY: switch
+switch:
+	@$(NIXOS_REBUILD) switch --flake '$(TARGET)' --use-remote-sudo $(NIXOS_REBUILD_ARGS)
+
+.PHONY: test
+test:
+	@$(NIXOS_REBUILD) test --flake '$(TARGET)' --use-remote-sudo $(NIXOS_REBUILD_ARGS)
+
+
+# 🐲 Everything beyond this point relates to the pre-Flakes configuration.
+# Since Flakes are likely the future of nix, you are advised to consider moving
+# over to a Flake-based configuration instead.
+
 # Git repository and branch in which I keep the nixpkgs which I want to install
 #
 #		The MY_NIXPKGS_* variables are only used in the remote rules (remote-test
@@ -49,8 +68,6 @@ nonflake: nonflake-setup nonflake-switch
 .PHONY: nonflake-setup
 nonflake-setup:
 	@$(SUDO) $(RSYNC) -avr --exclude='flake*' --exclude='customPkgs/' --exclude='tmp/*' --exclude='.git/*' --exclude 'result' . /tmp/nixos
-
-# TODO: Add --flake '.#TARGET' --verbose helper
 
 # Performs nixos-rebuilds against the nixpkgs version of this system
 #
