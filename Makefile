@@ -2,7 +2,7 @@ SHELL = /usr/bin/env bash
 
 # Commands
 CP = cp
-NIXOS_REBUILD = nixos-rebuild --show-trace
+NIXOS_REBUILD = nixos-rebuild
 RM = rm
 RSYNC = rsync
 SUDO = sudo
@@ -16,7 +16,7 @@ SUDO = sudo
 MY_NIXPKGS_REPO ?= "https://github.com/vidbina/nixpkgs"
 
 # Output of `git describe --dirty --always`
-# Update manually to maintain a tracked ref to the last working installation
+# TODO: Update manually to maintain a ref to the last working installation
 MY_NIXPKGS_COMMIT ?= "21.05-1432-g4feab93d28e"
 
 
@@ -40,14 +40,14 @@ MY_NIXPKGS_LOCAL_ARGS = -I nixos="$(MY_NIXPKGS_PATH)/nixos" -I nixpkgs="$(MY_NIX
 #
 #		in order to first trigger an upgrade of version of the nixos channel that
 #		your system tracks.
-.PHONY: all
-all: setup switch
+.PHONY: nonflake
+nonflake: nonflake-setup nonflake-switch
 
 # Sets up the configuration in /etc/nixos
 #
 # 	Source: https://nixos.org/nixos/manual/index.html#sec-changing-config
-.PHONY: setup
-setup:
+.PHONY: nonflake-setup
+nonflake-setup:
 	@$(SUDO) $(RSYNC) -avr --exclude='flake*' --exclude='customPkgs/' --exclude='tmp/*' --exclude='.git/*' --exclude 'result' . /tmp/nixos
 
 # TODO: Add --flake '.#TARGET' --verbose helper
@@ -57,13 +57,13 @@ setup:
 # 	Unless you add packages using these rules, nothing should really change
 # 	about your system you still use the exact same version of what you were
 # 	already using
-.PHONY: test
-test:
-	@$(SUDO) $(NIXOS_REBUILD) test
+.PHONY: nonflake-test
+nonflake-test:
+	@$(SUDO) $(NIXOS_REBUILD) test $(NIXOS_REBUILD_ARGS)
 
-.PHONY: switch
-switch:
-	@$(SUDO) $(NIXOS_REBUILD) switch
+.PHONY: nonflake-switch
+nonflake-switch:
+	@$(SUDO) $(NIXOS_REBUILD) switch $(NIXOS_REBUILD_ARGS)
 
 # Performs nixos-rebuilds against the upgraded nixpkgs
 #
@@ -74,13 +74,13 @@ switch:
 # 	the packages involved. Any of these make rules can potentially trigger a
 # 	lot of downloads and subsequent version upgrades of packages, perhaps this
 # 	operation even breaks the configuration as packages get dropped or renamed.
-.PHONY: upgrade-test
-upgrade-test:
-	@$(SUDO) $(NIXOS_REBUILD) test --upgrade
+.PHONY: nonflake-upgrade-test
+nonflake-upgrade-test:
+	@$(SUDO) $(NIXOS_REBUILD) test --upgrade $(NIXOS_REBUILD_ARGS)
 
-.PH0NY: upgrade-switch
-upgrade-switch:
-	@$(SUDO) $(NIXOS_REBUILD) switch --upgrade
+.PHONY: nonflake-upgrade-switch
+nonflake-upgrade-switch:
+	@$(SUDO) $(NIXOS_REBUILD) switch --upgrade $(NIXOS_REBUILD_ARGS)
 
 # Performs nixos-rebuilds against a local clone of nixpkgs
 #
@@ -90,17 +90,17 @@ upgrade-switch:
 # 	upstream first.
 #
 # 	Source: https://nixos.org/nixos/manual/#sec-changing-config
-.PHONY: local-boot
-local-boot:
-	@$(SUDO) $(NIXOS_REBUILD) $(MY_NIXPKGS_LOCAL_ARGS) boot
+.PHONY: nonflake-local-boot
+nonflake-local-boot:
+	@$(SUDO) $(NIXOS_REBUILD) $(MY_NIXPKGS_LOCAL_ARGS) boot $(NIXOS_REBUILD_ARGS)
 
-.PHONY: local-test
-local-test:
-	@$(SUDO) $(NIXOS_REBUILD) $(MY_NIXPKGS_LOCAL_ARGS) test
+.PHONY: nonflake-local-test
+nonflake-local-test:
+	@$(SUDO) $(NIXOS_REBUILD) $(MY_NIXPKGS_LOCAL_ARGS) test $(NIXOS_REBUILD_ARGS)
 
-.PHONY: local-switch
-local-switch:
-	@$(SUDO) $(NIXOS_REBUILD) $(MY_NIXPKGS_LOCAL_ARGS) switch
+.PHONY: nonflake-local-switch
+nonflake-local-switch:
+	@$(SUDO) $(NIXOS_REBUILD) $(MY_NIXPKGS_LOCAL_ARGS) switch $(NIXOS_REBUILD_ARGS)
 
 # Performs nixos-rebuilds against a remote nixpkgs
 #
@@ -113,12 +113,14 @@ local-switch:
 # 	NOTE: When a change is made to the specified branch, one should invoke
 # 	these rules on all the machines that are build against the branch in order
 # 	to ensure package version parity between machines.
-.PHONY: remote-test
-remote-test:
+.PHONY: nonflake-remote-test
+nonflake-remote-test:
 	@$(SUDO) $(NIXOS_REBUILD) \
-		-I nixpkgs="$(MY_NIXPKGS_REPO)/archive/$(MY_NIXPKGS_COMMIT).tar.gz" test
+		-I nixpkgs="$(MY_NIXPKGS_REPO)/archive/$(MY_NIXPKGS_COMMIT).tar.gz" test \
+		$(NIXOS_REBUILD_ARGS)
 
-.PHONY: remote-switch
-remote-switch:
+.PHONY: nonflake-remote-switch
+nonflake-remote-switch:
 	@$(SUDO) $(NIXOS_REBUILD) \
-		-I nixpkgs="$(MY_NIXPKGS_REPO)/archive/$(MY_NIXPKGS_COMMIT).tar.gz" switch
+		-I nixpkgs="$(MY_NIXPKGS_REPO)/archive/$(MY_NIXPKGS_COMMIT).tar.gz" switch \
+		$(NIXOS_REBUILD_ARGS)
