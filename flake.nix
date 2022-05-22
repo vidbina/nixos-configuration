@@ -43,7 +43,7 @@
             nixpkgs.overlays = [
               # https://github.com/NixOS/nixpkgs/issues/97855#issuecomment-1075818028
               (self: super: {
-                nixos-option =
+                my-nixos-option =
                   let
                     flake-compact = super.fetchFromGitHub {
                       owner = "edolstra";

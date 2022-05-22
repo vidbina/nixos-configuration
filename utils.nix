@@ -56,10 +56,10 @@ in
     jmtpfs
     libnotify
     mc
+    my-nixos-option
     networkmanagerapplet
     niv
     nix-prefetch-git
-    nixos-option
     nixpkgs-fmt
     nixpkgs-lint
     lxappearance
