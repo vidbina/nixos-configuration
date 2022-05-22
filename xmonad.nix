@@ -5,8 +5,6 @@
     compton
     conky
     dmenu
-    dzen2
-    gmrun
     hsetroot
     xmobar
   ];

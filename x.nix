@@ -2,7 +2,6 @@
   environment.systemPackages = with pkgs; [
     xcalib
     xclip
-    xfe # GUI file manager
     xorg.xbacklight
     xorg.xdpyinfo
     xorg.xev
