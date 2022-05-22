@@ -23,7 +23,6 @@ in
     httplab # interactive web server
     jq # pretty-print JSON
     kakoune # editor
-    nodejs
     rnix-lsp # LSP
     shellcheck
     shfmt
