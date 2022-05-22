@@ -75,6 +75,7 @@ in
     screenfetch
     scrot
     slop
+    ssh-to-age
     tabbed
     tcpdump
     transmission # for Torrent downloads
