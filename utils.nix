@@ -28,6 +28,7 @@ in
   nixpkgs.config = { };
   environment.systemPackages = with pkgs; [
     acpi # show batt status and other ACPI info
+    acpica-tools # ACPI utils
     arandr
     beep
     ccze
@@ -50,11 +51,12 @@ in
     gucharmap # GUI charmap
     hardinfo # system profiler and benchmark tool
     htop # for viewing process metrics
+    imagemagick
     indent
     iotop
-    imagemagick
     jmtpfs
     libnotify
+    lxappearance
     mc
     my-nixos-option
     networkmanagerapplet
@@ -62,12 +64,10 @@ in
     nix-prefetch-git
     nixpkgs-fmt
     nixpkgs-lint
-    lxappearance
     p7zip
     pass-vidbina
     pciutils
     pinentry_qt5
-    acpica-tools # ACPI utils
     pstree
     pv
     python38 # we all need a python interpreter sometimes
