@@ -14,9 +14,6 @@ in
     ghc
     ghcid
     ghidra-bin
-    git-lfs
-    gitAndTools.gitFull # to include send-email
-    github-cli
     glibc
     gnumake
     go
