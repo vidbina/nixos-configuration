@@ -53,7 +53,14 @@ in
 
     # 3rd-party caches
     ./caches.nix
-  ] ++ (pathIfExists /home/vidbina/nixos-configuration/personal.nix);
+  ] ++
+  # FIXME: Use of absolute here doesn't scale to more machines/configs
+  # FIXME: Conditional import below not working, hence system.stateVersion redef
+  (pathIfExists "/home/vidbina/src/nixos-configuration/personal.nix");
+
+  system = {
+    stateVersion = "22.05";
+  };
 
   console = {
     earlySetup = true;

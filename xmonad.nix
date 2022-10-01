@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    compton
+    picom
     conky
     dmenu
     hsetroot

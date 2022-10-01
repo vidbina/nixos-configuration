@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    alsaUtils
+    alsa-utils
     pamixer
     paprefs
     pavucontrol

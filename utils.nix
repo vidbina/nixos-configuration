@@ -44,7 +44,7 @@ in
     file
     fzf
     glances
-    gnome3.eog # for image viewing
+    gnome.eog # for image viewing
     gnum4 # m4 for colorit, which is installed with dict
     gnupg
     gotop
@@ -67,7 +67,7 @@ in
     p7zip
     pass-vidbina
     pciutils
-    pinentry_qt5
+    pinentry-qt
     pstree
     pv
     python38 # we all need a python interpreter sometimes

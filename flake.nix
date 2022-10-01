@@ -53,7 +53,7 @@
                     };
                     prefix = ''(import ${flake-compact} { src = ~/src/vidbina/nixos-configuration; }).defaultNix.nixosConfigurations.${target}'';
                   in
-                  super.runCommandNoCC "nixos-option" { buildInputs = [ super.makeWrapper ]; } ''
+                  super.runCommand "nixos-option" { buildInputs = [ super.makeWrapper ]; } ''
                     makeWrapper ${super.nixos-option}/bin/nixos-option $out/bin/nixos-option \
                       --add-flags --config_expr \
                       --add-flags "\"${prefix}.config\"" \

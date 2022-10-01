@@ -4,7 +4,7 @@
   environment.systemPackages = with pkgs; [
     alacritty
     cool-retro-term
-    rxvt_unicode.terminfo
+    rxvt-unicode-unwrapped.terminfo
     st
     terminator
     termite
