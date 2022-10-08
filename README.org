@@ -12,12 +12,16 @@ This is the NixOS ❄️ configuration that I use on my machines.
 :CUSTOM_ID: usage-flake
 :END:
 
-The short version is to run =make= to install a Flakes-based configuration on your setup but you will need to configure your setup first by populating a [[file:config.mk]] with at least =TARGET= set to whichever [[file:flake.nix::targets =][target from the Flake configuration]] you want to install. An example config.mk is presented below:
+Configure your setup first by populating a [[file:config.mk]] with at least =TARGET= set to whichever [[file:flake.nix::targets =][target from the Flake configuration]] you want to install. An example config.mk is presented below:
 
 #+begin_src makefile
 TARGET = .\#dell-xps-9360
 NIXOS_REBUILD_ARGS = --show-trace --verbose
 #+end_src
+
+Run =make= to install the Flakes-based configuration on your setup.
+
+*** Background
 
 [[https://nixos.wiki/wiki/Flakes][Flakes]] provide a mechanism for managing dependencies through a [[file:flake.lock][lock file]] that pins all dependency versions and allows for easier tooling to update these dependencies (using =nix flake lock --update-input= or =nix flake update=).
 
