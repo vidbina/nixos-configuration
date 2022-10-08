@@ -149,6 +149,10 @@ in
         RUNTIME_PM_ON_BAT = "auto";
       };
     };
+
+    udisks2 = {
+      enable = true;
+    };
   };
 
   # TODO: Use a dict of named coordinates and fetch a given location from that dict
