@@ -31,6 +31,7 @@ in
     acpica-tools # ACPI utils
     arandr
     beep
+    brightnessctl
     ccze
     ctags # generate tags
     curl
