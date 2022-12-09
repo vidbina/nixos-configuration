@@ -1,38 +1,8 @@
 { config, pkgs, ... }:
-let
-  sqlite-interactive = (pkgs.sqlite.override {
-    interactive = true;
-  });
-in
+
 {
-  environment.systemPackages = with pkgs; [
-    asciinema
-    checkmake
-    cmakeCurses
-    exercism
-    gdb
-    ghc
-    ghcid
-    ghidra-bin
-    glibc
-    gnumake
-    go
-    hexyl
-    html-tidy
-    httpie # cURL-like CLI tool
-    httplab # interactive web server
-    jq # pretty-print JSON
-    kakoune # editor
-    rnix-lsp # LSP
-    shellcheck
-    shfmt
-    sqlite-interactive
-    subversion
-    wuzz # cURL-like TUI HTTP request inspection tool
-    xxd
-    yq # pretty-print YAML
-  ]
-  ++ (
+  environment.systemPackages = with pkgs; [ ]
+    ++ (
     with haskellPackages; [
       apply-refact # for hlint --refactor
       hlint
@@ -40,7 +10,7 @@ in
       stylish-haskell
     ]
   )
-  ++ (
+    ++ (
     with pythonPackages; [
     ]
   );
