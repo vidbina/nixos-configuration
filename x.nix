@@ -2,6 +2,7 @@
   environment.systemPackages = with pkgs; [
     xcalib
     xclip
+    xkblayout-state
     xorg.xdpyinfo
     xorg.xev
     xorg.xhost
