@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+  environment.systemPackages = with pkgs; [
+    glibc
+    libva-utils
+  ];
+
   nixpkgs.config.packageOverrides = pkgs: {
     vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
   };
@@ -23,7 +28,6 @@
 
         # New additions
         vaapi-intel-hybrid
-        libvdpau-va-gl
         nvidia-vaapi-driver
       ];
     };
