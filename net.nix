@@ -51,7 +51,7 @@
       extraConfig = ''
         address=/.local/127.0.0.1
       '';
-      servers =
+      settings.server =
         let
           all = (provider: provider.ipv4 ++ provider.ipv6);
           cloudflare = {
