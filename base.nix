@@ -157,7 +157,7 @@ in
 
   # TODO: Use a dict of named coordinates and fetch a given location from that dict
   location = {
-    provider = "manual";
+    provider = "geoclue2";
     # Berlin
     latitude = 52.520008;
     longitude = 13.404954;
