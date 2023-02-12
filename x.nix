@@ -18,6 +18,11 @@
     xtruss
   ];
 
+  # NOTE: Bypass because xtrlock-pam needs python2
+  nixpkgs.config.permittedInsecurePackages = [
+    "python-2.7.18.6"
+  ];
+
   services = {
     urxvtd = {
       enable = true;
