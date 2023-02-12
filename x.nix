@@ -52,7 +52,7 @@
 
     # https://nixos.wiki/wiki/Logind
     logind = {
-      lidSwitch = "suspend-then-hibernate";
+      lidSwitch = "suspend";
     };
   };
 
