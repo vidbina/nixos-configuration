@@ -21,6 +21,20 @@ NIXOS_REBUILD_ARGS = --show-trace --verbose
 
 Run =make= to install the Flakes-based configuration on your setup.
 
+*** Update flakes
+
+Show flake setup with:
+
+#+begin_src bash :results code
+nix flake metadata
+#+end_src
+
+Update either of the inputs with:
+
+#+begin_src bash
+nix flake lock --update-input INPUT
+#+end_src
+
 *** Background
 
 [[https://nixos.wiki/wiki/Flakes][Flakes]] provide a mechanism for managing dependencies through a [[file:flake.lock][lock file]] that pins all dependency versions and allows for easier tooling to update these dependencies (using =nix flake lock --update-input= or =nix flake update=).
