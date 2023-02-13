@@ -36,5 +36,6 @@
     nvidia.powerManagement.enable = true;
   };
 
-  services.xserver.videoDrivers = [ "intel" "nvidia" ];
+  # https://nixos.org/manual/nixos/stable/#sec-x11--graphics-cards-intel
+  services.xserver.videoDrivers = [ "modesetting" "nvidia" ];
 }

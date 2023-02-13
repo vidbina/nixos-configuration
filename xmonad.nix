@@ -21,8 +21,5 @@
 
     layout = "us";
     xkbOptions = "caps:ctrl_modifier";
-
-    # TODO: Study libinput, modules
-    videoDrivers = [ "modesetting" "nvidia" ];
   };
 }

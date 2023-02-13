@@ -49,7 +49,6 @@
       exportConfiguration = true;
       layout = "us";
       # TODO: Study libinput, modules
-      videoDrivers = [ "intel" ];
       xkbOptions = builtins.concatStringsSep "," [
         "eurosign:e"
         "caps:ctrl_modifier"
