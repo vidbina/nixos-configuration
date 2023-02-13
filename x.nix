@@ -63,7 +63,7 @@
     serviceConfig = {
       User = config.my-config.handle;
       Environment = "DISPLAY=:0";
-      ExecStart = ''${pkgs.slock}/bin/slock'';
+      ExecStart = ''/run/wrappers/bin/slock'';
     };
   };
 }
