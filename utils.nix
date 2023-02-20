@@ -19,9 +19,6 @@ let
   pass-vidbina = with pkgs; pass.withExtensions (exts: [ exts.pass-otp ]);
 in
 {
-  nix = {
-    package = pkgs.bleeding.nixFlakes;
-  };
   nixpkgs.config = { };
   environment.systemPackages = with pkgs; [
     acpi # show batt status and other ACPI info
@@ -58,7 +55,6 @@ in
     mc
     my-nixos-option
     networkmanagerapplet
-    bleeding.niv
     nix-prefetch-git
     nixpkgs-fmt
     nixpkgs-lint
