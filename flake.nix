@@ -68,7 +68,7 @@
               })
 
               (final: prev: {
-                bleeding = nixpkgs-master.legacyPackages.${prev.system};
+                bleeding = nixpkgs-bleeding.legacyPackages.${prev.system};
               })
             ];
           })
