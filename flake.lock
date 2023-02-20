@@ -48,6 +48,22 @@
         "type": "github"
       }
     },
+    "nixpkgsBleeding": {
+      "locked": {
+        "lastModified": 1676863097,
+        "narHash": "sha256-9n88igIzOaLdA7D0Ctl/nfm8DnE9P341fwsdNhtM5HE=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "dec0b9d759b1c0a643c8594f850f36e772eb7c0d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "master",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1664177230,
@@ -68,6 +84,7 @@
       "inputs": {
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
+        "nixpkgsBleeding": "nixpkgsBleeding",
         "sops-nix": "sops-nix"
       }
     },
