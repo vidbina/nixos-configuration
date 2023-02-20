@@ -48,7 +48,7 @@
         "type": "github"
       }
     },
-    "nixpkgsBleeding": {
+    "nixpkgs-master": {
       "locked": {
         "lastModified": 1676863097,
         "narHash": "sha256-9n88igIzOaLdA7D0Ctl/nfm8DnE9P341fwsdNhtM5HE=",
@@ -84,7 +84,7 @@
       "inputs": {
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
-        "nixpkgsBleeding": "nixpkgsBleeding",
+        "nixpkgs-master": "nixpkgs-master",
         "sops-nix": "sops-nix"
       }
     },

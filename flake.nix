@@ -7,7 +7,7 @@
       url = github:NixOS/nixpkgs/nixos-unstable;
     };
 
-    nixpkgsBleeding = {
+    nixpkgs-bleeding = {
       url = github:NixOS/nixpkgs/master;
     };
 
@@ -23,6 +23,7 @@
   outputs =
     { self
     , nixpkgs
+    , nixpkgs-bleeding
     , nixos-hardware
     , sops-nix
     } @ args:
@@ -64,6 +65,10 @@
                       --add-flags --options_expr \
                       --add-flags "\"${prefix}.options\""
                   '';
+              })
+
+              (final: prev: {
+                bleeding = nixpkgs-master.legacyPackages.${prev.system};
               })
             ];
           })

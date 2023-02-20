@@ -20,10 +20,7 @@ let
 in
 {
   nix = {
-    package = pkgs.nixUnstable;
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
+    package = pkgs.bleeding.nixFlakes;
   };
   nixpkgs.config = { };
   environment.systemPackages = with pkgs; [
@@ -61,7 +58,7 @@ in
     mc
     my-nixos-option
     networkmanagerapplet
-    niv
+    bleeding.niv
     nix-prefetch-git
     nixpkgs-fmt
     nixpkgs-lint
