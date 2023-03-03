@@ -15,6 +15,10 @@
     # https://nixos.wiki/wiki/Accelerated_Video_Playback
     opengl = {
       enable = true;
+
+      driSupport = true;
+      driSupport32Bit = true;
+
       extraPackages = with pkgs; [
         mesa.drivers
 
