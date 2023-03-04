@@ -20,12 +20,8 @@
       driSupport32Bit = true;
 
       extraPackages = with pkgs; [
-        # LIBVA_DRIVER_NAME=iHD
+        mesa.drivers
         intel-media-driver
-
-        # New additions
-        vaapi-intel-hybrid
-        nvidia-vaapi-driver
       ];
     };
 
