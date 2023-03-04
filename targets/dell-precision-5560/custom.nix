@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     glibc
     libva-utils
+    vulkan-tools
   ];
 
   nixpkgs.config.packageOverrides = pkgs: {
