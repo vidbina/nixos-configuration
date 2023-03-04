@@ -30,7 +30,15 @@
     };
 
     # https://nixos.wiki/wiki/Nvidia
-    nvidia.powerManagement.enable = true;
+    nvidia = {
+      modesetting.enable = true;
+      powerManagement.enable = true;
+      prime = {
+        offload.enable = true;
+        intelBusId = "PCI:0:2:0";
+        nvidiaBusId = "PCI:1:0:0";
+      };
+    };
   };
 
   # https://nixos.org/manual/nixos/stable/#sec-x11--graphics-cards-intel
