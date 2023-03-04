@@ -34,5 +34,8 @@
   };
 
   # https://nixos.org/manual/nixos/stable/#sec-x11--graphics-cards-intel
-  services.xserver.videoDrivers = [ "modesetting" "nvidia" ];
+
+  # Listing just the NVIDIA driver as per:
+  # https://github.com/NixOS/nixpkgs/issues/108018
+  services.xserver.videoDrivers = [ "nvidia" ];
 }
