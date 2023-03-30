@@ -26,7 +26,9 @@
     docker = {
       enable = true;
       daemon.settings = {
-        buildkit = true;
+        features = {
+          buildkit = true;
+        };
       };
     };
   };
