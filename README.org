@@ -66,7 +66,7 @@ See https://nixos.wiki/wiki/Flakes for more information.
    #+begin_src nix
      { pkgs, ... }: {
        nix = {
-         package = pkgs.nixFlakes;
+         package = pkgs.bleeding.nix_2_13;
          extraOptions = ''
            experimental-features = nix-command flakes
          '';
@@ -328,3 +328,7 @@ While debugging my TLP configuration, I often looked up the =services.tlp= to fi
 #+begin_src bash
 nixos-option -r services.tlp
 #+end_src
+
+** OpenGL Drivers
+
+Note that OpenGL drivers are listed in file:/run/opengl-driver/lib/dri.

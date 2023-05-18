@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     dunst # for displaying IBus Notifications
     ibus-with-plugins # for handling input modes (emojis too)
+    # libinput-gestures
   ];
 
   i18n.inputMethod = {

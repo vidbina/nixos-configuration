@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     glibc
     libva-utils
+    vdpauinfo
     vulkan-tools
   ];
 
@@ -20,6 +21,9 @@
       driSupport32Bit = true;
 
       extraPackages = with pkgs; [
+        # Installing linux firmware as per
+        # https://wiki.archlinux.org/title/Hardware_video_acceleration
+        linux-firmware
         mesa.drivers
         intel-media-driver
       ];
