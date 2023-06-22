@@ -24,7 +24,7 @@
     enable = true;
     touchpad = {
       clickMethod = "clickfinger"; # default = buttonareas
-      naturalScrolling = false; # default = false
+      naturalScrolling = true; # default = false
       scrollMethod = "twofinger"; # default = twofinger
       disableWhileTyping = false; # default = false
       tapping = false; # default = true
