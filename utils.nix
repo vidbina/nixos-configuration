@@ -64,7 +64,6 @@ in
     pinentry-qt
     pstree
     pv
-    python38 # we all need a python interpreter sometimes
     ranger # TUI file mananager
     screenfetch
     scrot
