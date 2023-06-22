@@ -2,15 +2,16 @@
 
 {
   environment.systemPackages = with pkgs; [
-    glibc
     libva-utils
     vdpauinfo
     vulkan-tools
+    intel-gpu-tools
   ];
 
   nixpkgs.config.packageOverrides = pkgs: {
   };
 
+  # https://wiki.archlinux.org/title/Hardware_video_acceleration#Verification
   hardware = {
     # https://nixos.wiki/wiki/OpenGL
     # https://nixos.wiki/wiki/Accelerated_Video_Playback
@@ -25,12 +26,14 @@
         # https://wiki.archlinux.org/title/Hardware_video_acceleration
         linux-firmware
         mesa.drivers
-        intel-media-driver
+        intel-media-driver # LIBVA_DRIVER_NAME=iHD
+        vaapiIntel         # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
       ];
     };
 
     # https://nixos.wiki/wiki/Nvidia
     nvidia = {
+      nvidiaSettings = true;
       modesetting.enable = true;
       powerManagement.enable = true;
       prime = {
@@ -45,5 +48,5 @@
 
   # Listing just the NVIDIA driver as per:
   # https://github.com/NixOS/nixpkgs/issues/108018
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = [ "intel" "nvidia" ];
 }
