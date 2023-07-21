@@ -4,6 +4,8 @@
   environment.systemPackages = with pkgs; [
     dunst # for displaying IBus Notifications
     ibus-with-plugins # for handling input modes (emojis too)
+    libinput
+    # libinput-gestures
   ];
 
   i18n.inputMethod = {
@@ -21,11 +23,12 @@
   services.xserver.libinput = {
     enable = true;
     touchpad = {
-      clickMethod = "clickfinger";
-      naturalScrolling = true;
-      scrollMethod = "twofinger";
-      disableWhileTyping = true;
-      tapping = false;
+      clickMethod = "clickfinger"; # default = buttonareas
+      naturalScrolling = true; # default = false
+      scrollMethod = "twofinger"; # default = twofinger
+      disableWhileTyping = false; # default = false
+      tapping = false; # default = true
+      accelProfile = "adaptive"; # default = adaptive
     };
   };
 

@@ -4,7 +4,11 @@
 
   inputs = {
     nixpkgs = {
-      url = github:NixOS/nixpkgs/nixos-unstable;
+      url = github:NixOS/nixpkgs/master;
+    };
+
+    nixpkgs-bleeding = {
+      url = github:NixOS/nixpkgs/master;
     };
 
     nixos-hardware = {
@@ -14,13 +18,17 @@
     sops-nix = {
       url = github:Mic92/sops-nix;
     };
+
+    devenv.url = github:cachix/devenv/latest;
   };
 
   outputs =
     { self
     , nixpkgs
+    , nixpkgs-bleeding
     , nixos-hardware
     , sops-nix
+    , devenv
     } @ args:
     let
       # TODO: Use flake-utils to do this well
@@ -60,6 +68,11 @@
                       --add-flags --options_expr \
                       --add-flags "\"${prefix}.options\""
                   '';
+              })
+
+              (final: prev: {
+                bleeding = nixpkgs-bleeding.legacyPackages.${prev.system};
+                devenv = devenv.packages.${prev.system}.devenv;
               })
             ];
           })

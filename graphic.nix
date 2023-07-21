@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    aseprite-unfree
     #blender
     #fontforge-gtk
     ditaa

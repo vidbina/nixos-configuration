@@ -14,9 +14,12 @@
     xrectsel
     xsel
     xsettingsd
-    xtrlock-pam
     xtruss
   ];
+
+  programs = {
+    slock = { enable = true; };
+  };
 
   services = {
     urxvtd = {
@@ -35,16 +38,11 @@
         lightdm = {
           enable = true;
         };
-
-        sessionCommands = ''
-          alias freeze="${pkgs.xtrlock-pam}/bin/xtrlock-pam -b none"
-        '';
       };
 
       exportConfiguration = true;
       layout = "us";
       # TODO: Study libinput, modules
-      videoDrivers = [ "intel" ];
       xkbOptions = builtins.concatStringsSep "," [
         "eurosign:e"
         "caps:ctrl_modifier"
@@ -65,7 +63,7 @@
     serviceConfig = {
       User = config.my-config.handle;
       Environment = "DISPLAY=:0";
-      ExecStart = ''${pkgs.xtrlock-pam}/bin/xtrlock-pam -b none'';
+      ExecStart = ''/run/wrappers/bin/slock'';
     };
   };
 }

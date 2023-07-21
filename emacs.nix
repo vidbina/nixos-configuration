@@ -18,7 +18,7 @@ let
       ]
     )
   );
-  jupyter-for-emacs = (pkgs.python38.withPackages (ps: with ps; [ jupyter ]));
+  jupyter-for-emacs = (pkgs.python39.withPackages (ps: with ps; [ jupyter ]));
   ripgrep-for-doom-emacs = (pkgs.ripgrep.override { withPCRE2 = true; });
 in
 {

@@ -25,6 +25,11 @@
   virtualisation = {
     docker = {
       enable = true;
+      daemon.settings = {
+        features = {
+          buildkit = true;
+        };
+      };
     };
   };
 }

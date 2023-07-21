@@ -19,12 +19,6 @@ let
   pass-vidbina = with pkgs; pass.withExtensions (exts: [ exts.pass-otp ]);
 in
 {
-  nix = {
-    package = pkgs.nixUnstable;
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
-  };
   nixpkgs.config = { };
   environment.systemPackages = with pkgs; [
     acpi # show batt status and other ACPI info
@@ -61,7 +55,6 @@ in
     mc
     my-nixos-option
     networkmanagerapplet
-    niv
     nix-prefetch-git
     nixpkgs-fmt
     nixpkgs-lint
@@ -71,7 +64,6 @@ in
     pinentry-qt
     pstree
     pv
-    python38 # we all need a python interpreter sometimes
     ranger # TUI file mananager
     screenfetch
     scrot
