@@ -4,7 +4,7 @@
 
   inputs = {
     nixpkgs = {
-      url = github:NixOS/nixpkgs/master;
+      url = github:NixOS/nixpkgs/nixos-23.05;
     };
 
     nixpkgs-bleeding = {
