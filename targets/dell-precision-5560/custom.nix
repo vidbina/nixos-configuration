@@ -12,6 +12,9 @@
   };
 
   boot.loader.grub = {
+    font = "${pkgs.dejavu_fonts}/share/fonts/truetype/DejaVuSansMono.ttf";
+    fontSize = 36;
+
     # NOTE: From 2.06 to 2.12-rc1 missing shim symbol breaks the bootloader
     # see https://github.com/NixOS/nixpkgs/issues/243026
 
