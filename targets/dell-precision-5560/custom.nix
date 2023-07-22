@@ -11,6 +11,25 @@
   nixpkgs.config.packageOverrides = pkgs: {
   };
 
+  boot.loader.grub = {
+    # NOTE: From 2.06 to 2.12-rc1 missing shim symbol breaks the bootloader
+    # see https://github.com/NixOS/nixpkgs/issues/243026
+
+    # Workaround: Produce normal boot menu on a working GRUB2 version
+
+    # Note that we can workaround by:
+    # - prepping a NixOS pendrive
+    # - booting into GRUB2 from the pendrive (v2.06)
+    # - Run: set prefix=(hd1,gpt2)/grub
+    # - Run: set root=(hd1,gpt2)
+    # - Run: set cmdpath=(hd1,gpt2)/efi/NixOS-boot
+    # - Run: insmod normal
+    # - Run: normal
+    extraGrubInstallArgs = [
+      "--disable-shim-lock"
+    ];
+  };
+
   # https://wiki.archlinux.org/title/Hardware_video_acceleration#Verification
   hardware = {
     # https://nixos.wiki/wiki/OpenGL
