@@ -15,6 +15,9 @@
       url = github:NixOS/nixos-hardware/master;
     };
 
+    nix-darwin.url = "github:LnL7/nix-darwin";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+
     sops-nix = {
       url = github:Mic92/sops-nix;
     };
@@ -27,6 +30,7 @@
     , nixpkgs
     , nixpkgs-bleeding
     , nixos-hardware
+    , nix-darwin
     , sops-nix
     , devenv
     } @ args:
@@ -83,6 +87,35 @@
         dell-xps-9360 = dell-xps-13-9360;
         dell-precision-5560 = dell-precision-5530;
       };
+      darwinConfiguration = { pkgs, ... }: {
+        # List packages installed in system profile. To search by name, run:
+        # $ nix-env -qaP | grep wget
+        environment.systemPackages =
+          [
+            pkgs.vim
+          ];
+
+        # Auto upgrade nix package and the daemon service.
+        services.nix-daemon.enable = true;
+        # nix.package = pkgs.nix;
+
+        # Necessary for using flakes on this system.
+        nix.settings.experimental-features = "nix-command flakes";
+
+        # Create /etc/zshrc that loads the nix-darwin environment.
+        programs.zsh.enable = true; # default shell on catalina
+        # programs.fish.enable = true;
+
+        # Set Git commit hash for darwin-version.
+        system.configurationRevision = self.rev or self.dirtyRev or null;
+
+        # Used for backwards compatibility, please read the changelog before changing.
+        # $ darwin-rebuild changelog
+        system.stateVersion = 4;
+
+        # The platform the configuration will be used on.
+        nixpkgs.hostPlatform = "x86_64-darwin";
+      };
     in
     {
       nixosConfigurations = (nixpkgs.lib.genAttrs targets
@@ -90,5 +123,23 @@
           inherit target;
           module = hardwareModules."${target}";
         }));
+
+      # Build darwin flake using:
+      # $ darwin-rebuild build --flake .#simple
+      darwinConfigurations."simple" = nix-darwin.lib.darwinSystem {
+        modules = [ darwinConfiguration ];
+      };
+
+      # Expose the package set, including overlays, for convenience.
+      darwinPackages = self.darwinConfigurations."simple".pkgs;
+
+      devShells."x86_64-darwin".default = self.darwinConfigurations."simple".pkgs.mkShell rec {
+        name = "macbook-old-tokyo23";
+        shellHook = ''echo "Here is the rotten apple!"'';
+        buildInputs = with self.darwinConfigurations."simple".pkgs; [
+          nixpkgs-fmt
+        ];
+      };
     };
+
 }
