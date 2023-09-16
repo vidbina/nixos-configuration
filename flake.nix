@@ -15,6 +15,9 @@
       url = github:NixOS/nixos-hardware/master;
     };
 
+    nix-darwin.url = "github:LnL7/nix-darwin";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+
     sops-nix = {
       url = github:Mic92/sops-nix;
     };
@@ -27,6 +30,7 @@
     , nixpkgs
     , nixpkgs-bleeding
     , nixos-hardware
+    , nix-darwin
     , sops-nix
     , devenv
     } @ args:
